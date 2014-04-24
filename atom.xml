@@ -4,7 +4,7 @@
   <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-24T18:43:37+02:00</updated>
+  <updated>2014-04-24T18:46:34+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -34,7 +34,7 @@
 <p>Hay varias opciones:</p>
 
 <ul>
-<li><p><strong>NOOBS</strong>: es el instalador oficial que se aconseja para principiantes. De hecho su nombre es un acrónimo de <em>New Out Of Box Software</em> y un juego de palabras con <em>noob</em> (novato en ingés). Se descomprime su contenido (1 GB) en la tarjeta SD, se introduce en la Raspberry Pi y al encenderla aparece un menú en el que podemos elegir el sistema operativo a instalar.</p></li>
+<li><p><strong>NOOBS</strong>: es el instalador oficial que se aconseja para principiantes. De hecho su nombre es un acrónimo de <em>New Out Of Box Software</em> y un juego de palabras con <em>noob</em> (novato en inglés). Se descomprime su contenido (1 GB) en la tarjeta SD, se introduce en la Raspberry Pi y al encenderla aparece un menú en el que podemos elegir el sistema operativo a instalar.</p></li>
 <li><p><strong>Berryboot</strong>: es otro instalador. Se descomprime su contenido (unos 30 MB) en la tarjeta SD, se introduce en la Raspberry Pi conectada a Internet por cable y al encenderla aparece un menú en el que podemos elegir el sistema operativo a instalar.</p></li>
 </ul>
 
