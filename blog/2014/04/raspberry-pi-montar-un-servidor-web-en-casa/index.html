@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Raspberry Pi: montar un servidor web en casa (1) - Malsana Mondo</title>
+  <meta name="author" content="Malsana Mondo">
+
+  
+  <meta name="description" content="Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo costo, desarrollado en Reino Unido por la Fundación Raspberry Pi, con el &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Malsana Mondo" type="application/atom+xml">
+  <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1> <a href="/">Malsana Mondo</a></h1>
+  
+    <h2>nia tempo finas...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://startpage.com/do/search?" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:malsanamondo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Buscar"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archivo</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Raspberry Pi: montar un servidor web en casa (1)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-16T16:51:26+02:00" pubdate data-updated="true">16-04-2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="right" src="/images/RpiFront.jpg" width="300" height="300" title="Raspberry Pi Modelo B" >
+Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo costo, desarrollado en Reino Unido por la <a href="http://www.raspberrypi.org/">Fundación Raspberry Pi</a>, con el objetivo de estimular la enseñanza de ciencias de la computación en las escuelas.</p>
+
+<p>Las especificaciones las puedes consultar <a href="https://es.wikipedia.org/wiki/Raspberry_Pi">aquí</a>, y en Internet puedes encontrar fácilmente información de precios (la versión B de 512 MB cuesta unos 36 €), accesorios (cajas, tarjetas SD/SDHC, cables, alimentadores, adaptadores wifi, disipadores, cámaras, etc.), sistemas operativos, usos, proyectos, etc.</p>
+
+<!-- more -->
+
+
+<p>Una de las utilidades que podemos darle es la de <strong>servidor para alojar nuestro sitio web o blog</strong>, ya sea para experimentar y aprender, para tener mayor control sobre los datos que almacenamos (al no tener que confiar la seguridad de los mismos a las empresas de alquiler de alojamiento web), para tener mayor autonomía (al no depender de otras personas en la gestión de nuestro sitio), para ahorrarnos el coste del alojamiento web, o para todas las razones anteriores a la vez.</p>
+
+<p>Según la propia documentación de la Fundación Raspberry Pi el consumo energético del modelo B es de 3,5 W, y en algunos sitios web que tratan este tema han apuntado que el aumento en la factura de electricidad sería de unos 15 € anuales, teniéndola operativa las 24 horas del día los 365 días del año. No sabría calcular ese aumento y contrastarlo con la cantidad antes mencionada, pero en lo que sí coinciden todas las revisiones es en el <strong>bajo consumo energético</strong> de este ordenador. Más información <a href="http://bokunoshumi.wordpress.com/2012/11/24/convierte-tu-raspberry-pi-en-un-servidor-de-descargas-por-que/" title="Boku no shumi">aquí</a>.</p>
+
+<p>Hay que tener en cuenta que nuestro sitio web estará alojado en un ordenador con unas características básicas, lo que sumado a la velocidad de subida de nuestra conexión a Internet determinarán la velocidad de procesamiento y descarga de nuestras páginas que experimentará quien visite nuestro sitio, además de las visitas simultáneas soportadas. Por ello debemos decantarnos por crear <strong>páginas estáticas para no sobrecargar nuestro servidor</strong>, en nuestro caso instalaremos <a href="http://octopress.org/">Octopress</a>, un <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a> que no utiliza una base de datos para almacenar las entradas del blog, las cuales se redactan y almacenan en texto plano con <a href="http://lahonto.x64.me/blog/2014/04/markdown/">Markdown</a> y que automáticamente se convertirán en HTML estático con un par de órdenes.</p>
+
+<p>Lo que necesitamos para crear un servidor web en nuestra casa es:</p>
+
+<ul>
+<li><strong>una Raspberry Pi Modelo B</strong></li>
+<li><strong>un alimentador micro USB de al menos 700 mA</strong></li>
+<li><strong>una tarjeta SD/SDHC de al menos 4 GB clase 4 o superior</strong></li>
+<li><strong>un cable RJ-45 (para conectar la Raspberry Pi al router)</strong></li>
+<li><strong>un monitor con conexión HDMI o RCA (solamente necesario en la instalación)</strong></li>
+<li><strong>un cable HDMI o RCA (según monitor, solamente necesario en la instalación)</strong></li>
+<li><strong>un teclado USB (solamente necesario en la instalación)</strong></li>
+<li><strong>un ordenador (preferiblemente con sistema operativo GNU/Linux, para instalar el sistema operativo en la tarjeta SD, para configurar la Raspberry Pi y controlarla remotamente mediante conexión SSH)</strong></li>
+<li><strong>una conexión a Internet con un router y acceso a su configuración</strong></li>
+</ul>
+
+
+<p>Y el proceso completo constará de los siguientes pasos:</p>
+
+<ol>
+<li><strong>Instalación y configuración del sistema operativo en la tarjeta SD</strong></li>
+<li><strong>Asignación de una IP fija a la Raspberry Pi dentro de la red local</strong></li>
+<li><strong>Creación y configuración de una cuenta con DNSdynamic</strong></li>
+<li><strong>Instalación y configuración del cliente DNS</strong></li>
+<li><strong>Preparativos, instalación y configuración de Octopress</strong></li>
+</ol>
+
+
+<hr />
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">por <span class="fn">Malsana Mondo</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-16T16:51:26+02:00" pubdate data-updated="true">16-04-2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categorias/gnu-slash-linux/'>GNU/Linux</a>, <a class='category' href='/blog/categorias/raspberry-pi/'>Raspberry Pi</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa/" data-via="" data-counturl="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/04/markdown/" title="Entradas Anteriores: Markdown">&laquo; Markdown</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/" title="Entradas Posteriores: Raspberry Pi: montar un servidor web en casa (2)">Raspberry Pi: montar un servidor web en casa (2) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Entradas Recientes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">Raspberry Pi: montar un servidor web en casa (2)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa/">Raspberry Pi: montar un servidor web en casa (1)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/markdown/">Markdown</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/hola/">Hola</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categorías</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categorias/gnu-slash-linux/'>GNU/Linux (2)</a></li>
+<li class='category'><a href='/blog/categorias/raspberry-pi/'>Raspberry Pi (2)</a></li>
+<li class='category'><a href='/blog/categorias/codigo/'>código (1)</a></li>
+
+  </ul>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  2014 - Malsana Mondo - Contenido bajo licencia <a href="https://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons</a> - <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

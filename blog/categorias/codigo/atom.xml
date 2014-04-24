@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Categoría: código | Malsana Mondo]]></title>
+  <link href="http://malsanamondo.github.io/blog/categorias/codigo/atom.xml" rel="self"/>
+  <link href="http://malsanamondo.github.io/"/>
+  <updated>2014-04-24T14:28:30+02:00</updated>
+  <id>http://malsanamondo.github.io/</id>
+  <author>
+    <name><![CDATA[Malsana Mondo]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Markdown]]></title>
+    <link href="http://malsanamondo.github.io/blog/2014/04/markdown/"/>
+    <updated>2014-04-13T22:57:48+02:00</updated>
+    <id>http://malsanamondo.github.io/blog/2014/04/markdown</id>
+    <content type="html"><![CDATA[<p><a href="https://es.wikipedia.org/wiki/Markdown" title="Markdown en la Wikipedia">Markdown</a> es un lenguaje de marcado ligero que facilita la aplicación de formato a un texto mediante un simple editor de texto y ocupando poco espacio. En Octopress el contenido se forma con este lenguaje y a continuación se muestra la sintaxis utilizada para escribir en este blog. En algunos casos es Markdown simple, original o standard, en otros es Markdown sobre plugins que se incluyen en la instalación de Octopress y en otros casos directamente se recurre al HTML, ya que algunas funcionalidades no son propias del Markdown original (más información <a href="http://accelera.uab.cat/help.php?file=markdown.html#code" title="Sintaxis Markdown original">aquí</a>).</p>
+
+<!-- more -->
+
+
+<ul>
+<li><h5><a href="#1">Encabezados</a></h5></li>
+<li><h5><a href="#2">Párrafos</a></h5></li>
+<li><h5><a href="#3">Tablas</a></h5></li>
+<li><h5><a href="#4">Enlaces</a></h5></li>
+<li><h5><a href="#5">Citas</a></h5></li>
+<li><h5><a href="#6">Formato</a></h5></li>
+<li><h5><a href="#7">Listas</a></h5></li>
+<li><h5><a href="#8">Imágenes</a></h5></li>
+<li><h5><a href="#9">Regla horizontal</a></h5></li>
+<li><h5><a href="#10">Escapar caracteres</a></h5></li>
+<li><h5><a href="#11">Notas a pie de página</a></h5></li>
+<li><h5><a href="#12">Identificadores de cabecera</a></h5></li>
+<li><h5><a href="#13">Abreviaturas</a></h5></li>
+<li><h5><a href="#14">Código</a></h5></li>
+</ul>
+
+
+<h2>Encabezados<a name="1"></a></h2>
+
+<p>Si escribimos:</p>
+
+<pre><code>#Texto en H1
+
+######Texto en H6
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<h1>Texto en H1</h1>
+
+<h6>Texto en H6</h6>
+
+<p>Según se añadan almohadillas (hasta seis) se obtienen encabezados de diverso nivel. Por ejemplo si antes del texto correspondiente se colocan <code>###</code> se obtendrá un encabezado <code>&lt;h3&gt;</code>.</p>
+
+<h2>Párrafos<a name="2"></a></h2>
+
+<p>Para crearlos se deja una línea en blanco.<br/>
+Si escribimos:</p>
+
+<pre><code>Prueba de texto en un párrafo.
+
+Prueba de texto en otro párrafo.
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p>Prueba de texto en un párrafo.</p>
+
+<p>Prueba de texto en otro párrafo.</p>
+
+<p>Si queremos hacer un salto de línea en el mísmo párrafo debemos dejar dos espacios en blanco después de la última palabra de la línea.<br/>
+Si escribimos:</p>
+
+<pre><code>Prueba de texto en una línea  
+y este es el salto de línea.
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p>Prueba de texto en una línea<br/>
+y este es el salto de línea.</p>
+
+<h2>Tablas<a name="3"></a></h2>
+
+<p>Si escribimos:</p>
+
+<pre><code>Artículo | Unidades | Precio
+:------- | :------: | -----: 
+Item 1   | 24       | 29,99€
+Item 2   | 10       | 11,95€ 
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Artículo </th>
+<th align="center"> Unidades </th>
+<th align="right"> Precio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Item 1   </td>
+<td align="center"> 24       </td>
+<td align="right"> 29,99€</td>
+</tr>
+<tr>
+<td align="left">Item 2   </td>
+<td align="center"> 10       </td>
+<td align="right"> 11,95€</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Por defecto en Octopress las tablas se muestran con atributos de <code>border-width</code> igual a 0 en la hoja de estilo CSS. Para solucionarlo y modificarlo a placer visita <a href="http://samwize.com/2012/09/24/octopress-table-stylesheet/" title="http://samwize.com/">este blog</a>.</p>
+
+<h2>Enlaces<a name="4"></a></h2>
+
+<p>Hay varias formas de incluir enlaces.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>[Texto](http://loquesea.net "título")
+
+[Texto](http://loquesea.net)
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><a href="http://loquesea.net" title="título">Texto</a></p>
+
+<p><a href="http://loquesea.net">Texto</a></p>
+
+<p>Si escribimos:</p>
+
+<pre><code>&lt;http://loquesea.net&gt;
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><a href="http://loquesea.net">http://loquesea.net</a></p>
+
+<p>Si escribimos:</p>
+
+<pre><code>[Enlace 1][1], [Enlace 2][2], [Enlace 3][3]
+
+[1]: http://loquesea.net
+[2]: http://loquesea.net "Título"
+[3]: http://loquesea.net
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><a href="http://loquesea.net">Enlace 1</a>, <a href="http://loquesea.net" title="Título">Enlace 2</a>, <a href="http://loquesea.net">Enlace 3</a></p>
+
+<h2>Citas<a name="5"></a></h2>
+
+<p>Si escribimos:</p>
+
+<pre><code>&gt;Texto de la cita. La cita termina cuando se introduce una línea en blanco
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<blockquote><p>Texto de la cita. La cita termina cuando se introduce una línea en blanco</p></blockquote>
+
+<h2>Formato<a name="6"></a></h2>
+
+<p>Si escribimos:</p>
+
+<pre><code>*Texto en cursiva*
+
+_Texto en cursiva_
+
+**Texto en negrita**
+
+__Texto en negrita__
+
+***Texto en cursiva y negrita***
+
+___Texto en cursiva y negrita___
+
+~~~Texto tachado~~~
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><em>Texto en cursiva</em></p>
+
+<p><em>Texto en cursiva</em></p>
+
+<p><strong>Texto en negrita</strong></p>
+
+<p><strong>Texto en negrita</strong></p>
+
+<p><strong><em>Texto en cursiva y negrita</em></strong></p>
+
+<p><strong><em>Texto en cursiva y negrita</em></strong></p>
+
+<p><del>Texto tachado</del></p>
+
+<h2>Listas<a name="7"></a></h2>
+
+<p>Hay dos tipos de listas, las numeradas u ordenadas y las no ordenadas, y ambas se pueden mezclar y anidar. Para las no ordenadas se pueden usar los caracteres <code>*</code>, <code>+</code> o <code>-</code>.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>1. Este es el primer elemento
+2. Este es el segundo elemento
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<ol>
+<li>Este es el primer elemento</li>
+<li>Este es el segundo elemento</li>
+</ol>
+
+
+<p>Si escribimos:</p>
+
+<pre><code>* Un elemento
+* Otro elemento
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<ul>
+<li>Un elemento</li>
+<li>Otro elemento</li>
+</ul>
+
+
+<h2>Imágenes<a name="8"></a></h2>
+
+<p>Para añadir imágenes tenemos dos formas, una parecida a la de crear enlaces y otra que nos permite elegir el tamaño y la posición de la imagen (plugin Image Tag de Octopress).</p>
+
+<p>Con <code>![Texto alternativo](/images/imagen.jpg "Texto")</code>, reemplazando la ruta y el nombre del archivo de imagen, y añadiendo el nombre mostrado (opcional). En Octopress las imágenes se guardan en <code>octopress/sources/images</code>.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>![Con título](/images/obama_nsa_merkel.jpg "Criminales")
+
+![Sin título](/images/cepmanipula.jpg)
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><img src="/images/obama_nsa_merkel.jpg" title="Criminales" alt="Con título" /></p>
+
+<p><img src="/images/cepmanipula.jpg" alt="Sin título" /></p>
+
+<p>Con <code><img class="[class names]" src="/path/to/image" title="[width] [height] [title text [alt text]]" ></code>, reemplazando ruta y nombre del archivo de imagen y añadiendo atributos de posición, anchura, altura, título y nombre mostrado.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code><img class="left" src="/images/obama_nsa_merkel.jpg" width="300" height="300" title="Criminales" >
+
+<img class="right" src="/images/cepmanipula.jpg" width="420" height="700" title="Manipulando" >
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><img class="left" src="/images/obama_nsa_merkel.jpg" width="300" height="300" title="Criminales" ></p>
+
+<p><img class="right" src="/images/cepmanipula.jpg" width="420" height="700" title="Manipulando" ></p>
+
+<p>(1984 se quedó corto&hellip;)</p>
+
+<h2>Regla horizontal<a name="9"></a></h2>
+
+<p>Si escribimos:</p>
+
+<pre><code>***
+
+---
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<hr />
+
+<hr />
+
+<h2>Escapar caracteres<a name="10"></a></h2>
+
+<p>Para mostrar un carácter que a su vez es utilizado por Markdown debemos añadirle previamente <code>\</code>.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>\{ \` \_ \* \[ \]
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p>{ ` _ * [ ]</p>
+
+<h2>Notas a pie de página<a name="11"></a></h2>
+
+<p>Si escribimos:</p>
+
+<pre><code>Texto con nota a pie [^nota1] y otra nota a pie [^nota2]
+
+[^nota1]: Nota a pie de página.
+[^nota2]: Nota a pie de página.
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p>Texto con nota a pie <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> y otra nota a pie <sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+
+<p>Las definiciones de las notas aparecerán al final del documento.</p>
+
+<h2>Identificadores de cabecera<a name="12"></a></h2>
+
+<p>Sirven como un ancla (HTML) en el texto. Debería funcionar si escribimos esto:</p>
+
+<pre><code>###Cabecera con identificador   {#cabecera1}
+
+[Enlace a esa cabecera](#cabecera1)
+</code></pre>
+
+<p>pero no he podido hacer que funcione al ser <a href="http://michelf.ca/projects/php-markdown/extra/">Markdown Extra</a> (extensión de PHP Markdown) y no Markdown simple.</p>
+
+<p>A continuación la forma que utilizo.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>###Cabecera con identificador&lt;a name="cabecera1"&gt;&lt;/a&gt;
+
+[Enlace a esa cabecera](#cabecera1)
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<h3>Cabecera con identificador<a name="cabecera1"></a></h3>
+
+<p><a href="#cabecera1">Enlace a esa cabecera</a></p>
+
+<p>El enlace a la cabecera lo podemos colocar en cualquier parte del documento, por ejemplo en un índice.</p>
+
+<h2>Abreviaturas<a name="13"></a></h2>
+
+<p>Otro caso que no me funciona por ser PHP Markdown:</p>
+
+<pre><code>Texto, por ejemplo HTML y W3C.
+
+*[HTML]: Hyper Text Markup Language
+*[W3C]: World Wide Web Consortium
+</code></pre>
+
+<p>Debo hacerlo de la siguiente forma.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>Texto, por ejemplo &lt;abrr title="Hyper Text Markup Language"&gt;HTML&lt;/abbr&gt; y &lt;abrr title="World Wide Web Consortium"&gt;W3C&lt;/abbr&gt;.
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p>Texto, por ejemplo <abrr title="Hyper Text Markup Language">HTML</abbr> y <abrr title="World Wide Web Consortium">W3C</abbr>.</p>
+
+<h2>Código<a name="14"></a></h2>
+
+<p>Hay varias formas de añadir código.</p>
+
+<p>La más simple es empezar la línea de código después de <strong>tabular una vez</strong> o introducir <strong>cuatro espacios</strong>.</p>
+
+<p>Este sería el resultado:</p>
+
+<pre><code>Código que se quiere mostrar.
+</code></pre>
+
+<p>Otra forma es mediante el carácter &ldquo;`&rdquo; (tilde grave o signo de acento grave).</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>Prueba de `código mostrado` dentro de una línea con texto.
+
+Prueba de ```código mostrado``` dentro de una línea con texto.
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p>Prueba de <code>código mostrado</code> dentro de una línea   con texto.</p>
+
+<p>Prueba de <code>código mostrado</code> dentro de una línea con texto.</p>
+
+<p>Y otra forma es la que requiere el plugin Pygments, que resalta la sintaxis (en Octopress se incluye en la instalación). Para más información <a href="http://octopress.org/docs/plugins/backtick-codeblock/">http://octopress.org/docs/plugins/backtick-codeblock/</a>.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>```
+Aquí va el código que quieras mostrar
+```
+</code></pre>
+
+<p>o esto:</p>
+
+<pre><code>``` html Hola Mundo
+&lt;html&gt;
+  &lt;head&gt;
+        &lt;title&gt;Hola Mundo&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+¡Hola Mundo!
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><code>
+Aquí va el código que quieras mostrar
+</code></p>
+
+<p>``` html Hola Mundo
+<html>
+  <head></p>
+
+<pre><code>&lt;title&gt;Hola Mundo&lt;/title&gt;
+</code></pre>
+
+<p>  </head>
+  <body>
+¡Hola Mundo!
+  </body>
+</html>
+```</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Nota a pie de página.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Nota a pie de página.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

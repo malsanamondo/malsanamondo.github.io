@@ -1,0 +1,36 @@
+* + table {
+border-style:solid;
+border-width:1px;
+border-color:#B5B5B5;
+margin: 0 0 40px 0;
+}
+ 
+* + table th, * + table td {
+border-style:solid;
+border-width:1px;
+border-color:#B5B5B5;
+padding-left: 15px;
+padding-right: 15px;
+}
+ 
+* + table th {
+border-style:solid;
+font-weight:bold;
+background: url("/images/noise.png?1330434582") repeat scroll left top #ECECEC;
+}
+ 
+* + table th[align="left"], * + table td[align="left"] {
+text-align:left;
+}
+ 
+* + table th[align="right"], * + table td[align="right"] {
+text-align:right;
+}
+ 
+* + table th[align="center"], * + table td[align="center"] {
+text-align:center;
+}
+
+hr {
+  margin: 10px 0px 40px 0px;
+}

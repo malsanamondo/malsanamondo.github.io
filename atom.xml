@@ -1,24 +1,557 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-24T14:13:26+02:00</updated>
+  <updated>2014-04-24T14:28:30+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Malsana Mondo]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[Prueba]]></title>
-    <link href="http://malsanamondo.github.io/blog/2014/04/24/prueba/"/>
-    <updated>2014-04-24T14:12:15+02:00</updated>
-    <id>http://malsanamondo.github.io/blog/2014/04/24/prueba</id>
-    <content type="html"><![CDATA[
+    <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (2)]]></title>
+    <link href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/"/>
+    <updated>2014-04-17T12:22:14+02:00</updated>
+    <id>http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2</id>
+    <content type="html"><![CDATA[<p>Antes de continuar con este manual recomiendo la lectura de la <a href="http://lahonto.x64.me/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa/">primera parte</a>. A continuación instalaremos el sistema operativo de la Raspberry Pi.</p>
+
+<p>La Raspberry Pi no tiene disco duro ni SSD, en su lugar utiliza una tarjeta SD para almacenar los datos y es allí donde debemos instalar el sistema operativo.</p>
+
+<h3>Sistemas operativos</h3>
+
+<p>Existen varios <a href="http://www.raspberrypi.org/downloads/">sistemas operativos para la Raspberry Pi</a>, la mayoría basados en el sistema operativo <a href="https://es.wikipedia.org/wiki/GNU/Linux">GNU/Linux</a>. <a href="http://bitelia.com/2013/12/raspberry-pi-distribuciones-lnux">Aquí</a> muestran algunos de ellos. Nuestro servidor lo montaremos con <a href="https://es.wikipedia.org/wiki/Raspbian">Raspbian</a> (una versión de la distribución <em>Debian Wheezy</em> del sistema operativo GNU/Linux).</p>
+
+<!-- more -->
+
+
+<h3>Instalación</h3>
+
+<p>Hay varias opciones:</p>
+
+<ul>
+<li><p><strong>NOOBS</strong>: es el instalador oficial que se aconseja para principiantes. De hecho su nombre es un acrónimo de <em>New Out Of Box Software</em> y un juego de palabras con <em>noob</em> (novato en ingés). Se descomprime su contenido (1 GB) en la tarjeta SD, se introduce en la Raspberry Pi y al encenderla aparece un menú en el que podemos elegir el sistema operativo a instalar.</p></li>
+<li><p><strong>Berryboot</strong>: es otro instalador. Se descomprime su contenido (unos 30 MB) en la tarjeta SD, se introduce en la Raspberry Pi conectada a Internet por cable y al encenderla aparece un menú en el que podemos elegir el sistema operativo a instalar.</p></li>
+</ul>
+
+
+<p>Aunque estos instaladores presentan algunas ventajas (automatización, instalación de varios sistemas operativos en la misma tarjeta SD, clonación de particiones, etc.), nuestro servidor lo montaremos instalando directamente Raspbian en la tarjeta SD.</p>
+
+<p><img src="http://malsanamondo.github.io/images/raspbian_logo.png" alt="Logo Raspbian" /></p>
+
+<p>Descargamos la imagen de la última versión disponible desde <a href="http://www.raspberrypi.org/downloads/">aquí</a>, descomprimimos el archivo <code>.zip</code> y obtenemos otro archivo <code>.img</code>, el cual debemos grabar en la tarjeta SD. Explicaré el método para hacerlo desde un ordenador con sistema operativo GNU/Linux por ser el método que conozco, para hacerlo desde Windows encontraréis información <a href="http://openwebcms.es/raspberry-pi/como-instalar-raspbian-en-raspberry-pi/">aquí</a>.</p>
+
+<p>en construcción&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (1)]]></title>
+    <link href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa/"/>
+    <updated>2014-04-16T16:51:26+02:00</updated>
+    <id>http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa</id>
+    <content type="html"><![CDATA[<p><img class="right" src="http://malsanamondo.github.io/images/RpiFront.jpg" width="300" height="300" title="Raspberry Pi Modelo B" >
+Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo costo, desarrollado en Reino Unido por la <a href="http://www.raspberrypi.org/">Fundación Raspberry Pi</a>, con el objetivo de estimular la enseñanza de ciencias de la computación en las escuelas.</p>
+
+<p>Las especificaciones las puedes consultar <a href="https://es.wikipedia.org/wiki/Raspberry_Pi">aquí</a>, y en Internet puedes encontrar fácilmente información de precios (la versión B de 512 MB cuesta unos 36 €), accesorios (cajas, tarjetas SD/SDHC, cables, alimentadores, adaptadores wifi, disipadores, cámaras, etc.), sistemas operativos, usos, proyectos, etc.</p>
+
+<!-- more -->
+
+
+<p>Una de las utilidades que podemos darle es la de <strong>servidor para alojar nuestro sitio web o blog</strong>, ya sea para experimentar y aprender, para tener mayor control sobre los datos que almacenamos (al no tener que confiar la seguridad de los mismos a las empresas de alquiler de alojamiento web), para tener mayor autonomía (al no depender de otras personas en la gestión de nuestro sitio), para ahorrarnos el coste del alojamiento web, o para todas las razones anteriores a la vez.</p>
+
+<p>Según la propia documentación de la Fundación Raspberry Pi el consumo energético del modelo B es de 3,5 W, y en algunos sitios web que tratan este tema han apuntado que el aumento en la factura de electricidad sería de unos 15 € anuales, teniéndola operativa las 24 horas del día los 365 días del año. No sabría calcular ese aumento y contrastarlo con la cantidad antes mencionada, pero en lo que sí coinciden todas las revisiones es en el <strong>bajo consumo energético</strong> de este ordenador. Más información <a href="http://bokunoshumi.wordpress.com/2012/11/24/convierte-tu-raspberry-pi-en-un-servidor-de-descargas-por-que/" title="Boku no shumi">aquí</a>.</p>
+
+<p>Hay que tener en cuenta que nuestro sitio web estará alojado en un ordenador con unas características básicas, lo que sumado a la velocidad de subida de nuestra conexión a Internet determinarán la velocidad de procesamiento y descarga de nuestras páginas que experimentará quien visite nuestro sitio, además de las visitas simultáneas soportadas. Por ello debemos decantarnos por crear <strong>páginas estáticas para no sobrecargar nuestro servidor</strong>, en nuestro caso instalaremos <a href="http://octopress.org/">Octopress</a>, un <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a> que no utiliza una base de datos para almacenar las entradas del blog, las cuales se redactan y almacenan en texto plano con <a href="http://lahonto.x64.me/blog/2014/04/markdown/">Markdown</a> y que automáticamente se convertirán en HTML estático con un par de órdenes.</p>
+
+<p>Lo que necesitamos para crear un servidor web en nuestra casa es:</p>
+
+<ul>
+<li><strong>una Raspberry Pi Modelo B</strong></li>
+<li><strong>un alimentador micro USB de al menos 700 mA</strong></li>
+<li><strong>una tarjeta SD/SDHC de al menos 4 GB clase 4 o superior</strong></li>
+<li><strong>un cable RJ-45 (para conectar la Raspberry Pi al router)</strong></li>
+<li><strong>un monitor con conexión HDMI o RCA (solamente necesario en la instalación)</strong></li>
+<li><strong>un cable HDMI o RCA (según monitor, solamente necesario en la instalación)</strong></li>
+<li><strong>un teclado USB (solamente necesario en la instalación)</strong></li>
+<li><strong>un ordenador (preferiblemente con sistema operativo GNU/Linux, para instalar el sistema operativo en la tarjeta SD, para configurar la Raspberry Pi y controlarla remotamente mediante conexión SSH)</strong></li>
+<li><strong>una conexión a Internet con un router y acceso a su configuración</strong></li>
+</ul>
+
+
+<p>Y el proceso completo constará de los siguientes pasos:</p>
+
+<ol>
+<li><strong>Instalación y configuración del sistema operativo en la tarjeta SD</strong></li>
+<li><strong>Asignación de una IP fija a la Raspberry Pi dentro de la red local</strong></li>
+<li><strong>Creación y configuración de una cuenta con DNSdynamic</strong></li>
+<li><strong>Instalación y configuración del cliente DNS</strong></li>
+<li><strong>Preparativos, instalación y configuración de Octopress</strong></li>
+</ol>
+
+
+<hr />
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Markdown]]></title>
+    <link href="http://malsanamondo.github.io/blog/2014/04/markdown/"/>
+    <updated>2014-04-13T22:57:48+02:00</updated>
+    <id>http://malsanamondo.github.io/blog/2014/04/markdown</id>
+    <content type="html"><![CDATA[<p><a href="https://es.wikipedia.org/wiki/Markdown" title="Markdown en la Wikipedia">Markdown</a> es un lenguaje de marcado ligero que facilita la aplicación de formato a un texto mediante un simple editor de texto y ocupando poco espacio. En Octopress el contenido se forma con este lenguaje y a continuación se muestra la sintaxis utilizada para escribir en este blog. En algunos casos es Markdown simple, original o standard, en otros es Markdown sobre plugins que se incluyen en la instalación de Octopress y en otros casos directamente se recurre al HTML, ya que algunas funcionalidades no son propias del Markdown original (más información <a href="http://accelera.uab.cat/help.php?file=markdown.html#code" title="Sintaxis Markdown original">aquí</a>).</p>
+
+<!-- more -->
+
+
+<ul>
+<li><h5><a href="#1">Encabezados</a></h5></li>
+<li><h5><a href="#2">Párrafos</a></h5></li>
+<li><h5><a href="#3">Tablas</a></h5></li>
+<li><h5><a href="#4">Enlaces</a></h5></li>
+<li><h5><a href="#5">Citas</a></h5></li>
+<li><h5><a href="#6">Formato</a></h5></li>
+<li><h5><a href="#7">Listas</a></h5></li>
+<li><h5><a href="#8">Imágenes</a></h5></li>
+<li><h5><a href="#9">Regla horizontal</a></h5></li>
+<li><h5><a href="#10">Escapar caracteres</a></h5></li>
+<li><h5><a href="#11">Notas a pie de página</a></h5></li>
+<li><h5><a href="#12">Identificadores de cabecera</a></h5></li>
+<li><h5><a href="#13">Abreviaturas</a></h5></li>
+<li><h5><a href="#14">Código</a></h5></li>
+</ul>
+
+
+<h2>Encabezados<a name="1"></a></h2>
+
+<p>Si escribimos:</p>
+
+<pre><code>#Texto en H1
+
+######Texto en H6
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<h1>Texto en H1</h1>
+
+<h6>Texto en H6</h6>
+
+<p>Según se añadan almohadillas (hasta seis) se obtienen encabezados de diverso nivel. Por ejemplo si antes del texto correspondiente se colocan <code>###</code> se obtendrá un encabezado <code>&lt;h3&gt;</code>.</p>
+
+<h2>Párrafos<a name="2"></a></h2>
+
+<p>Para crearlos se deja una línea en blanco.<br/>
+Si escribimos:</p>
+
+<pre><code>Prueba de texto en un párrafo.
+
+Prueba de texto en otro párrafo.
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p>Prueba de texto en un párrafo.</p>
+
+<p>Prueba de texto en otro párrafo.</p>
+
+<p>Si queremos hacer un salto de línea en el mísmo párrafo debemos dejar dos espacios en blanco después de la última palabra de la línea.<br/>
+Si escribimos:</p>
+
+<pre><code>Prueba de texto en una línea  
+y este es el salto de línea.
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p>Prueba de texto en una línea<br/>
+y este es el salto de línea.</p>
+
+<h2>Tablas<a name="3"></a></h2>
+
+<p>Si escribimos:</p>
+
+<pre><code>Artículo | Unidades | Precio
+:------- | :------: | -----: 
+Item 1   | 24       | 29,99€
+Item 2   | 10       | 11,95€ 
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Artículo </th>
+<th align="center"> Unidades </th>
+<th align="right"> Precio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Item 1   </td>
+<td align="center"> 24       </td>
+<td align="right"> 29,99€</td>
+</tr>
+<tr>
+<td align="left">Item 2   </td>
+<td align="center"> 10       </td>
+<td align="right"> 11,95€</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Por defecto en Octopress las tablas se muestran con atributos de <code>border-width</code> igual a 0 en la hoja de estilo CSS. Para solucionarlo y modificarlo a placer visita <a href="http://samwize.com/2012/09/24/octopress-table-stylesheet/" title="http://samwize.com/">este blog</a>.</p>
+
+<h2>Enlaces<a name="4"></a></h2>
+
+<p>Hay varias formas de incluir enlaces.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>[Texto](http://loquesea.net "título")
+
+[Texto](http://loquesea.net)
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><a href="http://loquesea.net" title="título">Texto</a></p>
+
+<p><a href="http://loquesea.net">Texto</a></p>
+
+<p>Si escribimos:</p>
+
+<pre><code>&lt;http://loquesea.net&gt;
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><a href="http://loquesea.net">http://loquesea.net</a></p>
+
+<p>Si escribimos:</p>
+
+<pre><code>[Enlace 1][1], [Enlace 2][2], [Enlace 3][3]
+
+[1]: http://loquesea.net
+[2]: http://loquesea.net "Título"
+[3]: http://loquesea.net
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><a href="http://loquesea.net">Enlace 1</a>, <a href="http://loquesea.net" title="Título">Enlace 2</a>, <a href="http://loquesea.net">Enlace 3</a></p>
+
+<h2>Citas<a name="5"></a></h2>
+
+<p>Si escribimos:</p>
+
+<pre><code>&gt;Texto de la cita. La cita termina cuando se introduce una línea en blanco
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<blockquote><p>Texto de la cita. La cita termina cuando se introduce una línea en blanco</p></blockquote>
+
+<h2>Formato<a name="6"></a></h2>
+
+<p>Si escribimos:</p>
+
+<pre><code>*Texto en cursiva*
+
+_Texto en cursiva_
+
+**Texto en negrita**
+
+__Texto en negrita__
+
+***Texto en cursiva y negrita***
+
+___Texto en cursiva y negrita___
+
+~~~Texto tachado~~~
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><em>Texto en cursiva</em></p>
+
+<p><em>Texto en cursiva</em></p>
+
+<p><strong>Texto en negrita</strong></p>
+
+<p><strong>Texto en negrita</strong></p>
+
+<p><strong><em>Texto en cursiva y negrita</em></strong></p>
+
+<p><strong><em>Texto en cursiva y negrita</em></strong></p>
+
+<p><del>Texto tachado</del></p>
+
+<h2>Listas<a name="7"></a></h2>
+
+<p>Hay dos tipos de listas, las numeradas u ordenadas y las no ordenadas, y ambas se pueden mezclar y anidar. Para las no ordenadas se pueden usar los caracteres <code>*</code>, <code>+</code> o <code>-</code>.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>1. Este es el primer elemento
+2. Este es el segundo elemento
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<ol>
+<li>Este es el primer elemento</li>
+<li>Este es el segundo elemento</li>
+</ol>
+
+
+<p>Si escribimos:</p>
+
+<pre><code>* Un elemento
+* Otro elemento
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<ul>
+<li>Un elemento</li>
+<li>Otro elemento</li>
+</ul>
+
+
+<h2>Imágenes<a name="8"></a></h2>
+
+<p>Para añadir imágenes tenemos dos formas, una parecida a la de crear enlaces y otra que nos permite elegir el tamaño y la posición de la imagen (plugin Image Tag de Octopress).</p>
+
+<p>Con <code>![Texto alternativo](/images/imagen.jpg "Texto")</code>, reemplazando la ruta y el nombre del archivo de imagen, y añadiendo el nombre mostrado (opcional). En Octopress las imágenes se guardan en <code>octopress/sources/images</code>.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>![Con título](/images/obama_nsa_merkel.jpg "Criminales")
+
+![Sin título](/images/cepmanipula.jpg)
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><img src="http://malsanamondo.github.io/images/obama_nsa_merkel.jpg" title="Criminales" alt="Con título" /></p>
+
+<p><img src="http://malsanamondo.github.io/images/cepmanipula.jpg" alt="Sin título" /></p>
+
+<p>Con <code>&lt;img class="[class names]" src="http://malsanamondo.github.io/path/to/image" title="[width] [height] [title text [alt text]]" &gt;</code>, reemplazando ruta y nombre del archivo de imagen y añadiendo atributos de posición, anchura, altura, título y nombre mostrado.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>&lt;img class="left" src="http://malsanamondo.github.io/images/obama_nsa_merkel.jpg" width="300" height="300" title="Criminales" &gt;
+
+&lt;img class="right" src="http://malsanamondo.github.io/images/cepmanipula.jpg" width="420" height="700" title="Manipulando" &gt;
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><img class="left" src="http://malsanamondo.github.io/images/obama_nsa_merkel.jpg" width="300" height="300" title="Criminales" ></p>
+
+<p><img class="right" src="http://malsanamondo.github.io/images/cepmanipula.jpg" width="420" height="700" title="Manipulando" ></p>
+
+<p>(1984 se quedó corto&hellip;)</p>
+
+<h2>Regla horizontal<a name="9"></a></h2>
+
+<p>Si escribimos:</p>
+
+<pre><code>***
+
+---
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<hr />
+
+<hr />
+
+<h2>Escapar caracteres<a name="10"></a></h2>
+
+<p>Para mostrar un carácter que a su vez es utilizado por Markdown debemos añadirle previamente <code>\</code>.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>\{ \` \_ \* \[ \]
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p>{ ` _ * [ ]</p>
+
+<h2>Notas a pie de página<a name="11"></a></h2>
+
+<p>Si escribimos:</p>
+
+<pre><code>Texto con nota a pie [^nota1] y otra nota a pie [^nota2]
+
+[^nota1]: Nota a pie de página.
+[^nota2]: Nota a pie de página.
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p>Texto con nota a pie <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> y otra nota a pie <sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+
+<p>Las definiciones de las notas aparecerán al final del documento.</p>
+
+<h2>Identificadores de cabecera<a name="12"></a></h2>
+
+<p>Sirven como un ancla (HTML) en el texto. Debería funcionar si escribimos esto:</p>
+
+<pre><code>###Cabecera con identificador   {#cabecera1}
+
+[Enlace a esa cabecera](#cabecera1)
+</code></pre>
+
+<p>pero no he podido hacer que funcione al ser <a href="http://michelf.ca/projects/php-markdown/extra/">Markdown Extra</a> (extensión de PHP Markdown) y no Markdown simple.</p>
+
+<p>A continuación la forma que utilizo.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>###Cabecera con identificador&lt;a name="cabecera1"&gt;&lt;/a&gt;
+
+[Enlace a esa cabecera](#cabecera1)
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<h3>Cabecera con identificador<a name="cabecera1"></a></h3>
+
+<p><a href="#cabecera1">Enlace a esa cabecera</a></p>
+
+<p>El enlace a la cabecera lo podemos colocar en cualquier parte del documento, por ejemplo en un índice.</p>
+
+<h2>Abreviaturas<a name="13"></a></h2>
+
+<p>Otro caso que no me funciona por ser PHP Markdown:</p>
+
+<pre><code>Texto, por ejemplo HTML y W3C.
+
+*[HTML]: Hyper Text Markup Language
+*[W3C]: World Wide Web Consortium
+</code></pre>
+
+<p>Debo hacerlo de la siguiente forma.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>Texto, por ejemplo &lt;abrr title="Hyper Text Markup Language"&gt;HTML&lt;/abbr&gt; y &lt;abrr title="World Wide Web Consortium"&gt;W3C&lt;/abbr&gt;.
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p>Texto, por ejemplo <abrr title="Hyper Text Markup Language">HTML</abbr> y <abrr title="World Wide Web Consortium">W3C</abbr>.</p>
+
+<h2>Código<a name="14"></a></h2>
+
+<p>Hay varias formas de añadir código.</p>
+
+<p>La más simple es empezar la línea de código después de <strong>tabular una vez</strong> o introducir <strong>cuatro espacios</strong>.</p>
+
+<p>Este sería el resultado:</p>
+
+<pre><code>Código que se quiere mostrar.
+</code></pre>
+
+<p>Otra forma es mediante el carácter &ldquo;`&rdquo; (tilde grave o signo de acento grave).</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>Prueba de `código mostrado` dentro de una línea con texto.
+
+Prueba de ```código mostrado``` dentro de una línea con texto.
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p>Prueba de <code>código mostrado</code> dentro de una línea   con texto.</p>
+
+<p>Prueba de <code>código mostrado</code> dentro de una línea con texto.</p>
+
+<p>Y otra forma es la que requiere el plugin Pygments, que resalta la sintaxis (en Octopress se incluye en la instalación). Para más información <a href="http://octopress.org/docs/plugins/backtick-codeblock/">http://octopress.org/docs/plugins/backtick-codeblock/</a>.</p>
+
+<p>Si escribimos:</p>
+
+<pre><code>```
+Aquí va el código que quieras mostrar
+```
+</code></pre>
+
+<p>o esto:</p>
+
+<pre><code>``` html Hola Mundo
+&lt;html&gt;
+  &lt;head&gt;
+        &lt;title&gt;Hola Mundo&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+¡Hola Mundo!
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Aquí va el código que quieras mostrar</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Hola Mundo</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;head&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;title&gt;</span>Hola Mundo<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;body&gt;</span>
+</span><span class='line'>¡Hola Mundo!
+</span><span class='line'>  <span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Nota a pie de página.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Nota a pie de página.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hola]]></title>
+    <link href="http://malsanamondo.github.io/blog/2014/04/hola/"/>
+    <updated>2014-04-12T18:08:36+02:00</updated>
+    <id>http://malsanamondo.github.io/blog/2014/04/hola</id>
+    <content type="html"><![CDATA[<p>Esta es la primera entrada de este nuevo blog. Trataré diversos temas que he necesitado o querido conocer en algún momento, desarrollándolos como apuntes personales, esperando también que sirva de ayuda a quien lo necesite.</p>
+
+<p>Comenzaré explicando cómo montar un servidor web propio con una Raspberry Pi, cómo acceder a él desde el exterior de la red local y cómo instalar Octopress y crear un blog. Eso es lo que he tenido que aprender para montar este blog, y mediante documentación recogida en Internet, paciencia y mucho ensayo-error creo haberlo conseguido.</p>
 ]]></content>
   </entry>
   

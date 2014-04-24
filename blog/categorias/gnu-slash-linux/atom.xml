@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Categoría: GNU/Linux | Malsana Mondo]]></title>
+  <link href="http://malsanamondo.github.io/blog/categorias/gnu-slash-linux/atom.xml" rel="self"/>
+  <link href="http://malsanamondo.github.io/"/>
+  <updated>2014-04-24T14:28:30+02:00</updated>
+  <id>http://malsanamondo.github.io/</id>
+  <author>
+    <name><![CDATA[Malsana Mondo]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (2)]]></title>
+    <link href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/"/>
+    <updated>2014-04-17T12:22:14+02:00</updated>
+    <id>http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2</id>
+    <content type="html"><![CDATA[<p>Antes de continuar con este manual recomiendo la lectura de la <a href="http://lahonto.x64.me/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa/">primera parte</a>. A continuación instalaremos el sistema operativo de la Raspberry Pi.</p>
+
+<p>La Raspberry Pi no tiene disco duro ni SSD, en su lugar utiliza una tarjeta SD para almacenar los datos y es allí donde debemos instalar el sistema operativo.</p>
+
+<h3>Sistemas operativos</h3>
+
+<p>Existen varios <a href="http://www.raspberrypi.org/downloads/">sistemas operativos para la Raspberry Pi</a>, la mayoría basados en el sistema operativo <a href="https://es.wikipedia.org/wiki/GNU/Linux">GNU/Linux</a>. <a href="http://bitelia.com/2013/12/raspberry-pi-distribuciones-lnux">Aquí</a> muestran algunos de ellos. Nuestro servidor lo montaremos con <a href="https://es.wikipedia.org/wiki/Raspbian">Raspbian</a> (una versión de la distribución <em>Debian Wheezy</em> del sistema operativo GNU/Linux).</p>
+
+<!-- more -->
+
+
+<h3>Instalación</h3>
+
+<p>Hay varias opciones:</p>
+
+<ul>
+<li><p><strong>NOOBS</strong>: es el instalador oficial que se aconseja para principiantes. De hecho su nombre es un acrónimo de <em>New Out Of Box Software</em> y un juego de palabras con <em>noob</em> (novato en ingés). Se descomprime su contenido (1 GB) en la tarjeta SD, se introduce en la Raspberry Pi y al encenderla aparece un menú en el que podemos elegir el sistema operativo a instalar.</p></li>
+<li><p><strong>Berryboot</strong>: es otro instalador. Se descomprime su contenido (unos 30 MB) en la tarjeta SD, se introduce en la Raspberry Pi conectada a Internet por cable y al encenderla aparece un menú en el que podemos elegir el sistema operativo a instalar.</p></li>
+</ul>
+
+
+<p>Aunque estos instaladores presentan algunas ventajas (automatización, instalación de varios sistemas operativos en la misma tarjeta SD, clonación de particiones, etc.), nuestro servidor lo montaremos instalando directamente Raspbian en la tarjeta SD.</p>
+
+<p><img src="/images/raspbian_logo.png" alt="Logo Raspbian" /></p>
+
+<p>Descargamos la imagen de la última versión disponible desde <a href="http://www.raspberrypi.org/downloads/">aquí</a>, descomprimimos el archivo <code>.zip</code> y obtenemos otro archivo <code>.img</code>, el cual debemos grabar en la tarjeta SD. Explicaré el método para hacerlo desde un ordenador con sistema operativo GNU/Linux por ser el método que conozco, para hacerlo desde Windows encontraréis información <a href="http://openwebcms.es/raspberry-pi/como-instalar-raspbian-en-raspberry-pi/">aquí</a>.</p>
+
+<p>en construcción&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (1)]]></title>
+    <link href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa/"/>
+    <updated>2014-04-16T16:51:26+02:00</updated>
+    <id>http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa</id>
+    <content type="html"><![CDATA[<p><img class="right" src="/images/RpiFront.jpg" width="300" height="300" title="Raspberry Pi Modelo B" >
+Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo costo, desarrollado en Reino Unido por la <a href="http://www.raspberrypi.org/">Fundación Raspberry Pi</a>, con el objetivo de estimular la enseñanza de ciencias de la computación en las escuelas.</p>
+
+<p>Las especificaciones las puedes consultar <a href="https://es.wikipedia.org/wiki/Raspberry_Pi">aquí</a>, y en Internet puedes encontrar fácilmente información de precios (la versión B de 512 MB cuesta unos 36 €), accesorios (cajas, tarjetas SD/SDHC, cables, alimentadores, adaptadores wifi, disipadores, cámaras, etc.), sistemas operativos, usos, proyectos, etc.</p>
+
+<!-- more -->
+
+
+<p>Una de las utilidades que podemos darle es la de <strong>servidor para alojar nuestro sitio web o blog</strong>, ya sea para experimentar y aprender, para tener mayor control sobre los datos que almacenamos (al no tener que confiar la seguridad de los mismos a las empresas de alquiler de alojamiento web), para tener mayor autonomía (al no depender de otras personas en la gestión de nuestro sitio), para ahorrarnos el coste del alojamiento web, o para todas las razones anteriores a la vez.</p>
+
+<p>Según la propia documentación de la Fundación Raspberry Pi el consumo energético del modelo B es de 3,5 W, y en algunos sitios web que tratan este tema han apuntado que el aumento en la factura de electricidad sería de unos 15 € anuales, teniéndola operativa las 24 horas del día los 365 días del año. No sabría calcular ese aumento y contrastarlo con la cantidad antes mencionada, pero en lo que sí coinciden todas las revisiones es en el <strong>bajo consumo energético</strong> de este ordenador. Más información <a href="http://bokunoshumi.wordpress.com/2012/11/24/convierte-tu-raspberry-pi-en-un-servidor-de-descargas-por-que/" title="Boku no shumi">aquí</a>.</p>
+
+<p>Hay que tener en cuenta que nuestro sitio web estará alojado en un ordenador con unas características básicas, lo que sumado a la velocidad de subida de nuestra conexión a Internet determinarán la velocidad de procesamiento y descarga de nuestras páginas que experimentará quien visite nuestro sitio, además de las visitas simultáneas soportadas. Por ello debemos decantarnos por crear <strong>páginas estáticas para no sobrecargar nuestro servidor</strong>, en nuestro caso instalaremos <a href="http://octopress.org/">Octopress</a>, un <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a> que no utiliza una base de datos para almacenar las entradas del blog, las cuales se redactan y almacenan en texto plano con <a href="http://lahonto.x64.me/blog/2014/04/markdown/">Markdown</a> y que automáticamente se convertirán en HTML estático con un par de órdenes.</p>
+
+<p>Lo que necesitamos para crear un servidor web en nuestra casa es:</p>
+
+<ul>
+<li><strong>una Raspberry Pi Modelo B</strong></li>
+<li><strong>un alimentador micro USB de al menos 700 mA</strong></li>
+<li><strong>una tarjeta SD/SDHC de al menos 4 GB clase 4 o superior</strong></li>
+<li><strong>un cable RJ-45 (para conectar la Raspberry Pi al router)</strong></li>
+<li><strong>un monitor con conexión HDMI o RCA (solamente necesario en la instalación)</strong></li>
+<li><strong>un cable HDMI o RCA (según monitor, solamente necesario en la instalación)</strong></li>
+<li><strong>un teclado USB (solamente necesario en la instalación)</strong></li>
+<li><strong>un ordenador (preferiblemente con sistema operativo GNU/Linux, para instalar el sistema operativo en la tarjeta SD, para configurar la Raspberry Pi y controlarla remotamente mediante conexión SSH)</strong></li>
+<li><strong>una conexión a Internet con un router y acceso a su configuración</strong></li>
+</ul>
+
+
+<p>Y el proceso completo constará de los siguientes pasos:</p>
+
+<ol>
+<li><strong>Instalación y configuración del sistema operativo en la tarjeta SD</strong></li>
+<li><strong>Asignación de una IP fija a la Raspberry Pi dentro de la red local</strong></li>
+<li><strong>Creación y configuración de una cuenta con DNSdynamic</strong></li>
+<li><strong>Instalación y configuración del cliente DNS</strong></li>
+<li><strong>Preparativos, instalación y configuración de Octopress</strong></li>
+</ol>
+
+
+<hr />
+]]></content>
+  </entry>
+  
+</feed>
