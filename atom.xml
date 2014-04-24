@@ -4,7 +4,7 @@
   <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-24T18:23:55+02:00</updated>
+  <updated>2014-04-24T18:43:37+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -24,7 +24,7 @@
 
 <h3>Sistemas operativos</h3>
 
-<p>Existen varios <a href="http://www.raspberrypi.org/downloads/">sistemas operativos para la Raspberry Pi</a>, la mayoría basados en el sistema operativo <a href="https://es.wikipedia.org/wiki/GNU/Linux">GNU/Linux</a>. <a href="http://bitelia.com/2013/12/raspberry-pi-distribuciones-lnux">Aquí</a> muestran algunos de ellos. Nuestro servidor lo montaremos con <a href="https://es.wikipedia.org/wiki/Raspbian">Raspbian</a> (una versión de la distribución <em>Debian Wheezy</em> del sistema operativo GNU/Linux).</p>
+<p>Existen varios <a href="http://www.raspberrypi.org/downloads/">sistemas operativos para la Raspberry Pi</a>, muchos de ellos distribuciones <a href="https://es.wikipedia.org/wiki/GNU/Linux">GNU/Linux</a>. <a href="http://bitelia.com/2013/12/raspberry-pi-distribuciones-lnux">Aquí</a> muestran algunos de ellos. Nuestro servidor lo montaremos con <a href="https://es.wikipedia.org/wiki/Raspbian">Raspbian</a> (una versión de la distribución <em>Debian Wheezy</em> del sistema operativo GNU/Linux).</p>
 
 <!-- more -->
 
@@ -51,9 +51,9 @@
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (1)]]></title>
-    <link href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa/"/>
+    <link href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/"/>
     <updated>2014-04-16T16:51:26+02:00</updated>
-    <id>http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa</id>
+    <id>http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1</id>
     <content type="html"><![CDATA[<p><img class="right" src="http://malsanamondo.github.io/images/RpiFront.jpg" width="300" height="300" title="Raspberry Pi Modelo B" >
 Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo costo, desarrollado en Reino Unido por la <a href="http://www.raspberrypi.org/">Fundación Raspberry Pi</a>, con el objetivo de estimular la enseñanza de ciencias de la computación en las escuelas.</p>
 
