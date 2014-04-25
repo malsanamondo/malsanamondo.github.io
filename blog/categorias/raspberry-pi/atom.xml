@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: Raspberry Pi | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-25T20:32:21+02:00</updated>
+  <updated>2014-04-25T20:33:57+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -116,7 +116,8 @@ $ sudo apt-get upgrade
 <li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Si quieres puedes crear una nueva partición en el espacio libre resultante con el formato FAT32.</p></li>
 <li><p><strong>Desde la terminal</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD con:</p>
 
-<p>  # df -h</p></li>
+<pre><code>  # df -h
+</code></pre></li>
 </ul>
 
 
