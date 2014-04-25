@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: Raspberry Pi | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-25T20:24:54+02:00</updated>
+  <updated>2014-04-25T20:27:05+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -35,7 +35,7 @@
 <li><strong>Expandir el sistema</strong>: para que Raspbian ocupe todo el espacio de la tarjeta.</li>
 <li><p><strong>Activar inicio en modo escritorio</strong>: se puede elegir que arranque en modo gráfico o en modo consola, por defecto arranca en modo consola y es la opción con la cual trabajaremos. Una vez arrancado el sistema si queremos iniciar el modo gráfico basta con escribir:</p>
 
-<p>  $ startx</p></li>
+<p>  $ tartx</p></li>
 <li><p><strong>Opciones de internacionalización</strong>: configurar idioma, localización, teclado, etc. En idioma desmarcamos (con la barra de espacio) <em>en_GB</em> y seleccionamos <em>es_ES UTF8</em> (si lo quieres en castellano), elegimos distribución del teclado (normalmente PC genérico 105 teclas) e idioma de teclado. En las siguientes opciones no hace falta cambiar nada.</p></li>
 <li><strong>Opciones avanzadas</strong>: cambiamos el nombre de la máquina por uno fácilmente reconocible (nos servirá en los siguientes pasos), y activamos el acceso SSH para acceder a la Raspberry Pi de forma remota desde otros dispositivos.</li>
 </ul>
@@ -61,6 +61,7 @@
 <p>Una vez realizado el cambio escribimos uno a uno estos comandos:</p>
 
 <pre><code>$ sudo apt-get update
+
 
 $ sudo apt-get upgrade
 </code></pre>
