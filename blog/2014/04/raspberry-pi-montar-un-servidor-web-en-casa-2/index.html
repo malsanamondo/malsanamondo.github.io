@@ -126,14 +126,11 @@
 <li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Si quieres puedes crear una nueva partición en el espacio libre resultante con el formato FAT32.</p></li>
 <li><p><strong>Desde la terminal</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD con:</p>
 
-<p>  # fdisk -l</p></li>
+<p>  # fdisk -l
+o:
+  # df -h</p></li>
 </ul>
 
-
-<p>o:</p>
-
-<pre><code># df -h
-</code></pre>
 
 <p>(encontrarás que tiene asignado algo como /dev/sdb1 o /dev/mmcblk0p1, y si la SD tiene más particiones serán nombradas como sdb2, sdb3 y mmcblk0p2, mmcblk0p3 respectivamente), entonces desmóntalas con:</p>
 
