@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: GNU/Linux | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/gnu-slash-linux/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-25T14:41:49+02:00</updated>
+  <updated>2014-04-25T14:44:00+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -55,7 +55,7 @@
 </ul>
 
 
-<p>Ahora debemos copiar la imagen de Raspbian en la tarjeta SD con el comando <code>sudo dd bs=1M if=2014-01-07-wheezy-raspbian.img of=/dev/sdb</code>, donde &ldquo;2014-01-07-wheezy-raspbian.img&rdquo; es la ruta (en este caso la Carpeta Personal) y nombre de la imagen que hemos descargado y descomprimido (si la tenemos en Descargas será &ldquo;/Descargas/2014-01-07-wheezy-raspbian.img&rdquo;), y &ldquo;/dev/sdb&rdquo; es el nombre asignado a la tarjeta SD (nótese que no lleva número de partición pues queremos copiarla en toda la tarjeta).</p>
+<p>Ahora debemos copiar la imagen de Raspbian en la tarjeta SD con el comando <code>sudo dd bs=1M if=2014-01-07-wheezy-raspbian.img of=/dev/sdb</code>, donde &ldquo;2014-01-07-wheezy-raspbian.img&rdquo; es la ruta (en este caso la Carpeta personal o Home) y nombre de la imagen que hemos descargado y descomprimido (si la tenemos en Descargas será &ldquo;/Descargas/2014-01-07-wheezy-raspbian.img&rdquo;), y &ldquo;/dev/sdb&rdquo; es el nombre asignado a la tarjeta SD (nótese que no lleva número de partición pues queremos copiarla en toda la tarjeta).</p>
 
 <p>En la siguiente entrada se tratará el primer arranque de la Raspberry Pi con Raspbian y su configuración.</p>
 ]]></content>
