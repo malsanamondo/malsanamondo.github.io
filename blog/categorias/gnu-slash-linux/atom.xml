@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: GNU/Linux | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/gnu-slash-linux/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-25T16:47:49+02:00</updated>
+  <updated>2014-04-25T16:49:10+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -51,11 +51,15 @@
 
 <ul>
 <li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Si quieres puedes crear una nueva partición en el espacio libre resultante con el formato FAT32.</p></li>
-<li><p><strong>Desde la terminal</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD con:</p>
-
-<p>  # df -h</p></li>
+<li><p><strong>Desde la terminal</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD con:</p></li>
 </ul>
 
+
+<p>```</p>
+
+<h1>df -h</h1>
+
+<p>```</p>
 
 <p>o:</p>
 
