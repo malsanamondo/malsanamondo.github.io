@@ -4,7 +4,7 @@
   <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-25T20:27:05+02:00</updated>
+  <updated>2014-04-25T20:32:21+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -22,6 +22,9 @@
 
 <p>Después de copiar Raspbian en la tarjeta SD podemos comenzar la configuración. En este punto necesitamos además de la Raspberry Pi y de la SD, el alimentador micro-usb (sirve cualquier cargador micro-usb de móvil de al menos 700 mA), un teclado usb, un monitor y un cable RJ-45 (ethernet) para conectarla al router.</p>
 
+<!-- more -->
+
+
 <p>Introducimos en la Raspberry Pi la tarjeta SD, la conectamos al monitor (con cable HDMI o RCA), la conectamos al router, le conectamos un teclado usb, y por último le conectamos el alimentador. La Raspberry Pi no dispone de ningún botón de encendido, basta conectarla a la corriente y automáticamente se encenderá (más adelante se explica cómo apagarla correctamente).</p>
 
 <p>En el primer encendido se nos mostrará la herramienta de configuración, una ventana con algunas opciones principales. Posteriormente podemos volver a abrirla con el comando:</p>
@@ -35,7 +38,8 @@
 <li><strong>Expandir el sistema</strong>: para que Raspbian ocupe todo el espacio de la tarjeta.</li>
 <li><p><strong>Activar inicio en modo escritorio</strong>: se puede elegir que arranque en modo gráfico o en modo consola, por defecto arranca en modo consola y es la opción con la cual trabajaremos. Una vez arrancado el sistema si queremos iniciar el modo gráfico basta con escribir:</p>
 
-<p>  $ tartx</p></li>
+<pre><code>  $ startx
+</code></pre></li>
 <li><p><strong>Opciones de internacionalización</strong>: configurar idioma, localización, teclado, etc. En idioma desmarcamos (con la barra de espacio) <em>en_GB</em> y seleccionamos <em>es_ES UTF8</em> (si lo quieres en castellano), elegimos distribución del teclado (normalmente PC genérico 105 teclas) e idioma de teclado. En las siguientes opciones no hace falta cambiar nada.</p></li>
 <li><strong>Opciones avanzadas</strong>: cambiamos el nombre de la máquina por uno fácilmente reconocible (nos servirá en los siguientes pasos), y activamos el acceso SSH para acceder a la Raspberry Pi de forma remota desde otros dispositivos.</li>
 </ul>
