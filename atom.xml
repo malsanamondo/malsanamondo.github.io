@@ -4,7 +4,7 @@
   <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-25T16:20:20+02:00</updated>
+  <updated>2014-04-25T16:27:21+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -51,36 +51,28 @@
 
 <ul>
 <li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Si quieres puedes crear una nueva partición en el espacio libre resultante con el formato FAT32.</p></li>
-<li><p><strong>Desde la terminal</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD con</p></li>
+<li><p><strong>Desde la terminal</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD con</p>
+
+<p>  # fdisk -l</p></li>
 </ul>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\# fdisk -l</span></code></pre></td></tr></table></div></figure>
+<p>o</p>
 
+<pre><code># df -h
+</code></pre>
 
-<p>
-o</p>
+<p>(encontrarás que tiene asignado algo como /dev/sdb1 o /dev/mmcblk0p1, y si la SD tiene más particiones serán nombradas como sdb2, sdb3 y mmcblk0p2, mmcblk0p3 respectivamente), entonces desmóntalas con</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\# df -h</span></code></pre></td></tr></table></div></figure>
+<pre><code># umount /dev/sdb1
+</code></pre>
 
-
-<p>
-(encontrarás que tiene asignado algo como /dev/sdb1 o /dev/mmcblk0p1, y si la SD tiene más particiones serán nombradas como sdb2, sdb3 y mmcblk0p2, mmcblk0p3 respectivamente), entonces desmóntalas con</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\# umount /dev/sdb1</span></code></pre></td></tr></table></div></figure>
-
-
-<p>
-sustituyendo &ldquo;sdb&rdquo; por el nombre de tu tarjeta y el &ldquo;1&rdquo; por la partición.</p>
+<p>sustituyendo &ldquo;sdb&rdquo; por el nombre de tu tarjeta y el &ldquo;1&rdquo; por la partición.</p>
 
 <p>Ahora debemos copiar la imagen de Raspbian en la tarjeta SD con el comando</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\# sudo dd bs=1M if=2014-01-07-wheezy-raspbian.img of=/dev/sdb</span></code></pre></td></tr></table></div></figure>
-
+<pre><code># sudo dd bs=1M if=2014-01-07-wheezy-raspbian.img of=/dev/sdb
+</code></pre>
 
 <p>donde &ldquo;2014-01-07-wheezy-raspbian.img&rdquo; es la ruta (en este caso la Carpeta personal o Home) y nombre de la imagen que hemos descargado y descomprimido (si la tenemos en Descargas será &ldquo;/Descargas/2014-01-07-wheezy-raspbian.img&rdquo;), y &ldquo;/dev/sdb&rdquo; es el nombre asignado a la tarjeta SD (nótese que no lleva número de partición pues queremos copiarla en toda la tarjeta).</p>
 
