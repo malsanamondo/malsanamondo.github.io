@@ -123,12 +123,12 @@
 <p>Lo primero es identificar el nombre asignado a la tarjeta SD. Hay que tener mucho cuidado de no equivocarse ya que puedes destrozar el sistema operativo del ordenador, guíate por la capacidad del dispositivo.</p>
 
 <ul>
-<li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, selecciona y elimina las particiones existentes. Si quieres puedes crear una nueva partición en el espacio libre resultante con el formato FAT32.</p></li>
+<li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Si quieres puedes crear una nueva partición en el espacio libre resultante con el formato FAT32.</p></li>
 <li><p><strong>Desde la terminal</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD con <code>fdisk -l</code> o <code>df -h</code> (encontrarás que tiene asignado algo como /dev/sdb1 o /dev/mmcblk0p1, y si la SD tiene más particiones serán nombradas como sdb2, sdb3 y mmcblk0p2, mmcblk0p3 respectivamente), entonces desmóntalas con <code>umount /dev/sdb1</code> sustituyendo &ldquo;sdb&rdquo; por el nombre de tu tarjeta y el &ldquo;1&rdquo; por la partición.</p></li>
 </ul>
 
 
-<p>Ahora debemos copiar la imagen de Raspbian en la tarjeta SD con el comando <code>sudo dd bs=1M if=2014-01-07-wheezy-raspbian.img of=/dev/sdb</code>, donde &ldquo;2014-01-07-wheezy-raspbian.img&rdquo; es la ruta y nombre de la imagen que hemos descargado y descomprimido (si la tenemos en Descargas será &ldquo;/Descargas/2014-01-07-wheezy-raspbian.img&rdquo;), y &ldquo;/dev/sdb&rdquo; es el nombre asignado a la tarjeta SD (nótese que no lleva número de partición pues queremos copiarla en toda la tarjeta).</p>
+<p>Ahora debemos copiar la imagen de Raspbian en la tarjeta SD con el comando <code>sudo dd bs=1M if=2014-01-07-wheezy-raspbian.img of=/dev/sdb</code>, donde &ldquo;2014-01-07-wheezy-raspbian.img&rdquo; es la ruta (en este caso la Carpeta Personal) y nombre de la imagen que hemos descargado y descomprimido (si la tenemos en Descargas será &ldquo;/Descargas/2014-01-07-wheezy-raspbian.img&rdquo;), y &ldquo;/dev/sdb&rdquo; es el nombre asignado a la tarjeta SD (nótese que no lleva número de partición pues queremos copiarla en toda la tarjeta).</p>
 
 <p>En la siguiente entrada se tratará el primer arranque de la Raspberry Pi con Raspbian y su configuración.</p>
 </div>
