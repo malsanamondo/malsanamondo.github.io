@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Malsana Mondo</title>
+  <title>Raspberry Pi: montar un servidor web en casa (3) - Malsana Mondo</title>
   <meta name="author" content="Malsana Mondo">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://malsanamondo.github.io">
+  <link rel="canonical" href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Malsana Mondo" type="application/atom+xml">
@@ -63,15 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/">Raspberry Pi: montar un servidor web en casa (3)</a></h1>
+      <h1 class="entry-title">Raspberry Pi: montar un servidor web en casa (3)</h1>
     
     
       <p class="meta">
@@ -94,7 +91,7 @@
   </header>
 
 
-  <div class="entry-content"><p>En la <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera</a> y <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">segunda</a> parte de este manual hemos visto qué es la Raspberry Pi y cómo instalar Raspbian en la tarjeta SD. En esta tercera parte configuraremos el sistema operativo para que funcione como servidor web y para que podamos acceder a él desde cualquier parte.</p>
+<div class="entry-content"><p>En la <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera</a> y <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">segunda</a> parte de este manual hemos visto qué es la Raspberry Pi y cómo instalar Raspbian en la tarjeta SD. En esta tercera parte configuraremos el sistema operativo para que funcione como servidor web y para que podamos acceder a él desde cualquier parte.</p>
 
 <p>Después de copiar Raspbian en la tarjeta SD podemos comenzar la configuración. En este punto necesitamos además de la Raspberry Pi y de la SD, el alimentador micro-usb (sirve cualquier cargador micro-usb de móvil de al menos 700 mA), un teclado usb, un monitor y un cable RJ-45 (ethernet) para conectarla al router.</p>
 
@@ -145,69 +142,16 @@ $ sudo apt-get upgrade
 
 <p>En este punto</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">Raspberry Pi: montar un servidor web en casa (2)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">por <span class="fn">Malsana Mondo</span></span>
 
-<time datetime="2014-04-17T12:22:14+02:00" pubdate data-updated="true">17-04-2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Antes de continuar con este manual recomiendo la lectura de la <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera parte</a>. A continuación instalaremos el sistema operativo de la Raspberry Pi.</p>
-
-<p>La Raspberry Pi no tiene disco duro ni SSD, en su lugar utiliza una tarjeta SD para almacenar los datos y es allí donde debemos instalar el sistema operativo.</p>
-
-<h3>Sistemas operativos</h3>
-
-<p>Existen varios <a href="http://www.raspberrypi.org/downloads/">sistemas operativos para la Raspberry Pi</a>, muchos de ellos distribuciones <a href="https://es.wikipedia.org/wiki/GNU/Linux">GNU/Linux</a>. <a href="http://bitelia.com/2013/12/raspberry-pi-distribuciones-lnux">Aquí</a> muestran algunos de ellos. Nuestro servidor lo montaremos con <a href="https://es.wikipedia.org/wiki/Raspbian">Raspbian</a> (una versión de la distribución <em>Debian Wheezy</em> del sistema operativo GNU/Linux).</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">Leer más &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">Raspberry Pi: montar un servidor web en casa (1)</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -219,114 +163,44 @@ $ sudo apt-get upgrade
   
 
 
-<time datetime="2014-04-16T16:51:26+02:00" pubdate data-updated="true">16-04-2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="right" src="/images/RpiFront.jpg" width="300" height="300" title="Raspberry Pi Modelo B" >
-Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo costo, desarrollado en Reino Unido por la <a href="http://www.raspberrypi.org/">Fundación Raspberry Pi</a>, con el objetivo de estimular la enseñanza de ciencias de la computación en las escuelas.</p>
-
-<p>Las especificaciones las puedes consultar <a href="https://es.wikipedia.org/wiki/Raspberry_Pi">aquí</a>, y en Internet puedes encontrar fácilmente información de precios (la versión B de 512 MB cuesta unos 36 €), accesorios (cajas, tarjetas SD/SDHC, cables, alimentadores, adaptadores wifi, disipadores, cámaras, etc.), sistemas operativos, usos, proyectos, etc.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">Leer más &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2014-04-25T17:26:05+02:00" pubdate data-updated="true">25-04-2014</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/markdown/">Markdown</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categorias/gnu-slash-linux/'>GNU/Linux</a>, <a class='category' href='/blog/categorias/raspberry-pi/'>Raspberry Pi</a>
+  
+</span>
 
 
-<time datetime="2014-04-13T22:57:48+02:00" pubdate data-updated="true">13-04-2014</time>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://es.wikipedia.org/wiki/Markdown" title="Markdown en la Wikipedia">Markdown</a> es un lenguaje de marcado ligero que facilita la aplicación de formato a un texto mediante un simple editor de texto y ocupando poco espacio. En Octopress el contenido se forma con este lenguaje y a continuación se muestra la sintaxis utilizada para escribir en este blog. En algunos casos es Markdown simple, original o standard, en otros es Markdown sobre plugins que se incluyen en la instalación de Octopress y en otros casos directamente se recurre al HTML, ya que algunas funcionalidades no son propias del Markdown original (más información <a href="http://accelera.uab.cat/help.php?file=markdown.html#code" title="Sintaxis Markdown original">aquí</a>).</p>
-
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/" data-via="" data-counturl="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/markdown/">Leer más &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/hola/">Hola</a></h1>
-    
-    
-      <p class="meta">
-        
+        <a class="basic-alignment left" href="/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/" title="Entrada Anterior: Raspberry Pi: montar un servidor web en casa (2)">&laquo; Raspberry Pi: montar un servidor web en casa (2)</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-12T18:08:36+02:00" pubdate data-updated="true">12-04-2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Esta es la primera entrada de este nuevo blog. Trataré diversos temas que he necesitado o querido conocer en algún momento, desarrollándolos como apuntes personales, esperando también que sirva de ayuda a quien lo necesite.</p>
-
-<p>Comenzaré explicando cómo montar un servidor web propio con una Raspberry Pi, cómo acceder a él desde el exterior de la red local y cómo instalar Octopress y crear un blog. Eso es lo que he tenido que aprender para montar este blog, y mediante documentación recogida en Internet, paciencia y mucho ensayo-error creo haberlo conseguido.</p>
+  <section>
+    <h1>Comentarios</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Habilite JavaScript para leer los <a href="http://disqus.com/?ref_noscript">comentarios.</a></noscript>
 </div>
-  
-  
+  </section>
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Archivo</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -371,6 +245,7 @@ Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo cost
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -384,7 +259,10 @@ Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo cost
       var disqus_shortname = 'malsanamondo';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/';
+        var disqus_url = 'http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

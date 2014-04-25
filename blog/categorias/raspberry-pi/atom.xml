@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: Raspberry Pi | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-25T17:30:23+02:00</updated>
+  <updated>2014-04-25T20:20:06+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -12,6 +12,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (3)]]></title>
+    <link href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/"/>
+    <updated>2014-04-25T17:26:05+02:00</updated>
+    <id>http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3</id>
+    <content type="html"><![CDATA[<p>En la <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera</a> y <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">segunda</a> parte de este manual hemos visto qué es la Raspberry Pi y cómo instalar Raspbian en la tarjeta SD. En esta tercera parte configuraremos el sistema operativo para que funcione como servidor web y para que podamos acceder a él desde cualquier parte.</p>
+
+<p>Después de copiar Raspbian en la tarjeta SD podemos comenzar la configuración. En este punto necesitamos además de la Raspberry Pi y de la SD, el alimentador micro-usb (sirve cualquier cargador micro-usb de móvil de al menos 700 mA), un teclado usb, un monitor y un cable RJ-45 (ethernet) para conectarla al router.</p>
+
+<p>Introducimos en la Raspberry Pi la tarjeta SD, la conectamos al monitor (con cable HDMI o RCA), la conectamos al router, le conectamos un teclado usb, y por último le conectamos el alimentador. La Raspberry Pi no dispone de ningún botón de encendido, basta conectarla a la corriente y automáticamente se encenderá (más adelante se explica cómo apagarla correctamente).</p>
+
+<p>En el primer encendido se nos mostrará la herramienta de configuración, una ventana con algunas opciones principales. Posteriormente podemos volver a abrirla con el comando:</p>
+
+<pre><code>$ raspi-config
+</code></pre>
+
+<p>Para moverse por esta ventana utilizaremos las teclas de dirección y la tecla TAB para saltar de campos, para aceptar la tecla INTRO, para cancelar la tecla ESC y para seleccionar o desmarcar la barra de espacio. De las opciones que aparecen las que nos interesan son:</p>
+
+<ul>
+<li><strong>Expandir el sistema</strong>: para que Raspbian ocupe todo el espacio de la tarjeta.</li>
+<li><p><strong>Activar inicio en modo escritorio</strong>: se puede elegir que arranque en modo gráfico o en modo consola, por defecto arranca en modo consola y es la opción con la cual trabajaremos. Una vez arrancado el sistema si queremos iniciar el modo gráfico basta con escribir:</p>
+
+<p>  $ startx</p></li>
+<li><p><strong>Opciones de internacionalización</strong>: configurar idioma, localización, teclado, etc. En idioma desmarcamos (con la barra de espacio) <em>en_GB</em> y seleccionamos <em>es_ES UTF8</em> (si lo quieres en castellano), elegimos distribución del teclado (normalmente PC genérico 105 teclas) e idioma de teclado. En las siguientes opciones no hace falta cambiar nada.</p></li>
+<li><strong>Opciones avanzadas</strong>: cambiamos el nombre de la máquina por uno fácilmente reconocible (nos servirá en los siguientes pasos), y activamos el acceso SSH para acceder a la Raspberry Pi de forma remota desde otros dispositivos.</li>
+</ul>
+
+
+<p>Una vez realizados los cambios reiniciamos para no tener problemas con el teclado,  escribimos:</p>
+
+<pre><code>$ sudo reboot
+</code></pre>
+
+<p>Después de reiniciarse nos pide la contraseña (que por defecto es <em>raspberry</em>), y procedemos a cambiarla para aumentar la seguridad de nuestro dispositivo (el cambio de contraseña se puede realizar junto a la primera configuración, pero es posible que el sistema aún no reconozca el idioma que hayas configurado, por eso, para asegurarnos lo hacemos en un segundo momento después de reiniciar). Para hacerlo escribimos:</p>
+
+<pre><code>$ raspi-config
+</code></pre>
+
+<p>y vamos a:</p>
+
+<ul>
+<li><strong>Cambio de contraseña</strong>: por defecto el usuario es <em>pi</em> y la contraseña es <em>raspberry</em>. Por seguridad cambiamos la contraseña.</li>
+</ul>
+
+
+<p>Una vez realizado el cambio escribimos uno a uno estos comandos:</p>
+
+<pre><code>$ sudo apt-get update
+
+$ sudo apt-get upgrade
+</code></pre>
+
+<p>y esperamos el tiempo necesario para que el sistema se actualice. Es conveniente repetir estos comandos cada cierto tiempo para asegurar el óptimo funcionamiento del sistema operativo.</p>
+
+<p>En este punto</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (2)]]></title>
@@ -71,7 +129,7 @@
 
 <p>Ahora debemos copiar la imagen de Raspbian en la tarjeta SD con el comando:</p>
 
-<pre><code># sudo dd bs=1M if=2014-01-07-wheezy-raspbian.img of=/dev/sdb
+<pre><code># dd bs=1M if=2014-01-07-wheezy-raspbian.img of=/dev/sdb
 </code></pre>
 
 <p>donde &ldquo;2014-01-07-wheezy-raspbian.img&rdquo; es la ruta (en este caso la Carpeta personal o Home) y nombre de la imagen que hemos descargado y descomprimido (si la tenemos en Descargas será &ldquo;/Descargas/2014-01-07-wheezy-raspbian.img&rdquo;), y &ldquo;/dev/sdb&rdquo; es el nombre asignado a la tarjeta SD (nótese que no lleva número de partición pues queremos copiarla en toda la tarjeta).</p>
@@ -105,12 +163,12 @@ Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo cost
 
 <ul>
 <li><strong>una Raspberry Pi Modelo B</strong></li>
-<li><strong>un alimentador micro USB de al menos 700 mA</strong></li>
+<li><strong>un alimentador (cargador de móvil) micro USB de al menos 700 mA</strong></li>
 <li><strong>una tarjeta SD/SDHC de al menos 4 GB clase 4 o superior</strong></li>
 <li><strong>un cable RJ-45 (para conectar la Raspberry Pi al router)</strong></li>
-<li><strong>un monitor con conexión HDMI o RCA (solamente necesario en la instalación)</strong></li>
-<li><strong>un cable HDMI o RCA (según monitor, solamente necesario en la instalación)</strong></li>
-<li><strong>un teclado USB (solamente necesario en la instalación)</strong></li>
+<li><strong>un monitor con conexión HDMI o RCA (solamente necesario en la instalación y configuración)</strong></li>
+<li><strong>un cable HDMI o RCA (según monitor, solamente necesario en la instalación y configuración)</strong></li>
+<li><strong>un teclado USB (solamente necesario en la instalación y configuración)</strong></li>
 <li><strong>un ordenador (preferiblemente con sistema operativo GNU/Linux, para instalar el sistema operativo en la tarjeta SD, para configurar la Raspberry Pi y controlarla remotamente mediante conexión SSH)</strong></li>
 <li><strong>una conexión a Internet con un router y acceso a su configuración</strong></li>
 </ul>
