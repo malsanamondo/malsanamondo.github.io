@@ -4,7 +4,7 @@
   <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-25T20:20:06+02:00</updated>
+  <updated>2014-04-25T20:24:54+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -29,7 +29,7 @@
 <pre><code>$ raspi-config
 </code></pre>
 
-<p>Para moverse por esta ventana utilizaremos las teclas de dirección y la tecla TAB para saltar de campos, para aceptar la tecla INTRO, para cancelar la tecla ESC y para seleccionar o desmarcar la barra de espacio. De las opciones que aparecen las que nos interesan son:</p>
+<p>Para moverse por esta ventana utilizaremos las teclas de dirección y la tecla TAB para saltar de campos, para aceptar la tecla INTRO, para cancelar la tecla ESC y para seleccionar o desmarcar la barra de espacio. De las opciones que aparecen las que nos interesan ahora son:</p>
 
 <ul>
 <li><strong>Expandir el sistema</strong>: para que Raspbian ocupe todo el espacio de la tarjeta.</li>
