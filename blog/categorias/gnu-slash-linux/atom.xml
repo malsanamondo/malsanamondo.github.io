@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: GNU/Linux | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/gnu-slash-linux/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-25T16:45:49+02:00</updated>
+  <updated>2014-04-25T16:47:49+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -56,6 +56,11 @@
 <p>  # df -h</p></li>
 </ul>
 
+
+<p>o:</p>
+
+<pre><code># fdisk -l
+</code></pre>
 
 <p>(encontrarás que tiene asignado algo como /dev/sdb1 o /dev/mmcblk0p1, y si la SD tiene más particiones serán nombradas como sdb2, sdb3 y mmcblk0p2, mmcblk0p3 respectivamente), entonces desmóntalas con:</p>
 
