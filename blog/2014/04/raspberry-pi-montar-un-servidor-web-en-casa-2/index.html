@@ -97,7 +97,7 @@
 
 <h3>Sistemas operativos</h3>
 
-<p>Existen varios <a href="http://www.raspberrypi.org/downloads/">sistemas operativos para la Raspberry Pi</a>, muchos de ellos distribuciones <a href="https://es.wikipedia.org/wiki/GNU/Linux">GNU/Linux</a>. <a href="http://bitelia.com/2013/12/raspberry-pi-distribuciones-lnux">Aquí</a> muestran algunos de ellos. Nuestro servidor lo montaremos con <a href="https://es.wikipedia.org/wiki/Raspbian">Raspbian</a> (una versión de la distribución <em>Debian Wheezy</em> del sistema operativo GNU/Linux).</p>
+<p>Existen varios <a href="http://www.raspberrypi.org/downloads/">sistemas operativos para la Raspberry Pi</a>, muchos de ellos distribuciones <a href="https://es.wikipedia.org/wiki/GNU/Linux">GNU/Linux</a>. <a href="http://bitelia.com/2013/12/raspberry-pi-distribuciones-lnux">Aquí</a> muestran algunos de ellos. Nuestro servidor lo montaremos con <a href="https://es.wikipedia.org/wiki/Raspbian">Raspbian</a> (una versión de la distribución Debian Wheezy del sistema operativo GNU/Linux).</p>
 
 <!-- more -->
 
@@ -116,7 +116,7 @@
 
 <p><img src="/images/raspbian_logo.png" alt="Logo Raspbian" /></p>
 
-<p>Descargamos la imagen de la última versión disponible desde <a href="http://www.raspberrypi.org/downloads/">aquí</a>, descomprimimos el archivo <code>.zip</code> y obtenemos otro archivo <code>.img</code>, el cual debemos copiar en la tarjeta SD. Explicaré el método para hacerlo desde un ordenador con sistema operativo GNU/Linux por ser el método que conozco, para hacerlo desde Windows encontraréis información <a href="http://openwebcms.es/raspberry-pi/como-instalar-raspbian-en-raspberry-pi/">aquí</a>.</p>
+<p>Descargamos la imagen de la última versión disponible desde <a href="http://www.raspberrypi.org/downloads/">aquí</a>, descomprimimos el archivo <code>.zip</code> y obtenemos otro archivo <code>.img</code>, el cual debemos copiar en la tarjeta SD. Explicaré el método para hacerlo desde un ordenador con sistema operativo GNU/Linux (Debian Wheezy) por ser el método que conozco, para hacerlo desde Windows encontraréis información <a href="http://openwebcms.es/raspberry-pi/como-instalar-raspbian-en-raspberry-pi/">aquí</a>.</p>
 
 <p>En GNU/Linux:</p>
 
@@ -148,7 +148,7 @@
 <pre><code># dd bs=1M if=2014-01-07-wheezy-raspbian.img of=/dev/sdb
 </code></pre>
 
-<p>donde &ldquo;2014-01-07-wheezy-raspbian.img&rdquo; es la ruta (en este caso la Carpeta personal o Home) y nombre de la imagen que hemos descargado y descomprimido (si la tenemos en Descargas será &ldquo;/Descargas/2014-01-07-wheezy-raspbian.img&rdquo;), y &ldquo;/dev/sdb&rdquo; es el nombre asignado a la tarjeta SD (nótese que no lleva número de partición pues queremos copiarla en toda la tarjeta).</p>
+<p>donde &ldquo;2014-01-07-wheezy-raspbian.img&rdquo; es la ruta y nombre de la imagen que hemos descargado y descomprimido (si la tenemos en Descargas será &ldquo;/home/usuario/Descargas/2014-01-07-wheezy-raspbian.img&rdquo;), y &ldquo;/dev/sdb&rdquo; es el nombre asignado a la tarjeta SD (nótese que no lleva número de partición pues queremos copiarla en toda la tarjeta).</p>
 
 <p>Una vez completado el proceso que dura unos 10 minutos expulsamos de forma segura la tarjeta y ya podemos introducirla en la Raspberry Pi.</p>
 

@@ -93,59 +93,137 @@
 
 <div class="entry-content"><p>En la <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera</a> y <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">segunda</a> parte de este manual hemos visto qué es la Raspberry Pi y cómo instalar Raspbian en la tarjeta SD. En esta tercera parte configuraremos el sistema operativo para que funcione como servidor web y para que podamos acceder a él desde cualquier parte.</p>
 
-<p>Después de copiar Raspbian en la tarjeta SD podemos comenzar la configuración. En este punto necesitamos además de la Raspberry Pi y de la SD, el alimentador micro-usb (sirve cualquier cargador micro-usb de móvil de al menos 700 mA), un teclado usb, un monitor y un cable RJ-45 (ethernet) para conectarla al router.</p>
+<p>Después de copiar Raspbian en la tarjeta SD podemos comenzar la configuración. En este punto necesitamos además de la Raspberry Pi y de la SD, el alimentador micro-usb (sirve cualquier cargador micro-usb de móvil de al menos 700 mA) y un cable RJ-45 (ethernet) para conectarla al router. También debemos tener acceso a la configuración del router.</p>
 
 <!-- more -->
 
 
-<h3>Primer arranque y configuración</h3>
+<h2>Primer arranque y configuración</h2>
 
-<p>Introducimos en la Raspberry Pi la tarjeta SD, la conectamos al monitor (con cable HDMI o RCA), la conectamos al router, le conectamos un teclado usb, y por último le conectamos el alimentador. La Raspberry Pi no dispone de ningún botón de encendido, basta conectarla a la corriente y automáticamente se encenderá (más adelante se explica cómo apagarla correctamente).</p>
+<p>Introducimos la tarjeta SD en la Raspberry Pi, la conectamos al router y le conectamos el alimentador. La Raspberry Pi no dispone de ningún botón de encendido, basta conectarla a la corriente y automáticamente se encenderá (más adelante se explica cómo apagarla correctamente).</p>
 
-<p>En el primer encendido se nos mostrará la herramienta de configuración, una ventana con algunas opciones principales. Posteriormente podemos volver a abrirla con el comando:</p>
+<p>En este punto debemos descubrir la IP de la Raspberry Pi en la red local accediendo a la configuración del router. Normalmente se accede escribiendo en el navegador de un ordenador conectado en la misma red la IP 192.168.1.1, introduciendo usuario y contraseña que suelen estar indicados en la carcasa del propio router (es aconsejable también cambiar la contraseña de administrador del router). Una vez identificada la IP podemos empezar la configuración a través de SSH.</p>
 
-<pre><code>$ raspi-config
+<p>Explicaré como hacerlo desde la distribución Debian Wheezy de GNU/Linux, para hacerlo desde Windows puedes encontrar información <a href="http://comiendorasps.blogspot.com.es/2013/04/conectandonos-la-raspberry-mediante-ssh.html">aquí</a> a través de <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Putty</a>.</p>
+
+<p>Si tu distribución GNU/Linux no trae instalado un cliente SSH puedes encontrar información de cómo instalarlo <a href="http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m5/instalacin_de_servidor_de_ssh.html">aquí</a> (Debian Wheezy lo trae).</p>
+
+<p>En la consola escribimos como root:</p>
+
+<pre><code># ssh pi@192.168.1.5
 </code></pre>
 
-<p>Para moverse por esta ventana utilizaremos las teclas de dirección y la tecla TAB para saltar de campos, para aceptar la tecla INTRO, para cancelar la tecla ESC y para seleccionar o desmarcar la barra de espacio. De las opciones que aparecen las que nos interesan ahora son:</p>
+<p>siendo <em>192.168.1.5</em> la IP de vuestra Raspberry Pi, pedirá la contraseña que por defecto es <em>raspberry</em> y acto seguido tendréis control total sobre vuestra Raspberry Pi siempre que estéis en la misma red local (el acceso a través de SSH desde el exterior se explicará más adelante).</p>
+
+<p>Si no se abre automáticamente la herramienta de configuración escribimos en la consola:</p>
+
+<pre><code>$ sudo raspi-config
+</code></pre>
+
+<p>Se abrirá una ventana con algunas opciones principales (podemos volver a abrirla en cualquier momento con el mismo comando). Para moverse por esta ventana utilizaremos las teclas de dirección y la tecla TAB para saltar de campos, para aceptar la tecla INTRO, para cancelar la tecla ESC y para seleccionar o desmarcar la barra de espacio. De las opciones que aparecen las que nos interesan ahora son:</p>
 
 <ul>
 <li><strong>Expandir el sistema</strong>: para que Raspbian ocupe todo el espacio de la tarjeta.</li>
+<li><strong>Cambio de contraseña</strong>: por defecto el usuario es <em>pi</em> y la contraseña es <em>raspberry</em>. Por seguridad cambiamos la contraseña.</li>
 <li><strong>Opciones de internacionalización</strong>: configurar idioma, localización, teclado, etc. En idioma desmarcamos (con la barra de espacio) <em>en_GB</em> y seleccionamos <em>es_ES UTF8</em> (si lo quieres en castellano), elegimos distribución del teclado (normalmente PC genérico 105 teclas) e idioma de teclado. En las siguientes opciones no hace falta cambiar nada.</li>
-<li><strong>Opciones avanzadas</strong>: activamos el acceso SSH para acceder a la Raspberry Pi de forma remota desde otros dispositivos.</li>
+<li><strong>Opciones avanzadas</strong>: si queremos podemos cambiar el nombre del dispositivo (hostname) dentro de la red local.</li>
 </ul>
 
 
-<p>Una vez realizados estos cambios ya podemos controlar la Raspberry Pi desde otro ordenador a través de SSH (en la misma red local). La apagamos correctamente con el comando:</p>
-
-<pre><code>$ sudo shutdown -h now
-</code></pre>
-
-<p>La Raspberry Pi se apaga con el comando anterior y la señal que muestra cuando realmente se ha apagado es un solo led de color rojo, en este punto podemos desconectar el cable de alimentación, el teclado y el monitor.</p>
-
-<h3>Acceso con SSH, cambio de nombre de la máquina y cambio de contraseña</h3>
-
-<p>Volvemos a conectar el cable de alimentación y ya podemos controlarla desde un ordenador. Para hacerlo necesitamos saber la IP asignada a la Raspberry Pi en la red local</p>
-
-<p>reiniciamos para no tener problemas con la configuración del teclado,  escribimos:</p>
+<p>Una vez hemos terminado la configuración procedemos a reiniciar con el comando:</p>
 
 <pre><code>$ sudo reboot
 </code></pre>
 
-<p>Después de reiniciarse nos pide la contraseña (que por defecto es <em>raspberry</em>), y procedemos a cambiarla para aumentar la seguridad de nuestro dispositivo (el cambio de contraseña y el cambio de nombre del dispositivo en la red local se pueden realizar en el paso anterior de configuración, pero es posible que el sistema aún no reconozca el idioma de teclado que previamente has configurado, por eso, para asegurarnos lo hacemos en un segundo momento después de reiniciar). Para hacerlo escribimos:</p>
+<p>y volvemos a conectarnos por SSH (cambiando la IP por la nuestra) con:</p>
 
-<pre><code>$ raspi-config
+<pre><code># ssh pi@192.169.1.5
 </code></pre>
 
-<p>y vamos a:</p>
+<p>Debemos saber que la Raspberry Pi se apaga con el comando:</p>
 
-<ul>
-<li><strong>Cambio de contraseña</strong>: por defecto el usuario es <em>pi</em> y la contraseña es <em>raspberry</em>. Por seguridad cambiamos la contraseña.</li>
-<li><strong>Opciones avanzadas</strong>: cambiamos el nombre del dispositivo dentro de la red local por uno fácilmente reconocible (nos servirá en los siguientes pasos).</li>
-</ul>
+<pre><code>$ sudo shutdown -h now
+</code></pre>
 
+<p>y la señal que muestra cuando realmente se ha apagado es un solo led de color rojo, en este punto es cuando podemos desconectar el cable de alimentación.</p>
 
-<p>Una vez realizado el cambio escribimos uno a uno estos comandos:</p>
+<p>Por defecto Raspbian arranca en modo consola, sin modo gráfico (para nuestro servidor web no nos hace falta). Puedes arrancar el modo gráfico en cualquier momento con el comando:</p>
+
+<pre><code>$ startx
+</code></pre>
+
+<p>y puedes configurarlo para que arranque en modo gráfico por defecto escribiendo:</p>
+
+<pre><code>$ sudo raspi-config
+</code></pre>
+
+<p>cambiando la opción en <em>Activar inicio en modo escritorio</em>.</p>
+
+<h2>IP fija dentro de nuestra red local</h2>
+
+<p>Antes hemos averiguado la IP de la Raspberry Pi, pero debemos saber que el router puede cambiar esa IP cuando conectamos o desconectamos el dispositivo. Para evitar tener que averiguar la IP asignada cada vez que cambie (y sobre todo para acceder desde el exterior) debemos asignarle manualmente una IP fija dentro de nuestra red local. Para hacerlo escribimos:</p>
+
+<pre><code>$ sudo nano /etc/network/interfaces
+</code></pre>
+
+<p>lo que abrirá un archivo en el cual debemos modificar una línea y añadir tres nuevas, dejando el resto del archivo tal y como está. En la línea:</p>
+
+<pre><code>iface eth0 inet dhcp
+</code></pre>
+
+<p>debemos cambiar <em>dhcp</em> por <em>static</em> y añadir debajo tres líneas, resultando:</p>
+
+<pre><code>iface eth0 inet static
+address 192.168.1.9
+netmask 255.255.255.1
+gateway 192.168.1.1
+</code></pre>
+
+<p>donde <em>192.168.1.9</em> es la IP fija que hemos elegido para la Raspberry Pi, y gateway <em>192.168.1.1</em> es la IP desde la cual accedemos a configurar nuestro router.
+Guardamos los cambios en el documento y lo cerramos con ctrl+O, ctrl+X y mantenemos el mismo nombre de archivo con ENTER.</p>
+
+<p>Reiniciamos con:</p>
+
+<pre><code>$ sudo reboot
+</code></pre>
+
+<p>y comprobamos desde la configuración de nuestro router que le ha sido asignada la IP que queríamos.</p>
+
+<p>Ahora cuando queramos conectarnos por SSH con:</p>
+
+<pre><code># ssh pi@192.168.1.9
+</code></pre>
+
+<p>nos avisará que podemos estar sufriendo un ataque <em>man in the middle</em>:</p>
+
+<pre><code>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+28:ab:4a:df:05:0e:4b:21:95:01:63:71:c1:04:90:91.
+Please contact your system administrator.
+Add correct host key in /home/user/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /home/user/.ssh/known_hosts:3
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+X11 forwarding is disabled to avoid man-in-the-middle attacks.
+Permission denied (publickey,password).
+</code></pre>
+
+<p>No hay de qué preocuparse, al haber cambiado la IP del acceso SSH salta esta alerta de seguridad con las claves. Para solucionarlo debemos escribir el siguiente comando:</p>
+
+<pre><code># ssh-keygen -R 192.168.1.9
+</code></pre>
+
+<p>de esa forma se regenera una nueva clave, y ya podemos acceder con:</p>
+
+<pre><code># ssh pi@192.168.1.9
+</code></pre>
+
+<p>Una vez dentro escribimos uno a uno estos comandos:</p>
 
 <pre><code>$ sudo apt-get update
 
@@ -155,24 +233,60 @@ $ sudo apt-get upgrade
 
 <p>y esperamos el tiempo necesario para que el sistema se actualice. Es conveniente repetir estos comandos cada cierto tiempo para asegurar el óptimo funcionamiento del sistema operativo.</p>
 
-<p>Por defecto Raspbian arranca en modo consola, sin modo gráfico (para nuestro servidor web no nos hace falta). Puedes arrancar el modo gráfico en cualquier momento con el comando:</p>
+<h2>Acceder a la Raspberry Pi desde el exterior de la red local</h2>
 
-<pre><code>$ startx
+<p>Al conectarnos a Internet desde nuestras casas los proveedores nos asignan una dirección IP pública que normalmente es dinámica. Esto quiere decir que cambia cada vez que se apaga y enciende el router, algo parecido a lo que pasa en una red local con las direcciones IP (en este caso IP privadas) de los dispositivos cada vez que se conectan a ella.</p>
+
+<p>No se puede acceder al contenido de un servidor que está detrás de una IP dinámica si antes no hemos instalado un cliente DNS que actualice automáticamente la IP pública asociándola a un dominio. Una vez hecho esto se puede acceder desde cualquier lugar a nuestro servidor web a través de un nombre de dominio, sea cual sea la IP pública que tenga.</p>
+
+<p>Vamos a utilizar el servicio que ofrece <a href="https://www.dnsdynamic.org/">dnsdynamic.org</a>. Nos registramos con una dirección email y una contraseña y esperamos a que nos llegue un email con el enlace de confirmación. Una vez hecha la identificación pulsamos en <em>add</em> y elegimos el dominio que queramos si está disponible (realmente será un subdominio tipo <em>loquesea.dnsdynamic.com</em>), y le asociamos nuestra IP pública y guardamos los cambios. Si no sabes cuál es tu IP pública la puedes averiguar <a href="http://vermiip.es/">aquí</a>.</p>
+
+<p>Ahora vamos a instalar el cliente en la Raspberry Pi, escribimos:</p>
+
+<pre><code>$ sudo apt-get install ddclient
 </code></pre>
 
-<p>y puedes activarlo para que siempre arranque con modo gráfico volviendo a escribir:</p>
+<p>nos preguntará si queremos ejecutar el cliente cuando establezca una conexión PPP y contestamos NO, si lo queremos ejecutar como demonio y contestamos SI. A partir de aquí podemos poner lo que queramos porque en el siguiente paso sobreescribiremos todo.</p>
 
-<pre><code>$ raspi-config
+<p>Escribimos:</p>
+
+<pre><code>$ sudo nano /etc/ddclient.conf
 </code></pre>
 
-<p>y cambiando la opción en:</p>
+<p>y reemplazamos todo su contenido por:</p>
 
-<ul>
-<li><strong>Activar inicio en modo escritorio</strong>: se puede elegir que arranque en modo gráfico o en modo consola, por defecto arranca en modo consola.</li>
-</ul>
+<pre><code>#
+# Configuration file for ddclient generated by debconf
+#
+# /etc/ddclient.conf
+daemon=300                         # check every 300 seconds
+syslog=yes                         # log update msgs to syslog
+mail=root                          # mail all msgs to root
+mail-failure=root                  # mail failed update msgs to root
+pid=/var/run/ddclient.pid          # record PID in file.
+ssl=yes                            # use ssl-support.
+use=web, web=myip.dnsdynamic.com   # get ip from server.
+server=www.dnsdynamic.org          # default server
+login=YOUR-LOGIN                   # your login
+password=YOUR-PASSWORD             # your password
+server=www.dnsdynamic.org,         \
+protocol=dyndns2                   \
+YOUR-DOMAIN
+</code></pre>
 
+<p>y cambiamos <em>YOUR-LOGIN</em>, <em>YOUR-PASSWORD</em> y <em>YOUR-DOMAIN</em> por tu nombre de usuario, tu contraseña y tu dominio registrado de dnsdynamic.org. Si quieres puedes cambiar también el tiempo de comprobación de IP, en este caso 5 minutos.
+Guarda el archivo con ctrl+O, ctrl+W y barra de espacio para no cambiar el nombre al archivo.</p>
 
-<p>En este punto</p>
+<p>y reiniciamos con:</p>
+
+<pre><code>$ sudo reboot
+</code></pre>
+
+<p>Para que todo funcione debemos configurar nuestro router redirigiendo los puertos 80 (HTTP) y 22 (SHH) hacia la IP privada de nuestra Raspberry Pi, en el ejemplo que estamos siguiendo 192.168.1.9. Cada router es diferente, si tienes dificultades para abrir los puertos busca documentación de la marca y modelo de tu router.</p>
+
+<p>En principio si se quiere utilizar un nombre de dominio propio contratado (por ejemplo: loquesea.net) para que apunte a tu Raspberry Pi, se puede hacer añadiendo un registro CNAME en los DNS de loquesea.net que apunte hacia el dominio registrado en dnsdynamic, aunque debo decir que yo no lo he logrado.</p>
+
+<p>En la próxima entrada instalaremos y configuraremos el CMS Octopress.</p>
 </div>
 
 
