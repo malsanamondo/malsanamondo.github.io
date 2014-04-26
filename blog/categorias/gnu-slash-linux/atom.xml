@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: GNU/Linux | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/gnu-slash-linux/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-26T12:59:57+02:00</updated>
+  <updated>2014-04-26T15:36:57+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -25,6 +25,8 @@
 <!-- more -->
 
 
+<h3>Primer arranque y configuración</h3>
+
 <p>Introducimos en la Raspberry Pi la tarjeta SD, la conectamos al monitor (con cable HDMI o RCA), la conectamos al router, le conectamos un teclado usb, y por último le conectamos el alimentador. La Raspberry Pi no dispone de ningún botón de encendido, basta conectarla a la corriente y automáticamente se encenderá (más adelante se explica cómo apagarla correctamente).</p>
 
 <p>En el primer encendido se nos mostrará la herramienta de configuración, una ventana con algunas opciones principales. Posteriormente podemos volver a abrirla con el comando:</p>
@@ -41,7 +43,18 @@
 </ul>
 
 
-<p>Una vez realizados los cambios reiniciamos para no tener problemas con la configuración del teclado,  escribimos:</p>
+<p>Una vez realizados estos cambios ya podemos controlar la Raspberry Pi desde otro ordenador a través de SSH (en la misma red local). La apagamos correctamente con el comando:</p>
+
+<pre><code>$ sudo shutdown -h now
+</code></pre>
+
+<p>La Raspberry Pi se apaga con el comando anterior y la señal que muestra cuando realmente se ha apagado es un solo led de color rojo, en este punto podemos desconectar el cable de alimentación, el teclado y el monitor.</p>
+
+<h3>Acceso con SSH, cambio de nombre de la máquina y cambio de contraseña</h3>
+
+<p>Volvemos a conectar el cable de alimentación y ya podemos controlarla desde un ordenador. Para hacerlo necesitamos saber la IP asignada a la Raspberry Pi en la red local</p>
+
+<p>reiniciamos para no tener problemas con la configuración del teclado,  escribimos:</p>
 
 <pre><code>$ sudo reboot
 </code></pre>
