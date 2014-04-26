@@ -100,9 +100,14 @@
 
 <h2>Primer arranque y configuración</h2>
 
-<p>Introducimos la tarjeta SD en la Raspberry Pi, la conectamos al router y le conectamos el alimentador. La Raspberry Pi no dispone de ningún botón de encendido, basta conectarla a la corriente y automáticamente se encenderá (más adelante se explica cómo apagarla correctamente).</p>
+<p>Introducimos la tarjeta SD en la Raspberry Pi, la conectamos al router y le conectamos el alimentador. La Raspberry Pi no dispone de ningún botón de encendido, basta conectarla a la corriente y automáticamente se encenderá. La Raspberry Pi se apaga con el comando:</p>
 
-<p>En este punto debemos descubrir la IP de la Raspberry Pi en la red local accediendo a la configuración del router. Normalmente se accede escribiendo en el navegador de un ordenador conectado en la misma red la IP 192.168.1.1, introduciendo usuario y contraseña que suelen estar indicados en la carcasa del propio router (es aconsejable también cambiar la contraseña de administrador del router). Una vez identificada la IP podemos empezar la configuración a través de SSH.</p>
+<pre><code>$ sudo shutdown -h now
+</code></pre>
+
+<p>y la señal que muestra cuando realmente se ha apagado es un solo led de color rojo, en ese momento podemos desconectar el cable de alimentación.</p>
+
+<p>Para continuar debemos descubrir la IP de la Raspberry Pi en la red local accediendo a la configuración del router. Normalmente se accede escribiendo en el navegador de un ordenador conectado en la misma red la IP 192.168.1.1, introduciendo usuario y contraseña que suelen estar indicados en la carcasa del propio router (es aconsejable también cambiar la contraseña de administrador del router). Una vez identificada la IP podemos empezar la configuración a través de SSH.</p>
 
 <p>Explicaré como hacerlo desde la distribución Debian Wheezy de GNU/Linux, para hacerlo desde Windows puedes encontrar información <a href="http://comiendorasps.blogspot.com.es/2013/04/conectandonos-la-raspberry-mediante-ssh.html">aquí</a> a través de <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Putty</a>.</p>
 
@@ -139,13 +144,6 @@
 
 <pre><code># ssh pi@192.169.1.5
 </code></pre>
-
-<p>Debemos saber que la Raspberry Pi se apaga con el comando:</p>
-
-<pre><code>$ sudo shutdown -h now
-</code></pre>
-
-<p>y la señal que muestra cuando realmente se ha apagado es un solo led de color rojo, en este punto es cuando podemos desconectar el cable de alimentación.</p>
 
 <p>Por defecto Raspbian arranca en modo consola, sin modo gráfico (para nuestro servidor web no nos hace falta). Puedes arrancar el modo gráfico en cualquier momento con el comando:</p>
 
