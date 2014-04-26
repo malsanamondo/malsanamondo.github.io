@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: Raspberry Pi | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-26T12:33:49+02:00</updated>
+  <updated>2014-04-26T12:59:57+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -36,21 +36,17 @@
 
 <ul>
 <li><strong>Expandir el sistema</strong>: para que Raspbian ocupe todo el espacio de la tarjeta.</li>
-<li><p><strong>Activar inicio en modo escritorio</strong>: se puede elegir que arranque en modo gráfico o en modo consola, por defecto arranca en modo consola y es la opción con la cual trabajaremos. Una vez arrancado el sistema si queremos iniciar el modo gráfico basta con escribir:</p>
-
-<pre><code>  $ startx
-</code></pre></li>
-<li><p><strong>Opciones de internacionalización</strong>: configurar idioma, localización, teclado, etc. En idioma desmarcamos (con la barra de espacio) <em>en_GB</em> y seleccionamos <em>es_ES UTF8</em> (si lo quieres en castellano), elegimos distribución del teclado (normalmente PC genérico 105 teclas) e idioma de teclado. En las siguientes opciones no hace falta cambiar nada.</p></li>
-<li><strong>Opciones avanzadas</strong>: cambiamos el nombre de la máquina por uno fácilmente reconocible (nos servirá en los siguientes pasos), y activamos el acceso SSH para acceder a la Raspberry Pi de forma remota desde otros dispositivos.</li>
+<li><strong>Opciones de internacionalización</strong>: configurar idioma, localización, teclado, etc. En idioma desmarcamos (con la barra de espacio) <em>en_GB</em> y seleccionamos <em>es_ES UTF8</em> (si lo quieres en castellano), elegimos distribución del teclado (normalmente PC genérico 105 teclas) e idioma de teclado. En las siguientes opciones no hace falta cambiar nada.</li>
+<li><strong>Opciones avanzadas</strong>: activamos el acceso SSH para acceder a la Raspberry Pi de forma remota desde otros dispositivos.</li>
 </ul>
 
 
-<p>Una vez realizados los cambios reiniciamos para no tener problemas con el teclado,  escribimos:</p>
+<p>Una vez realizados los cambios reiniciamos para no tener problemas con la configuración del teclado,  escribimos:</p>
 
 <pre><code>$ sudo reboot
 </code></pre>
 
-<p>Después de reiniciarse nos pide la contraseña (que por defecto es <em>raspberry</em>), y procedemos a cambiarla para aumentar la seguridad de nuestro dispositivo (el cambio de contraseña se puede realizar junto a la primera configuración, pero es posible que el sistema aún no reconozca el idioma que hayas configurado, por eso, para asegurarnos lo hacemos en un segundo momento después de reiniciar). Para hacerlo escribimos:</p>
+<p>Después de reiniciarse nos pide la contraseña (que por defecto es <em>raspberry</em>), y procedemos a cambiarla para aumentar la seguridad de nuestro dispositivo (el cambio de contraseña y el cambio de nombre del dispositivo en la red local se pueden realizar en el paso anterior de configuración, pero es posible que el sistema aún no reconozca el idioma de teclado que previamente has configurado, por eso, para asegurarnos lo hacemos en un segundo momento después de reiniciar). Para hacerlo escribimos:</p>
 
 <pre><code>$ raspi-config
 </code></pre>
@@ -59,6 +55,7 @@
 
 <ul>
 <li><strong>Cambio de contraseña</strong>: por defecto el usuario es <em>pi</em> y la contraseña es <em>raspberry</em>. Por seguridad cambiamos la contraseña.</li>
+<li><strong>Opciones avanzadas</strong>: cambiamos el nombre del dispositivo dentro de la red local por uno fácilmente reconocible (nos servirá en los siguientes pasos).</li>
 </ul>
 
 
@@ -71,6 +68,23 @@ $ sudo apt-get upgrade
 </code></pre>
 
 <p>y esperamos el tiempo necesario para que el sistema se actualice. Es conveniente repetir estos comandos cada cierto tiempo para asegurar el óptimo funcionamiento del sistema operativo.</p>
+
+<p>Por defecto Raspbian arranca en modo consola, sin modo gráfico (para nuestro servidor web no nos hace falta). Puedes arrancar el modo gráfico en cualquier momento con el comando:</p>
+
+<pre><code>$ startx
+</code></pre>
+
+<p>y puedes activarlo para que siempre arranque con modo gráfico volviendo a escribir:</p>
+
+<pre><code>$ raspi-config
+</code></pre>
+
+<p>y cambiando la opción en:</p>
+
+<ul>
+<li><strong>Activar inicio en modo escritorio</strong>: se puede elegir que arranque en modo gráfico o en modo consola, por defecto arranca en modo consola.</li>
+</ul>
+
 
 <p>En este punto</p>
 ]]></content>
