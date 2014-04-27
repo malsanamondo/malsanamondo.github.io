@@ -4,7 +4,7 @@
   <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-27T12:01:45+02:00</updated>
+  <updated>2014-04-27T12:31:18+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -20,7 +20,7 @@
     <id>http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3</id>
     <content type="html"><![CDATA[<p>En la <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera</a> y <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">segunda</a> parte de este manual hemos visto qué es la Raspberry Pi y cómo instalar Raspbian en la tarjeta SD. En esta tercera parte configuraremos el sistema operativo para que funcione como servidor web y para que podamos acceder a él desde cualquier parte.</p>
 
-<p>Después de copiar Raspbian en la tarjeta SD podemos comenzar la configuración. En este punto necesitamos además de la Raspberry Pi y de la SD, el alimentador micro-usb (sirve cualquier cargador micro-usb de móvil de al menos 700 mA) y un cable RJ-45 (ethernet) para conectarla al router. También debemos tener acceso a la configuración del router.</p>
+<p>Después de copiar Raspbian en la tarjeta SD podemos comenzar la configuración. En este punto necesitamos además de la Raspberry Pi y de la SD, el alimentador micro-usb (sirve cualquier cargador micro-usb de móvil de al menos 700 mA), un cable RJ-45 (ethernet) para conectarla al router y un ordenador desde el cual controlaremos nuestra Raspberry Pi. También debemos tener acceso a la configuración del router.</p>
 
 <!-- more -->
 
@@ -45,7 +45,7 @@
 <pre><code># ssh pi@192.168.1.5
 </code></pre>
 
-<p>siendo <em>192.168.1.5</em> la IP de vuestra Raspberry Pi, pedirá la contraseña que por defecto es <em>raspberry</em> y acto seguido tendréis control total sobre vuestra Raspberry Pi siempre que estéis en la misma red local (el acceso a través de SSH desde el exterior se explicará más adelante).</p>
+<p>siendo <em>192.168.1.5</em> la IP de vuestra Raspberry Pi, pedirá la contraseña que por defecto es <em>raspberry</em> y acto seguido tendréis control total sobre ella siempre que estéis en la misma red local (el acceso a través de SSH desde el exterior se explicará más adelante).</p>
 
 <p>Si no se abre automáticamente la herramienta de configuración escribimos en la consola:</p>
 
@@ -160,18 +160,18 @@ $ sudo apt-get upgrade
 
 <h2>Acceder a la Raspberry Pi desde el exterior de la red local</h2>
 
-<p>Al conectarnos a Internet desde nuestras casas los proveedores nos asignan una dirección IP pública que normalmente es dinámica. Esto quiere decir que cambia cada vez que se apaga y enciende el router, algo parecido a lo que pasa en una red local con las direcciones IP (en este caso IP privadas) de los dispositivos cada vez que se conectan a ella.</p>
+<p>Al conectarnos a Internet desde nuestras casas los proveedores (<a href="https://es.wikipedia.org/wiki/Proveedor_de_servicios_de_Internet">ISP</a>) nos asignan una dirección IP pública que normalmente es dinámica. Esto quiere decir que cambia cada vez que se apaga y enciende el router, algo parecido a lo que pasa en una red local con las direcciones IP (en este caso IP privadas) de los dispositivos cada vez que se conectan a ella.</p>
 
 <p>No se puede acceder al contenido de un servidor que está detrás de una IP dinámica si antes no hemos instalado un cliente DNS que actualice automáticamente la IP pública asociándola a un dominio. Una vez hecho esto se puede acceder desde cualquier lugar a nuestro servidor web a través de un nombre de dominio, sea cual sea la IP pública que tenga.</p>
 
-<p>Vamos a utilizar el servicio que ofrece <a href="https://www.dnsdynamic.org/">dnsdynamic.org</a>. Nos registramos con una dirección email y una contraseña y esperamos a que nos llegue un email con el enlace de confirmación. Una vez hecha la identificación pulsamos en <em>add</em> y elegimos el dominio que queramos si está disponible (realmente será un subdominio tipo <em>loquesea.dnsdynamic.com</em>), y le asociamos nuestra IP pública y guardamos los cambios. Si no sabes cuál es tu IP pública la puedes averiguar <a href="http://vermiip.es/">aquí</a>.</p>
+<p>Vamos a utilizar el servicio que ofrece <a href="https://www.dnsdynamic.org/">dnsdynamic.org</a>. Nos registramos con una dirección email y una contraseña y esperamos a que nos llegue un email con el enlace de confirmación. Una vez hecha la identificación pulsamos en <em>Add</em> y elegimos el dominio que queramos si está disponible (realmente será un subdominio tipo <em>loquesea.dnsdynamic.com</em>), y le asociamos nuestra IP pública (lo hará automáticamente) y guardamos los cambios. Si no sabes cuál es tu IP pública la puedes averiguar <a href="http://vermiip.es/">aquí</a>.</p>
 
 <p>Ahora vamos a instalar el cliente en la Raspberry Pi, escribimos:</p>
 
 <pre><code>$ sudo apt-get install ddclient
 </code></pre>
 
-<p>nos preguntará si queremos ejecutar el cliente cuando establezca una conexión PPP y contestamos NO, si lo queremos ejecutar como demonio y contestamos SI. A partir de aquí podemos poner lo que queramos porque en el siguiente paso sobreescribiremos todo.</p>
+<p>nos preguntará si queremos ejecutar el cliente cuando establezca una conexión PPP y contestamos <strong>NO</strong>, si lo queremos ejecutar como demonio y contestamos <strong>SI</strong>. A partir de aquí podemos marcar lo que queramos porque en el siguiente paso sobreescribiremos todo.</p>
 
 <p>Escribimos:</p>
 
@@ -200,14 +200,14 @@ YOUR-DOMAIN
 </code></pre>
 
 <p>y cambiamos <em>YOUR-LOGIN</em>, <em>YOUR-PASSWORD</em> y <em>YOUR-DOMAIN</em> por tu nombre de usuario, tu contraseña y tu dominio registrado de dnsdynamic.org. Si quieres puedes cambiar también el tiempo de comprobación de IP, en este caso 5 minutos.
-Guarda el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al archivo.</p>
+Guarda el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al archivo (en cualquier momento se puede volver a configurar el cliente con el comando anterior).</p>
 
 <p>y reiniciamos con:</p>
 
 <pre><code>$ sudo reboot
 </code></pre>
 
-<p>Para que todo funcione debemos configurar nuestro router redirigiendo los puertos 80 (HTTP) y 22 (SHH) hacia la IP privada de nuestra Raspberry Pi, en el ejemplo que estamos siguiendo 192.168.1.9. Cada router es diferente, si tienes dificultades para abrir los puertos busca documentación de la marca y modelo de tu router.</p>
+<p>Para que todo funcione debemos configurar nuestro router redirigiendo los puertos 80 (HTTP) y 22 (SHH) hacia la IP privada de nuestra Raspberry Pi, en el ejemplo que estamos siguiendo 192.168.1.9. Cada router se configura de forma diferente, si tienes dificultades para abrir los puertos busca en Internet documentación de la marca y modelo de tu router.</p>
 
 <p>En principio si se quiere utilizar un nombre de dominio propio contratado (por ejemplo: loquesea.net) para que apunte a tu Raspberry Pi, se puede hacer añadiendo un registro CNAME en los DNS de loquesea.net que apunte hacia el dominio registrado en dnsdynamic, aunque debo decir que yo no lo he logrado.</p>
 
