@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: Raspberry Pi | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-27T12:31:18+02:00</updated>
+  <updated>2014-04-27T12:43:00+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -38,14 +38,14 @@
 
 <p>Explicaré como hacerlo desde la distribución Debian Wheezy de GNU/Linux, para hacerlo desde Windows puedes encontrar información <a href="http://comiendorasps.blogspot.com.es/2013/04/conectandonos-la-raspberry-mediante-ssh.html">aquí</a> a través de <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Putty</a>.</p>
 
-<p>Si tu distribución GNU/Linux no trae instalado un cliente SSH puedes encontrar información de cómo instalarlo <a href="http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m5/instalacin_de_servidor_de_ssh.html">aquí</a> (Debian Wheezy lo trae).</p>
+<p>Si tu distribución GNU/Linux no tiene instalado un cliente SSH puedes encontrar información sobre cómo instalarlo <a href="http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m5/instalacin_de_servidor_de_ssh.html">aquí</a>.</p>
 
 <p>En la consola escribimos como root:</p>
 
 <pre><code># ssh pi@192.168.1.5
 </code></pre>
 
-<p>siendo <em>192.168.1.5</em> la IP de vuestra Raspberry Pi, pedirá la contraseña que por defecto es <em>raspberry</em> y acto seguido tendréis control total sobre ella siempre que estéis en la misma red local (el acceso a través de SSH desde el exterior se explicará más adelante).</p>
+<p>cambiando <em>192.168.1.5</em> por la IP de vuestra Raspberry Pi, pedirá la contraseña que por defecto es <em>raspberry</em> y acto seguido tendréis control total sobre ella siempre que estéis en la misma red local (el acceso a través de SSH desde el exterior se explicará más adelante).</p>
 
 <p>Si no se abre automáticamente la herramienta de configuración escribimos en la consola:</p>
 
@@ -67,7 +67,7 @@
 <pre><code>$ sudo reboot
 </code></pre>
 
-<p>y volvemos a conectarnos por SSH (cambiando la IP por la nuestra) con:</p>
+<p>y volvemos a conectarnos por SSH (no olvidéis cambiar la IP por la vuestra) con:</p>
 
 <pre><code># ssh pi@192.169.1.5
 </code></pre>
