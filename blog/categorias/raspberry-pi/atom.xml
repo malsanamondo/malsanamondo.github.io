@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: Raspberry Pi | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-27T13:24:59+02:00</updated>
+  <updated>2014-04-27T13:51:38+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (3)]]></title>
-    <link href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/"/>
+    <link href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/"/>
     <updated>2014-04-25T17:26:05+02:00</updated>
-    <id>http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3</id>
-    <content type="html"><![CDATA[<p>En la <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera</a> y <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">segunda</a> parte de este manual hemos visto qué es la Raspberry Pi y cómo se instala Raspbian en la tarjeta SD. En esta tercera parte configuraremos el sistema operativo para que funcione como servidor web y para que podamos acceder a él desde cualquier parte.</p>
+    <id>http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3</id>
+    <content type="html"><![CDATA[<p>En la <a href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera</a> y <a href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">segunda</a> parte de este manual hemos visto qué es la Raspberry Pi y cómo se instala Raspbian en la tarjeta SD. En esta tercera parte configuraremos el sistema operativo para que funcione como servidor web y para que podamos acceder a él desde cualquier parte.</p>
 
 <p>Después de copiar Raspbian en la tarjeta SD podemos comenzar la configuración. En este punto necesitamos además de la Raspberry Pi y de la SD, el alimentador micro-usb (sirve cualquier cargador micro-usb de móvil de al menos 700 mA), un cable RJ-45 (ethernet) para conectarla al router y un ordenador desde el cual controlaremos nuestra Raspberry Pi. También debemos tener acceso a la configuración del router.</p>
 
@@ -217,10 +217,10 @@ Guardamos el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al arc
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (2)]]></title>
-    <link href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/"/>
+    <link href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/"/>
     <updated>2014-04-17T12:22:14+02:00</updated>
-    <id>http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2</id>
-    <content type="html"><![CDATA[<p>Antes de continuar con este manual recomiendo la lectura de la <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera parte</a>. A continuación instalaremos el sistema operativo de la Raspberry Pi.</p>
+    <id>http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2</id>
+    <content type="html"><![CDATA[<p>Antes de continuar con este manual recomiendo la lectura de la <a href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera parte</a>. A continuación instalaremos el sistema operativo de la Raspberry Pi.</p>
 
 <p>La Raspberry Pi no tiene disco duro ni SSD, en su lugar utiliza una tarjeta SD para almacenar los datos y es allí donde debemos instalar el sistema operativo.</p>
 
@@ -287,9 +287,9 @@ Guardamos el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al arc
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (1)]]></title>
-    <link href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/"/>
+    <link href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/"/>
     <updated>2014-04-16T16:51:26+02:00</updated>
-    <id>http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1</id>
+    <id>http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1</id>
     <content type="html"><![CDATA[<p><img class="right" src="/images/RpiFront.jpg" width="300" height="300" title="Raspberry Pi Modelo B" >
 Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo costo, desarrollado en Reino Unido por la <a href="http://www.raspberrypi.org/">Fundación Raspberry Pi</a>, con el objetivo de estimular la enseñanza de ciencias de la computación en las escuelas.</p>
 
@@ -302,7 +302,7 @@ Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo cost
 
 <p>Según la propia documentación de la Fundación Raspberry Pi el consumo energético del modelo B es de 3,5 W, y en algunos sitios web que tratan este tema han apuntado que el aumento en la factura de electricidad sería de unos 15 € anuales, teniéndola operativa las 24 horas del día los 365 días del año. No sabría calcular ese aumento y contrastarlo con la cantidad antes mencionada, pero en lo que sí coinciden todas las revisiones es en el <strong>bajo consumo energético</strong> de este ordenador. Más información <a href="http://bokunoshumi.wordpress.com/2012/11/24/convierte-tu-raspberry-pi-en-un-servidor-de-descargas-por-que/" title="Boku no shumi">aquí</a>.</p>
 
-<p>Hay que tener en cuenta que nuestro sitio web estará alojado en un ordenador con unas características básicas, lo que sumado a la velocidad de subida de nuestra conexión a Internet determinarán la velocidad de procesamiento y descarga de nuestras páginas que experimentará quien visite nuestro sitio, además de las visitas simultáneas soportadas. Por ello debemos decantarnos por crear <strong>páginas estáticas para no sobrecargar nuestro servidor</strong>, en nuestro caso instalaremos <a href="http://octopress.org/">Octopress</a>, un <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a> que no utiliza una base de datos para almacenar las entradas del blog, las cuales se redactan y almacenan en texto plano con <a href="http://malsanamondo.github.io/blog/2014/04/markdown/">Markdown</a> y que automáticamente se convertirán en HTML estático con un par de órdenes.</p>
+<p>Hay que tener en cuenta que nuestro sitio web estará alojado en un ordenador con unas características básicas, lo que sumado a la velocidad de subida de nuestra conexión a Internet determinarán la velocidad de procesamiento y descarga de nuestras páginas que experimentará quien visite nuestro sitio, además de las visitas simultáneas soportadas. Por ello debemos decantarnos por crear <strong>páginas estáticas para no sobrecargar nuestro servidor</strong>, en nuestro caso instalaremos <a href="http://octopress.org/">Octopress</a>, un <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a> que no utiliza una base de datos para almacenar las entradas del blog, las cuales se redactan y almacenan en texto plano con <a href="http://malsanamondo.github.io/2014/04/markdown/">Markdown</a> y que automáticamente se convertirán en HTML estático con un par de órdenes.</p>
 
 <p>Lo que necesitamos para crear un servidor web en nuestra casa es:</p>
 

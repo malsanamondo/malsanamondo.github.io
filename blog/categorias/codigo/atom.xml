@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: código | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/codigo/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-27T13:24:59+02:00</updated>
+  <updated>2014-04-27T13:51:38+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Markdown]]></title>
-    <link href="http://malsanamondo.github.io/blog/2014/04/markdown/"/>
+    <link href="http://malsanamondo.github.io/2014/04/markdown/"/>
     <updated>2014-04-13T22:57:48+02:00</updated>
-    <id>http://malsanamondo.github.io/blog/2014/04/markdown</id>
+    <id>http://malsanamondo.github.io/2014/04/markdown</id>
     <content type="html"><![CDATA[<p><a href="https://es.wikipedia.org/wiki/Markdown" title="Markdown en la Wikipedia">Markdown</a> es un lenguaje de marcado ligero que facilita la aplicación de formato a un texto mediante un simple editor de texto y ocupando poco espacio. En Octopress el contenido se forma con este lenguaje y a continuación se muestra la sintaxis utilizada para escribir en este blog. En algunos casos es Markdown simple, original o standard, en otros es Markdown sobre plugins que se incluyen en la instalación de Octopress y en otros casos directamente se recurre al HTML, ya que algunas funcionalidades no son propias del Markdown original (más información <a href="http://accelera.uab.cat/help.php?file=markdown.html#code" title="Sintaxis Markdown original">aquí</a>).</p>
 
 <!-- more -->
