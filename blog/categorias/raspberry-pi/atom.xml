@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: Raspberry Pi | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-27T02:29:39+02:00</updated>
+  <updated>2014-04-27T02:31:07+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -34,7 +34,7 @@
 
 <p>y la señal que muestra cuando realmente se ha apagado es un solo led de color rojo, en ese momento podemos desconectar el cable de alimentación.</p>
 
-<p>Para continuar debemos descubrir la IP de la Raspberry Pi en la red local accediendo a la configuración del router. Normalmente se accede escribiendo 192.168.1.1 en el navegador de un dispositivo conectado en la misma red local que la Raspberry Pi, e introduciendo el usuario y la contraseña que suelen estar indicados en la carcasa del propio router (es aconsejable también cambiar la contraseña de administrador del router). Una vez identificada la IP podemos empezar la configuración a través de SSH.</p>
+<p>Para continuar debemos descubrir la IP de la Raspberry Pi en la red local accediendo a la configuración del router. Normalmente se accede escribiendo la IP 192.168.1.1 en el navegador de un dispositivo conectado en la misma red local que la Raspberry Pi, e introduciendo el usuario y la contraseña que suelen estar indicados en la carcasa del propio router (es aconsejable también cambiar la contraseña de administrador del router). Una vez identificada la IP podemos empezar la configuración a través de SSH.</p>
 
 <p>Explicaré como hacerlo desde la distribución Debian Wheezy de GNU/Linux, para hacerlo desde Windows puedes encontrar información <a href="http://comiendorasps.blogspot.com.es/2013/04/conectandonos-la-raspberry-mediante-ssh.html">aquí</a> a través de <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Putty</a>.</p>
 
