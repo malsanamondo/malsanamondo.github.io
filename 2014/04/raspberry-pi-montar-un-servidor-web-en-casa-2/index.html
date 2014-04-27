@@ -108,7 +108,7 @@
 </ul>
 
 
-<p>Aunque estos instaladores presentan algunas ventajas (automatización, instalación de varios sistemas operativos en la misma tarjeta SD, clonación de particiones, etc.), nuestro servidor lo montaremos copiando directamente Raspbian en la tarjeta SD.</p>
+<p>Aunque estos instaladores presentan algunas ventajas (automatización, instalación de varios sistemas operativos en la misma tarjeta SD, clonación de particiones, etc.), nuestro servidor lo montaremos sin instalador, copiando directamente Raspbian en la tarjeta SD.</p>
 
 <p><img src="/images/raspbian_logo.png" alt="Logo Raspbian" /></p>
 
@@ -119,7 +119,7 @@
 <p>Lo primero es identificar el nombre asignado a la tarjeta SD. Hay que tener mucho cuidado de no equivocarse ya que puedes destrozar el sistema operativo del ordenador, guíate por la capacidad del dispositivo.</p>
 
 <ul>
-<li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Si quieres puedes crear una nueva partición en el espacio libre resultante con el formato FAT32.</p></li>
+<li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Si quieres puedes crear una nueva partición en el espacio libre resultante con el formato FAT32 (creo que no es necesario).</p></li>
 <li><p><strong>Desde la terminal</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD con:</p>
 
 <pre><code>  # df -h
@@ -132,12 +132,12 @@
 <pre><code># fdisk -l
 </code></pre>
 
-<p>Encontrarás que tiene asignado algo como /dev/sdb1 o /dev/mmcblk0p1, y si la SD tiene más particiones serán nombradas como sdb2, sdb3 y mmcblk0p2, mmcblk0p3 respectivamente. Entonces desmóntalas con:</p>
+<p>Encontraréis que tiene asignado algo como /dev/sdb1 o /dev/mmcblk0p1, y si la SD tiene más particiones serán nombradas como sdb2, sdb3 y mmcblk0p2, mmcblk0p3 respectivamente. Entonces se desmontan con:</p>
 
 <pre><code># umount /dev/sdb1
 </code></pre>
 
-<p>sustituyendo &ldquo;sdb&rdquo; por el nombre de tu tarjeta y el &ldquo;1&rdquo; por la partición.</p>
+<p>sustituyendo &ldquo;sdb&rdquo; por el nombre de vuestra tarjeta y el &ldquo;1&rdquo; por la partición.</p>
 
 <p>Ahora debemos copiar la imagen de Raspbian en la tarjeta SD con el comando:</p>
 

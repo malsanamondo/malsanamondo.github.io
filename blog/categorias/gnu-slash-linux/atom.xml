@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: GNU/Linux | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/gnu-slash-linux/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-27T18:50:55+02:00</updated>
+  <updated>2014-04-27T19:32:15+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -241,7 +241,7 @@ Guardamos el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al arc
 </ul>
 
 
-<p>Aunque estos instaladores presentan algunas ventajas (automatización, instalación de varios sistemas operativos en la misma tarjeta SD, clonación de particiones, etc.), nuestro servidor lo montaremos copiando directamente Raspbian en la tarjeta SD.</p>
+<p>Aunque estos instaladores presentan algunas ventajas (automatización, instalación de varios sistemas operativos en la misma tarjeta SD, clonación de particiones, etc.), nuestro servidor lo montaremos sin instalador, copiando directamente Raspbian en la tarjeta SD.</p>
 
 <p><img src="/images/raspbian_logo.png" alt="Logo Raspbian" /></p>
 
@@ -252,7 +252,7 @@ Guardamos el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al arc
 <p>Lo primero es identificar el nombre asignado a la tarjeta SD. Hay que tener mucho cuidado de no equivocarse ya que puedes destrozar el sistema operativo del ordenador, guíate por la capacidad del dispositivo.</p>
 
 <ul>
-<li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Si quieres puedes crear una nueva partición en el espacio libre resultante con el formato FAT32.</p></li>
+<li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Si quieres puedes crear una nueva partición en el espacio libre resultante con el formato FAT32 (creo que no es necesario).</p></li>
 <li><p><strong>Desde la terminal</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD con:</p>
 
 <pre><code>  # df -h
@@ -265,12 +265,12 @@ Guardamos el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al arc
 <pre><code># fdisk -l
 </code></pre>
 
-<p>Encontrarás que tiene asignado algo como /dev/sdb1 o /dev/mmcblk0p1, y si la SD tiene más particiones serán nombradas como sdb2, sdb3 y mmcblk0p2, mmcblk0p3 respectivamente. Entonces desmóntalas con:</p>
+<p>Encontraréis que tiene asignado algo como /dev/sdb1 o /dev/mmcblk0p1, y si la SD tiene más particiones serán nombradas como sdb2, sdb3 y mmcblk0p2, mmcblk0p3 respectivamente. Entonces se desmontan con:</p>
 
 <pre><code># umount /dev/sdb1
 </code></pre>
 
-<p>sustituyendo &ldquo;sdb&rdquo; por el nombre de tu tarjeta y el &ldquo;1&rdquo; por la partición.</p>
+<p>sustituyendo &ldquo;sdb&rdquo; por el nombre de vuestra tarjeta y el &ldquo;1&rdquo; por la partición.</p>
 
 <p>Ahora debemos copiar la imagen de Raspbian en la tarjeta SD con el comando:</p>
 
@@ -298,7 +298,7 @@ Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo cost
 <!-- more -->
 
 
-<p>Una de las utilidades que podemos darle es la de <strong>servidor para alojar nuestro sitio web o blog</strong>, ya sea para experimentar y aprender, para tener mayor control sobre los datos que almacenamos (al no tener que confiar la seguridad de los mismos a las empresas de alquiler de alojamiento web), para tener mayor autonomía (al no depender de otras personas en la gestión de nuestro sitio), para ahorrarnos el coste del alojamiento web, o para todas las razones anteriores a la vez.</p>
+<p>Una de las utilidades que podemos darle es la de <strong>servidor para alojar nuestro sitio web o blog</strong>, ya sea para experimentar y aprender, para tener mayor control sobre los datos que almacenamos (al no tener que confiar la seguridad de los mismos a las empresas de alquiler de alojamiento web), para tener mayor autonomía (al no depender de otras personas o servicios en la gestión de nuestro sitio), para ahorrarnos el coste del alojamiento web o para todas las razones anteriores a la vez.</p>
 
 <p>Según la propia documentación de la Fundación Raspberry Pi el consumo energético del modelo B es de 3,5 W, y en algunos sitios web que tratan este tema han apuntado que el aumento en la factura de electricidad sería de unos 15 € anuales, teniéndola operativa las 24 horas del día los 365 días del año. No sabría calcular ese aumento y contrastarlo con la cantidad antes mencionada, pero en lo que sí coinciden todas las revisiones es en el <strong>bajo consumo energético</strong> de este ordenador. Más información <a href="http://bokunoshumi.wordpress.com/2012/11/24/convierte-tu-raspberry-pi-en-un-servidor-de-descargas-por-que/" title="Boku no shumi">aquí</a>.</p>
 
