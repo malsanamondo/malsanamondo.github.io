@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: Raspberry Pi | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-27T13:05:08+02:00</updated>
+  <updated>2014-04-27T13:22:09+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -18,7 +18,7 @@
     <link href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/"/>
     <updated>2014-04-25T17:26:05+02:00</updated>
     <id>http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3</id>
-    <content type="html"><![CDATA[<p>En la <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera</a> y <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">segunda</a> parte de este manual hemos visto qué es la Raspberry Pi y cómo instalar Raspbian en la tarjeta SD. En esta tercera parte configuraremos el sistema operativo para que funcione como servidor web y para que podamos acceder a él desde cualquier parte.</p>
+    <content type="html"><![CDATA[<p>En la <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera</a> y <a href="http://malsanamondo.github.io/blog/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">segunda</a> parte de este manual hemos visto qué es la Raspberry Pi y cómo se instala Raspbian en la tarjeta SD. En esta tercera parte configuraremos el sistema operativo para que funcione como servidor web y para que podamos acceder a él desde cualquier parte.</p>
 
 <p>Después de copiar Raspbian en la tarjeta SD podemos comenzar la configuración. En este punto necesitamos además de la Raspberry Pi y de la SD, el alimentador micro-usb (sirve cualquier cargador micro-usb de móvil de al menos 700 mA), un cable RJ-45 (ethernet) para conectarla al router y un ordenador desde el cual controlaremos nuestra Raspberry Pi. También debemos tener acceso a la configuración del router.</p>
 
