@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: GNU/Linux | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/blog/categorias/gnu-slash-linux/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-27T12:43:00+02:00</updated>
+  <updated>2014-04-27T13:05:08+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -38,7 +38,7 @@
 
 <p>Explicaré como hacerlo desde la distribución Debian Wheezy de GNU/Linux, para hacerlo desde Windows puedes encontrar información <a href="http://comiendorasps.blogspot.com.es/2013/04/conectandonos-la-raspberry-mediante-ssh.html">aquí</a> a través de <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Putty</a>.</p>
 
-<p>Si tu distribución GNU/Linux no tiene instalado un cliente SSH puedes encontrar información sobre cómo instalarlo <a href="http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m5/instalacin_de_servidor_de_ssh.html">aquí</a>.</p>
+<p>Si vuestra distribución GNU/Linux no tiene instalado un cliente SSH podéis encontrar información sobre cómo instalarlo <a href="http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m5/instalacin_de_servidor_de_ssh.html">aquí</a>.</p>
 
 <p>En la consola escribimos como root:</p>
 
@@ -57,7 +57,7 @@
 <ul>
 <li><strong>Expandir el sistema</strong>: para que Raspbian ocupe todo el espacio de la tarjeta.</li>
 <li><strong>Cambio de contraseña</strong>: por defecto el usuario es <em>pi</em> y la contraseña es <em>raspberry</em>. Por seguridad cambiamos la contraseña.</li>
-<li><strong>Opciones de internacionalización</strong>: configurar idioma, localización, teclado, etc. En idioma desmarcamos (con la barra de espacio) <em>en_GB</em> y seleccionamos <em>es_ES UTF8</em> (si lo quieres en castellano), elegimos distribución del teclado (normalmente PC genérico 105 teclas) e idioma de teclado. En las siguientes opciones no hace falta cambiar nada.</li>
+<li><strong>Opciones de internacionalización</strong>: configurar idioma, localización, teclado, etc. En idioma desmarcamos (con la barra de espacio) <em>en_GB</em> y seleccionamos <em>es_ES UTF8</em> (si lo queréis en castellano), elegimos distribución del teclado (normalmente PC genérico 105 teclas) e idioma de teclado. En las siguientes opciones no hace falta cambiar nada.</li>
 <li><strong>Opciones avanzadas</strong>: si queremos podemos cambiar el nombre del dispositivo (hostname) dentro de la red local.</li>
 </ul>
 
@@ -72,17 +72,17 @@
 <pre><code># ssh pi@192.169.1.5
 </code></pre>
 
-<p>Por defecto Raspbian arranca en modo consola, sin modo gráfico (para nuestro servidor web no nos hace falta). Puedes arrancar el modo gráfico en cualquier momento con el comando:</p>
+<p>Por defecto Raspbian arranca en modo consola, sin modo gráfico (para nuestro servidor web no nos hace falta). Podéis arrancar el modo gráfico en cualquier momento con el comando:</p>
 
 <pre><code>$ startx
 </code></pre>
 
-<p>y puedes configurarlo para que arranque en modo gráfico por defecto escribiendo:</p>
+<p>y podéis configurarlo para que arranque en modo gráfico por defecto escribiendo:</p>
 
 <pre><code>$ sudo raspi-config
 </code></pre>
 
-<p>cambiando la opción en <em>Activar inicio en modo escritorio</em>.</p>
+<p>cambiando la opción correspondiente en <em>Activar inicio en modo escritorio</em>.</p>
 
 <h2>IP fija dentro de nuestra red local</h2>
 
@@ -138,7 +138,7 @@ X11 forwarding is disabled to avoid man-in-the-middle attacks.
 Permission denied (publickey,password).
 </code></pre>
 
-<p>No hay de qué preocuparse, al haber cambiado la IP del acceso SSH salta esta alerta de seguridad con las claves. Para solucionarlo debemos escribir el siguiente comando:</p>
+<p>No hay de qué preocuparse, al haber cambiado la IP del dispositivo remoto salta esta alerta de seguridad con las claves cifradas entre nuestro ordenador y nuestra Raspberry Pi. Para solucionarlo debemos escribir el siguiente comando:</p>
 
 <pre><code># ssh-keygen -R 192.168.1.9
 </code></pre>
@@ -171,7 +171,7 @@ $ sudo apt-get upgrade
 <pre><code>$ sudo apt-get install ddclient
 </code></pre>
 
-<p>nos preguntará si queremos ejecutar el cliente cuando establezca una conexión PPP y contestamos <strong>NO</strong>, si lo queremos ejecutar como demonio y contestamos <strong>SI</strong>. A partir de aquí podemos marcar lo que queramos porque en el siguiente paso sobreescribiremos todo.</p>
+<p>nos preguntará si queremos ejecutar el cliente cuando establezca una conexión PPP y contestamos <strong>NO</strong>, si lo queremos ejecutar como demonio y contestamos <strong>SI</strong>. A partir de aquí podemos marcar lo que queramos porque en el siguiente paso sobrescribiremos todo.</p>
 
 <p>Escribimos:</p>
 
@@ -199,17 +199,17 @@ protocol=dyndns2                   \
 YOUR-DOMAIN
 </code></pre>
 
-<p>y cambiamos <em>YOUR-LOGIN</em>, <em>YOUR-PASSWORD</em> y <em>YOUR-DOMAIN</em> por tu nombre de usuario, tu contraseña y tu dominio registrado de dnsdynamic.org. Si quieres puedes cambiar también el tiempo de comprobación de IP, en este caso 5 minutos.
-Guarda el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al archivo (en cualquier momento se puede volver a configurar el cliente con el comando anterior).</p>
+<p>y cambiamos <em>YOUR-LOGIN</em>, <em>YOUR-PASSWORD</em> y <em>YOUR-DOMAIN</em> por vuestro nombre de usuario, vuestra contraseña y vuestro dominio registrado de dnsdynamic.org. Si queréis podéis cambiar también el tiempo de comprobación de IP, en este caso 5 minutos.
+Guardamos el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al archivo (en cualquier momento se puede volver a configurar el cliente con el comando anterior).</p>
 
 <p>y reiniciamos con:</p>
 
 <pre><code>$ sudo reboot
 </code></pre>
 
-<p>Para que todo funcione debemos configurar nuestro router redirigiendo los puertos 80 (HTTP) y 22 (SHH) hacia la IP privada de nuestra Raspberry Pi, en el ejemplo que estamos siguiendo 192.168.1.9. Cada router se configura de forma diferente, si tienes dificultades para abrir los puertos busca en Internet documentación de la marca y modelo de tu router.</p>
+<p>Para que todo funcione debemos configurar nuestro router redirigiendo los puertos 80 (HTTP) y 22 (SHH) hacia la IP privada de nuestra Raspberry Pi, en el ejemplo que estamos siguiendo 192.168.1.9. Cada router se configura de forma diferente, si tenéis dificultades para abrir los puertos buscad en Internet documentación de la marca y modelo de vuestro router.</p>
 
-<p>En principio si se quiere utilizar un nombre de dominio propio contratado (por ejemplo: loquesea.net) para que apunte a tu Raspberry Pi, se puede hacer añadiendo un registro CNAME en los DNS de loquesea.net que apunte hacia el dominio registrado en dnsdynamic, aunque debo decir que yo no lo he logrado.</p>
+<p>En principio si se quiere utilizar un nombre de dominio propio contratado (por ejemplo: loquesea.net) para que apunte a vuestra Raspberry Pi, se puede hacer añadiendo un registro CNAME en los DNS de loquesea.net que apunte hacia el dominio registrado en dnsdynamic, aunque debo decir que yo no lo he logrado.</p>
 
 <p>En la próxima entrada instalaremos y configuraremos el CMS Octopress.</p>
 ]]></content>
