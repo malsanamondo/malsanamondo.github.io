@@ -4,7 +4,7 @@
   <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-27T13:51:38+02:00</updated>
+  <updated>2014-04-27T15:19:52+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -327,7 +327,7 @@ Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo cost
 </ol>
 
 
-<hr />
+<p>En la siguiente entrada veremos como instalar y configurar el sistema operativo en la Raspberry Pi.</p>
 ]]></content>
   </entry>
   
