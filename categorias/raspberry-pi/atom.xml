@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: Raspberry Pi | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/categorias/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-27T23:29:12+02:00</updated>
+  <updated>2014-04-29T12:16:06+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -18,7 +18,7 @@
     <link href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/"/>
     <updated>2014-04-25T17:26:05+02:00</updated>
     <id>http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3</id>
-    <content type="html"><![CDATA[<p>En la <a href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera</a> y <a href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">segunda</a> parte de este manual hemos visto qué es la Raspberry Pi y cómo se instala Raspbian en la tarjeta SD. En esta tercera parte configuraremos el sistema operativo para que funcione como servidor web y para que podamos acceder a él desde cualquier parte.</p>
+    <content type="html"><![CDATA[<p>En la <a href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera</a> y <a href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">segunda</a> parte de este manual hemos visto qué es la Raspberry Pi y cómo se instala Raspbian en la tarjeta SD. En esta tercera parte configuraremos el sistema operativo para que podamos acceder a él desde cualquier parte.</p>
 
 <p>Después de copiar Raspbian en la tarjeta SD podemos comenzar la configuración. En este punto necesitamos además de la Raspberry Pi y de la SD, el alimentador micro-usb (sirve cualquier cargador micro-usb de móvil de al menos 700 mA), un cable RJ-45 (ethernet) para conectarla al router y un ordenador desde el cual controlaremos nuestra Raspberry Pi. También debemos tener acceso a la configuración del router.</p>
 
@@ -211,7 +211,7 @@ Guardamos el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al arc
 
 <p>En principio si se quiere utilizar un nombre de dominio propio contratado (por ejemplo: loquesea.net) para que apunte a vuestra Raspberry Pi, se puede hacer añadiendo un registro CNAME en los DNS de loquesea.net que apunte hacia el dominio registrado en dnsdynamic, aunque debo decir que yo no lo he logrado.</p>
 
-<p>En la próxima entrada instalaremos y configuraremos el CMS Octopress.</p>
+<p>En la próxima y última entrada de este manual instalaremos y configuraremos el servidor web y Octopress.</p>
 ]]></content>
   </entry>
   
@@ -249,10 +249,10 @@ Guardamos el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al arc
 
 <p>En GNU/Linux:</p>
 
-<p>Lo primero es identificar el nombre asignado a la tarjeta SD. Hay que tener mucho cuidado de no equivocarse ya que puedes destrozar el sistema operativo del ordenador, guíate por la capacidad del dispositivo.</p>
+<p>Lo primero es identificar el nombre asignado a la tarjeta SD. Hay que tener mucho cuidado de no equivocarse ya que puedes destrozar el sistema operativo del ordenador, guíate por la capacidad de almacenamiento de la tarjeta (4 GB).</p>
 
 <ul>
-<li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Si quieres puedes crear una nueva partición en el espacio libre resultante con el formato FAT32 (creo que no es necesario).</p></li>
+<li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Creamos una nueva partición con formato FAT32 en el espacio libre resultante.</p></li>
 <li><p><strong>Desde la terminal</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD con:</p>
 
 <pre><code>  # df -h

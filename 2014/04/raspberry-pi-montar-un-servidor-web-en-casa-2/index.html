@@ -116,10 +116,10 @@
 
 <p>En GNU/Linux:</p>
 
-<p>Lo primero es identificar el nombre asignado a la tarjeta SD. Hay que tener mucho cuidado de no equivocarse ya que puedes destrozar el sistema operativo del ordenador, guíate por la capacidad del dispositivo.</p>
+<p>Lo primero es identificar el nombre asignado a la tarjeta SD. Hay que tener mucho cuidado de no equivocarse ya que puedes destrozar el sistema operativo del ordenador, guíate por la capacidad de almacenamiento de la tarjeta (4 GB).</p>
 
 <ul>
-<li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Si quieres puedes crear una nueva partición en el espacio libre resultante con el formato FAT32 (creo que no es necesario).</p></li>
+<li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Creamos una nueva partición con formato FAT32 en el espacio libre resultante.</p></li>
 <li><p><strong>Desde la terminal</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD con:</p>
 
 <pre><code>  # df -h
