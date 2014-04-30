@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: GNU/Linux | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/categorias/gnu-slash-linux/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-29T13:00:11+02:00</updated>
+  <updated>2014-04-30T18:23:47+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -12,6 +12,151 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (4)]]></title>
+    <link href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4/"/>
+    <updated>2014-04-27T23:03:21+02:00</updated>
+    <id>http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4</id>
+    <content type="html"><![CDATA[<p><a href="https://malsanamondo.github.io/categorias/raspberry-pi/">Anteriormente</a> ya hemos instalado y configurado el sistema operativo de la Raspberry Pi. En esta entrada veremos cómo instalar el servidor web y Octopress para poder escribir y gestionar un blog alojado en nuestra Raspberry Pi.</p>
+
+<p>También hemos comentado que a diferencia de otros CMS Octopress ofrece el contenido en HTML estático sin utilizar una base de datos, por tanto no necesitamos software que las gestione y muestre el contenido dinámico (MySQL, PHP, PhpMyAdmin, etc.). Necesitaremos solamente <a href="https://es.wikipedia.org/wiki/Nginx">Nginx</a> como servidor web, y Ruby-Dev como dependencias necesarias para Octopress.</p>
+
+<!-- more -->
+
+
+<p>Los servidores web más usados son Apache, lighttpd y Nginx, y es con este último con el que vamos a trabajar por ser rápido y soportar muchas conexiones simultáneas, lo que nos interesa ya que nuestra Raspberry Pi es un ordenador de características básicas y de esta forma le sacamos el máximo partido.</p>
+
+<p>Nos conectamos por SSH (<code>$ ssh pi@192.168.1.9</code>) e instalamos algunos paquetes necesarios para el funcionamiento de Octopress escribiendo:</p>
+
+<pre><code>$ sudo apt-get install ruby ruby-dev
+</code></pre>
+
+<p>Instalamos nginx:</p>
+
+<pre><code>$ sudo apt-get install nginx-full
+</code></pre>
+
+<p>Instalamos GIT (es posible que ya lo tengas instalado):</p>
+
+<pre><code>$ sudo apt-get install git
+</code></pre>
+
+<p>Clonamos el repositorio oficial de Octopress en el directorio <em>home</em> de nuestra Raspberry Pi. Con el siguiente comando lo clonaremos en la carpeta <em>octopress</em>:</p>
+
+<pre><code>$ git clone git://github.com/imathis/octopress.git octopress
+</code></pre>
+
+<p>Nos situamos dentro de la carpeta que acabamos de crear con:</p>
+
+<pre><code>$  cd octopress
+</code></pre>
+
+<p>y allí dentro debemos instalar <em>bundle</em>:</p>
+
+<pre><code>$ sudo gem install bundle
+</code></pre>
+
+<p>Instalamos Octopress bundle:</p>
+
+<pre><code>$ bundle install
+</code></pre>
+
+<p>Ya podemos salir de la carpeta <em>octopress</em> con:</p>
+
+<pre><code>$ cd
+</code></pre>
+
+<p>Creamos la carpeta <em>www</em> dentro de /var/:</p>
+
+<pre><code>$ sudo mkdir /var/www/
+</code></pre>
+
+<p>Le cambiamos los permisos al directorio:</p>
+
+<pre><code>$ sudo chmod 777 -R /var/www/
+</code></pre>
+
+<p>Editamos el archivo de configuración de nginx:</p>
+
+<pre><code>$ sudo nano /etc/nginx/sites-enabled/default
+</code></pre>
+
+<p>En este archivo hay una parte que mostrará algo parecido a esto:</p>
+
+<pre><code>server {
+        #listen   80; ## listen for ipv4; this line is default and implied
+        #listen   [::]:80 default_server ipv6only=on; ## listen for ipv6
+
+        root /usr/share/nginx/www/; #change this web root
+        index index.html index.htm;
+
+        # Make site accessible from http://localhost/
+        server_name localhost;
+</code></pre>
+
+<p>y debemos editar esa parte para que contenga esto otro:</p>
+
+<pre><code>server {
+        #listen   80; ## listen for ipv4; this line is default and implied
+        #listen   [::]:80 default_server ipv6only=on; ## listen for ipv6
+
+        root /var/www; #this is the new web root
+        index index.html index.htm;
+
+        # Make site accessible from http://localhost/
+        server_name localhost;
+</code></pre>
+
+<p>Iniciamos nginx:</p>
+
+<pre><code>$ sudo /etc/init.d/nginx start
+</code></pre>
+
+<p>Volvemos a entrar en la carpeta <em>octopress</em> y editamos el archivo Rakefile que se encuentra dentro con:</p>
+
+<pre><code>$ cd octopress
+
+$ sudo nano Rakefile
+</code></pre>
+
+<p>En este archivo hay una parte donde se muestra esto:</p>
+
+<pre><code>ssh_user       = "user@domain.com"
+ssh_port       = "22"
+document_root  = "~/website.com/"
+rsync_delete   = false
+rsync_args     = ""  # Any extra arguments to pass to rsync
+deploy_default = "rsync"
+</code></pre>
+
+<p>y debemos editarlo para que sea:</p>
+
+<pre><code>ssh_user       = "pi@192.168.1.9" # the pi@and ip-address of your Raspberry Pi
+ssh_port       = "22"
+document_root  = "/var/www/" ## the web root where octopress public will be placed
+rsync_delete   = false
+rsync_args     = ""  # Any extra arguments to pass to rsync
+deploy_default = "rsync" #using rsync to deploy octopress
+</code></pre>
+
+<p>Guardamos con Ctrl+O, ENTER y Ctrl+X.</p>
+
+<p>Siempre dentro de la carpeta <em>octopress</em> instalamos el tema de Octopress:</p>
+
+<pre><code>$ sudo bundle exec rake install
+</code></pre>
+
+<p>y después:</p>
+
+<pre><code>$ bundle exec rake gen_deploy
+</code></pre>
+
+<p>Desde ahora puedes visitar el blog en la dirección <em>loquesea.dnsdynamic.com</em> (tu dominio) desde cualquier sitio siempre que tengas tu servidor activo, es decir, que tengas la Raspberry encendida.</p>
+
+<p>Más adelante escribiré una entrada donde explicaré cómo configurar y usar Octopress.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (3)]]></title>
@@ -27,14 +172,14 @@
 
 <h2>Primer arranque y configuración</h2>
 
-<p>Introducimos la tarjeta SD en la Raspberry Pi, la conectamos al router y le conectamos el alimentador. La Raspberry Pi no dispone de ningún botón de encendido, basta conectarla a la corriente y automáticamente se encenderá. La Raspberry Pi se apaga con el comando:</p>
+<p>Introducimos la tarjeta SD en la Raspberry Pi, la conectamos al router y le conectamos el alimentador. La Raspberry Pi no dispone de ningún botón de encendido, basta conectarla a la corriente y automáticamente se encenderá. La Raspberry Pi se apaga correctamente con el comando:</p>
 
 <pre><code>$ sudo shutdown -h now
 </code></pre>
 
 <p>y la señal que muestra cuando realmente se ha apagado es un solo led de color rojo, en ese momento podemos desconectar el cable de alimentación.</p>
 
-<p>Para continuar debemos descubrir la IP de la Raspberry Pi en la red local accediendo a la configuración del router. Normalmente se accede escribiendo la IP 192.168.1.1 en el navegador de un dispositivo conectado en la misma red local que la Raspberry Pi, e introduciendo el usuario y la contraseña que suelen estar indicados en la carcasa del propio router (es aconsejable también cambiar la contraseña de administrador del router). Una vez identificada la IP podemos empezar la configuración a través de SSH.</p>
+<p>Para continuar debemos descubrir la IP de la Raspberry Pi en la red local accediendo a la configuración del router. Normalmente se accede escribiendo la IP 192.168.1.1 en el navegador de un dispositivo conectado en la misma red local que la Raspberry Pi, e introduciendo el usuario y la contraseña que suelen estar indicados en la carcasa del propio router (es aconsejable también cambiar la contraseña de administrador del router). Una vez identificada la IP (el nombre por defecto es &ldquo;raspberrypi+IP&rdquo;) podemos empezar la configuración a través de SSH.</p>
 
 <p>Explicaré como hacerlo desde la distribución Debian Wheezy de GNU/Linux, para hacerlo desde Windows puedes encontrar información <a href="http://comiendorasps.blogspot.com.es/2013/04/conectandonos-la-raspberry-mediante-ssh.html">aquí</a> a través de <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Putty</a>.</p>
 
@@ -45,7 +190,7 @@
 <pre><code># ssh pi@192.168.1.5
 </code></pre>
 
-<p>cambiando <em>192.168.1.5</em> por la IP de vuestra Raspberry Pi, pedirá la contraseña que por defecto es <em>raspberry</em> y acto seguido tendréis control total sobre ella siempre que estéis en la misma red local (el acceso a través de SSH desde el exterior se explicará más adelante).</p>
+<p>cambiando <em>192.168.1.5</em> por la IP de vuestra Raspberry Pi, se mostrará un aviso preguntando si queremos añadir esa IP a los host conocidos y escribimos <em>yes</em>, volvemos a escribir <code># ssh pi@192.168.1.5</code> y pedirá la contraseña que por defecto es <em>raspberry</em>, acto seguido tendréis control total sobre ella siempre que estéis en la misma red local (el acceso a través de SSH desde el exterior se explicará más adelante).</p>
 
 <p>Si no se abre automáticamente la herramienta de configuración escribimos en la consola:</p>
 
@@ -56,21 +201,23 @@
 
 <ul>
 <li><strong>Expandir el sistema</strong>: para que Raspbian ocupe todo el espacio de la tarjeta.</li>
-<li><strong>Cambio de contraseña</strong>: por defecto el usuario es <em>pi</em> y la contraseña es <em>raspberry</em>. Por seguridad cambiamos la contraseña.</li>
-<li><strong>Opciones de internacionalización</strong>: configurar idioma, localización, teclado, etc. En idioma desmarcamos (con la barra de espacio) <em>en_GB</em> y seleccionamos <em>es_ES UTF8</em> (si lo queréis en castellano), elegimos distribución del teclado (normalmente PC genérico 105 teclas) e idioma de teclado. En las siguientes opciones no hace falta cambiar nada.</li>
+<li><strong>Cambio de contraseña</strong>: por defecto el usuario es <em>pi</em> y la contraseña es <em>raspberry</em>. Por seguridad cambiamos la contraseña. Nos pedirá dos veces que escribamos la nueva contraseña.</li>
+<li><strong>Opciones de internacionalización</strong>: configurar idioma, localización, teclado, etc. En idioma desmarcamos (con la barra de espacio) <em>en_GB.UTF-8 UTF-8</em> y seleccionamos <em>es_ES UTF-8 UTF-8</em> (si lo queréis en castellano), volvemos a seleccionar <em>es_ES.UTF-8</em> en configuración de sistema y cambiamos la zona horaria. No es necesario configurar ni la distribución ni el idioma del teclado porque se toma automáticamente del ordenador huésped (si decidimos conectar un teclado USB a la Raspberry Pi necesitaremos configurarlo). En las siguientes opciones no hace falta cambiar nada.</li>
 <li><strong>Opciones avanzadas</strong>: si queremos podemos cambiar el nombre del dispositivo (hostname) dentro de la red local.</li>
 </ul>
 
 
-<p>Una vez hemos terminado la configuración procedemos a reiniciar con el comando:</p>
+<p>Una vez terminada la configuración inicial reiniciamos. Cuando no muestre automáticamente la opción de reiniciar, lo haremos con:</p>
 
 <pre><code>$ sudo reboot
 </code></pre>
 
-<p>y volvemos a conectarnos por SSH (no olvidéis cambiar la IP por la vuestra) con:</p>
+<p>volvemos a conectarnos por SSH (no olvidéis cambiar la IP por la vuestra) con:</p>
 
 <pre><code># ssh pi@192.169.1.5
 </code></pre>
+
+<p>y nos pedirá la contraseña que previamente habremos cambiado.</p>
 
 <p>Por defecto Raspbian arranca en modo consola, sin modo gráfico (para nuestro servidor web no nos hace falta). Podéis arrancar el modo gráfico en cualquier momento con el comando:</p>
 
@@ -100,12 +247,12 @@
 
 <pre><code>iface eth0 inet static
 address 192.168.1.9
-netmask 255.255.255.1
+netmask 255.255.255.0
 gateway 192.168.1.1
 </code></pre>
 
 <p>donde <em>192.168.1.9</em> es la IP fija que hemos elegido para la Raspberry Pi, y gateway <em>192.168.1.1</em> es la IP desde la cual accedemos a configurar nuestro router.
-Guardamos los cambios en el documento y lo cerramos con ctrl+O, ctrl+X y mantenemos el mismo nombre de archivo con ENTER.</p>
+Guardamos los cambios en el documento y lo cerramos con Ctrl+O, ENTER y Ctrl+X.</p>
 
 <p>Reiniciamos con:</p>
 
@@ -148,6 +295,8 @@ Permission denied (publickey,password).
 <pre><code># ssh pi@192.168.1.9
 </code></pre>
 
+<p>y nos pedirá confirmación, escribimos <strong>yes</strong>.</p>
+
 <p>Una vez dentro escribimos uno a uno estos comandos:</p>
 
 <pre><code>$ sudo apt-get update
@@ -156,7 +305,7 @@ Permission denied (publickey,password).
 $ sudo apt-get upgrade
 </code></pre>
 
-<p>y esperamos el tiempo necesario para que el sistema se actualice. Es conveniente repetir estos comandos cada cierto tiempo para asegurar el óptimo funcionamiento del sistema operativo.</p>
+<p>y esperamos el tiempo necesario para que el sistema se actualice. Si hay paquetes para descargar nos pedirá confirmación para la descarga e instalación, a lo cual contestamos con &ldquo;<strong>S</strong>&rdquo;. Es conveniente repetir estos comandos cada cierto tiempo para asegurar el óptimo funcionamiento del sistema operativo.</p>
 
 <h2>Acceder a la Raspberry Pi desde el exterior de la red local</h2>
 
@@ -171,7 +320,7 @@ $ sudo apt-get upgrade
 <pre><code>$ sudo apt-get install ddclient
 </code></pre>
 
-<p>nos preguntará si queremos ejecutar el cliente cuando establezca una conexión PPP y contestamos <strong>NO</strong>, si lo queremos ejecutar como demonio y contestamos <strong>SI</strong>. A partir de aquí podemos marcar lo que queramos porque en el siguiente paso sobrescribiremos todo.</p>
+<p>nos preguntará si queremos instalar los paquetes, contestaremos <strong>SI</strong>, nos pregunta el servidor DNS y elegimos <strong>OTRO</strong>, escribimos <strong><a href="http://dnsdynamic.org**,">http://dnsdynamic.org**,</a> en protocolo de actualización de DNS elegimos </strong>dyndns2<strong>, </strong>ejecutar el cliente cuando establezca una conexión PPP y contestamos <strong>NO</strong>, si lo queremos ejecutar como demonio y contestamos <strong>SI</strong>. A partir de aquí podemos marcar lo que queramos porque en el siguiente paso sobrescribiremos todo.</p>
 
 <p>Escribimos:</p>
 
@@ -199,8 +348,8 @@ protocol=dyndns2                   \
 YOUR-DOMAIN
 </code></pre>
 
-<p>y cambiamos <em>YOUR-LOGIN</em>, <em>YOUR-PASSWORD</em> y <em>YOUR-DOMAIN</em> por vuestro nombre de usuario, vuestra contraseña y vuestro dominio registrado de dnsdynamic.org. Si queréis podéis cambiar también el tiempo de comprobación de IP, en este caso 5 minutos.
-Guardamos el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al archivo (en cualquier momento se puede volver a configurar el cliente con el comando anterior).</p>
+<p>y cambiamos <em>YOUR-LOGIN</em>, <em>YOUR-PASSWORD</em> y <em>YOUR-DOMAIN</em> por vuestro nombre de usuario, vuestra contraseña y vuestro dominio registrado de dnsdynamic.org. Si queréis podéis cambiar también el tiempo de comprobación de IP, en este caso 300 segundos (5 minutos).
+Guardamos el archivo con Ctrl+O, ENTER y Ctrl+X (en cualquier momento se puede volver a configurar el cliente con el comando anterior).</p>
 
 <p>y reiniciamos con:</p>
 
@@ -249,10 +398,10 @@ Guardamos el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al arc
 
 <p>En GNU/Linux:</p>
 
-<p>Lo primero es identificar el nombre asignado a la tarjeta SD. Hay que tener mucho cuidado de no equivocarse ya que puedes destrozar el sistema operativo del ordenador, guíate por la capacidad de almacenamiento de la tarjeta (4 GB).</p>
+<p>Lo primero es identificar el nombre asignado a la tarjeta SD. Hay que tener mucho cuidado de no equivocarse ya que puedes destrozar el sistema operativo del ordenador, guíate por la capacidad de almacenamiento de la tarjeta (mínimo 4 GB).</p>
 
 <ul>
-<li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes. Creamos una nueva partición con formato FAT32 en el espacio libre resultante.</p></li>
+<li><p><strong>Con GParted</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD, desmonta, selecciona y elimina las particiones existentes (clic derecho + opción correspondiente) y aplicar los cambios.</p></li>
 <li><p><strong>Desde la terminal</strong>: identifícate como root y averigua el nombre asignado a la tarjeta SD con:</p>
 
 <pre><code>  # df -h
@@ -272,14 +421,14 @@ Guardamos el archivo con ctrl+O, ctrl+W y ENTER para no cambiar el nombre al arc
 
 <p>sustituyendo &ldquo;sdb&rdquo; por el nombre de vuestra tarjeta y el &ldquo;1&rdquo; por la partición.</p>
 
-<p>Ahora debemos copiar la imagen de Raspbian en la tarjeta SD con el comando:</p>
+<p>Lo hayamos realizado con uno u otro método, ahora debemos copiar la imagen de Raspbian en la tarjeta SD con el comando:</p>
 
 <pre><code># dd bs=1M if=2014-01-07-wheezy-raspbian.img of=/dev/sdb
 </code></pre>
 
-<p>donde &ldquo;2014-01-07-wheezy-raspbian.img&rdquo; es la ruta y nombre de la imagen que hemos descargado y descomprimido (si la tenemos en Descargas será &ldquo;/home/usuario/Descargas/2014-01-07-wheezy-raspbian.img&rdquo;), y &ldquo;/dev/sdb&rdquo; es el nombre asignado a la tarjeta SD (nótese que no lleva número de partición pues queremos copiarla en toda la tarjeta).</p>
+<p>donde &ldquo;2014-01-07-wheezy-raspbian.img&rdquo; es la ruta y nombre de la imagen que hemos descargado y descomprimido (si la tenemos en Descargas será <code>/home/usuario/Descargas/2014-01-07-wheezy-raspbian.img</code>), y &ldquo;/dev/sdb&rdquo; es el nombre asignado a la tarjeta SD (nótese que no lleva número de partición pues queremos copiarla en toda la tarjeta).</p>
 
-<p>Una vez completado el proceso que dura unos 10 minutos expulsamos de forma segura la tarjeta y ya podemos introducirla en la Raspberry Pi.</p>
+<p>Una vez completado el proceso (unos 8 minutos aproximadamente) retiramos la tarjeta y ya podemos introducirla en la Raspberry Pi.</p>
 
 <p>En la siguiente entrada se tratará el primer arranque con Raspbian y su configuración.</p>
 ]]></content>

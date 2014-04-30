@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Raspberry Pi: montar un servidor web en casa (4) - Malsana Mondo</title>
+  <meta name="author" content="Malsana Mondo">
+
+  
+  <meta name="description" content="Anteriormente ya hemos instalado y configurado el sistema operativo de la Raspberry Pi. En esta entrada veremos cómo instalar el servidor web y &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Malsana Mondo" type="application/atom+xml">
+  <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1> <a href="/">Malsana Mondo</a></h1>
+  
+    <h2>nia tempo finas...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="suscribirse via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://startpage.com/do/search?" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:malsanamondo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Buscar"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/archives">Archivo</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Raspberry Pi: montar un servidor web en casa (4)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-27T23:03:21+02:00" pubdate data-updated="true">27-04-2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="https://malsanamondo.github.io/categorias/raspberry-pi/">Anteriormente</a> ya hemos instalado y configurado el sistema operativo de la Raspberry Pi. En esta entrada veremos cómo instalar el servidor web y Octopress para poder escribir y gestionar un blog alojado en nuestra Raspberry Pi.</p>
+
+<p>También hemos comentado que a diferencia de otros CMS Octopress ofrece el contenido en HTML estático sin utilizar una base de datos, por tanto no necesitamos software que las gestione y muestre el contenido dinámico (MySQL, PHP, PhpMyAdmin, etc.). Necesitaremos solamente <a href="https://es.wikipedia.org/wiki/Nginx">Nginx</a> como servidor web, y Ruby-Dev como dependencias necesarias para Octopress.</p>
+
+<!-- more -->
+
+
+<p>Los servidores web más usados son Apache, lighttpd y Nginx, y es con este último con el que vamos a trabajar por ser rápido y soportar muchas conexiones simultáneas, lo que nos interesa ya que nuestra Raspberry Pi es un ordenador de características básicas y de esta forma le sacamos el máximo partido.</p>
+
+<p>Nos conectamos por SSH (<code>$ ssh pi@192.168.1.9</code>) e instalamos algunos paquetes necesarios para el funcionamiento de Octopress escribiendo:</p>
+
+<pre><code>$ sudo apt-get install ruby ruby-dev
+</code></pre>
+
+<p>Instalamos nginx:</p>
+
+<pre><code>$ sudo apt-get install nginx-full
+</code></pre>
+
+<p>Instalamos GIT (es posible que ya lo tengas instalado):</p>
+
+<pre><code>$ sudo apt-get install git
+</code></pre>
+
+<p>Clonamos el repositorio oficial de Octopress en el directorio <em>home</em> de nuestra Raspberry Pi. Con el siguiente comando lo clonaremos en la carpeta <em>octopress</em>:</p>
+
+<pre><code>$ git clone git://github.com/imathis/octopress.git octopress
+</code></pre>
+
+<p>Nos situamos dentro de la carpeta que acabamos de crear con:</p>
+
+<pre><code>$  cd octopress
+</code></pre>
+
+<p>y allí dentro debemos instalar <em>bundle</em>:</p>
+
+<pre><code>$ sudo gem install bundle
+</code></pre>
+
+<p>Instalamos Octopress bundle:</p>
+
+<pre><code>$ bundle install
+</code></pre>
+
+<p>Ya podemos salir de la carpeta <em>octopress</em> con:</p>
+
+<pre><code>$ cd
+</code></pre>
+
+<p>Creamos la carpeta <em>www</em> dentro de /var/:</p>
+
+<pre><code>$ sudo mkdir /var/www/
+</code></pre>
+
+<p>Le cambiamos los permisos al directorio:</p>
+
+<pre><code>$ sudo chmod 777 -R /var/www/
+</code></pre>
+
+<p>Editamos el archivo de configuración de nginx:</p>
+
+<pre><code>$ sudo nano /etc/nginx/sites-enabled/default
+</code></pre>
+
+<p>En este archivo hay una parte que mostrará algo parecido a esto:</p>
+
+<pre><code>server {
+        #listen   80; ## listen for ipv4; this line is default and implied
+        #listen   [::]:80 default_server ipv6only=on; ## listen for ipv6
+
+        root /usr/share/nginx/www/; #change this web root
+        index index.html index.htm;
+
+        # Make site accessible from http://localhost/
+        server_name localhost;
+</code></pre>
+
+<p>y debemos editar esa parte para que contenga esto otro:</p>
+
+<pre><code>server {
+        #listen   80; ## listen for ipv4; this line is default and implied
+        #listen   [::]:80 default_server ipv6only=on; ## listen for ipv6
+
+        root /var/www; #this is the new web root
+        index index.html index.htm;
+
+        # Make site accessible from http://localhost/
+        server_name localhost;
+</code></pre>
+
+<p>Iniciamos nginx:</p>
+
+<pre><code>$ sudo /etc/init.d/nginx start
+</code></pre>
+
+<p>Volvemos a entrar en la carpeta <em>octopress</em> y editamos el archivo Rakefile que se encuentra dentro con:</p>
+
+<pre><code>$ cd octopress
+
+$ sudo nano Rakefile
+</code></pre>
+
+<p>En este archivo hay una parte donde se muestra esto:</p>
+
+<pre><code>ssh_user       = "user@domain.com"
+ssh_port       = "22"
+document_root  = "~/website.com/"
+rsync_delete   = false
+rsync_args     = ""  # Any extra arguments to pass to rsync
+deploy_default = "rsync"
+</code></pre>
+
+<p>y debemos editarlo para que sea:</p>
+
+<pre><code>ssh_user       = "pi@192.168.1.9" # the pi@and ip-address of your Raspberry Pi
+ssh_port       = "22"
+document_root  = "/var/www/" ## the web root where octopress public will be placed
+rsync_delete   = false
+rsync_args     = ""  # Any extra arguments to pass to rsync
+deploy_default = "rsync" #using rsync to deploy octopress
+</code></pre>
+
+<p>Guardamos con Ctrl+O, ENTER y Ctrl+X.</p>
+
+<p>Siempre dentro de la carpeta <em>octopress</em> instalamos el tema de Octopress:</p>
+
+<pre><code>$ sudo bundle exec rake install
+</code></pre>
+
+<p>y después:</p>
+
+<pre><code>$ bundle exec rake gen_deploy
+</code></pre>
+
+<p>Desde ahora puedes visitar el blog en la dirección <em>loquesea.dnsdynamic.com</em> (tu dominio) desde cualquier sitio siempre que tengas tu servidor activo, es decir, que tengas la Raspberry encendida.</p>
+
+<p>Más adelante escribiré una entrada donde explicaré cómo configurar y usar Octopress.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">por <span class="fn">Malsana Mondo</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-27T23:03:21+02:00" pubdate data-updated="true">27-04-2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/categorias/gnu-slash-linux/'>GNU/Linux</a>, <a class='category' href='/categorias/raspberry-pi/'>Raspberry Pi</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4/" data-via="" data-counturl="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/" title="Entrada Anterior: Raspberry Pi: montar un servidor web en casa (3)">&laquo; Raspberry Pi: montar un servidor web en casa (3)</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comentarios</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Habilite JavaScript para leer los <a href="http://disqus.com/?ref_noscript">comentarios.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Últimas Entradas</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4/">Raspberry Pi: montar un servidor web en casa (4)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/">Raspberry Pi: montar un servidor web en casa (3)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">Raspberry Pi: montar un servidor web en casa (2)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">Raspberry Pi: montar un servidor web en casa (1)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2014/04/markdown/">Markdown</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categorías</h1>
+  <ul id="categories">
+    <li class='category'><a href='/categorias/gnu-slash-linux/'>GNU/Linux (4)</a></li>
+<li class='category'><a href='/categorias/raspberry-pi/'>Raspberry Pi (4)</a></li>
+<li class='category'><a href='/categorias/codigo/'>código (1)</a></li>
+
+  </ul>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  2014 - Malsana Mondo - Contenido bajo licencia <a href="https://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons</a> - <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'malsanamondo';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4/';
+        var disqus_url = 'http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
