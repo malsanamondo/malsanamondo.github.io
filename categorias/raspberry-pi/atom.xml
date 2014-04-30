@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: Raspberry Pi | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/categorias/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-30T18:54:09+02:00</updated>
+  <updated>2014-04-30T19:14:32+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -152,7 +152,7 @@ deploy_default = "rsync" #using rsync to deploy octopress
 <pre><code>$ bundle exec rake gen_deploy
 </code></pre>
 
-<p>Desde ahora puedes visitar el blog con el dominio <em>loquesea.dnsdynamic.com</em> (tu dominio) desde cualquier sitio siempre que tengas tu servidor activo, es decir, que tengas la Raspberry encendida.</p>
+<p>Desde ahora se puede visitar vuestro blog en la URL <a href="http://loquesea.dnsdynamic.com">http://loquesea.dnsdynamic.com</a> (vuestro dominio) desde cualquier sitio siempre que tengáis vuestro servidor activo, es decir, que tengáis la Raspberry encendida y conectada al router en la misma red local para la cual la hemos configurado. Si queréis mover el servidor a otro lugar debéis cambiar las IP públicas y privadas por las nuevas en los archivos de configuración en la Raspberry Pi y también vuestro dominio en DNSdynamic.org.</p>
 
 <p>Más adelante escribiré una entrada donde explicaré cómo configurar y añadir contenido en Octopress.</p>
 ]]></content>
