@@ -4,7 +4,7 @@
   <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-30T18:23:47+02:00</updated>
+  <updated>2014-04-30T18:30:37+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -27,12 +27,12 @@
 
 <p>Los servidores web más usados son Apache, lighttpd y Nginx, y es con este último con el que vamos a trabajar por ser rápido y soportar muchas conexiones simultáneas, lo que nos interesa ya que nuestra Raspberry Pi es un ordenador de características básicas y de esta forma le sacamos el máximo partido.</p>
 
-<p>Nos conectamos por SSH (<code>$ ssh pi@192.168.1.9</code>) e instalamos algunos paquetes necesarios para el funcionamiento de Octopress escribiendo:</p>
+<p>Nos conectamos por SSH <code>$ ssh pi@192.168.1.9</code> e instalamos algunos paquetes necesarios para el funcionamiento de Octopress escribiendo:</p>
 
 <pre><code>$ sudo apt-get install ruby ruby-dev
 </code></pre>
 
-<p>Instalamos nginx:</p>
+<p>Instalamos Nginx:</p>
 
 <pre><code>$ sudo apt-get install nginx-full
 </code></pre>
@@ -67,17 +67,17 @@
 <pre><code>$ cd
 </code></pre>
 
-<p>Creamos la carpeta <em>www</em> dentro de /var/:</p>
+<p>Creamos la carpeta <em>www</em> dentro de <em>/var/</em>:</p>
 
 <pre><code>$ sudo mkdir /var/www/
 </code></pre>
 
-<p>Le cambiamos los permisos al directorio:</p>
+<p>Cambiamos los permisos al directorio:</p>
 
 <pre><code>$ sudo chmod 777 -R /var/www/
 </code></pre>
 
-<p>Editamos el archivo de configuración de nginx:</p>
+<p>Editamos el archivo de configuración de Nginx:</p>
 
 <pre><code>$ sudo nano /etc/nginx/sites-enabled/default
 </code></pre>
@@ -108,12 +108,12 @@
         server_name localhost;
 </code></pre>
 
-<p>Iniciamos nginx:</p>
+<p>Iniciamos Nginx:</p>
 
 <pre><code>$ sudo /etc/init.d/nginx start
 </code></pre>
 
-<p>Volvemos a entrar en la carpeta <em>octopress</em> y editamos el archivo Rakefile que se encuentra dentro con:</p>
+<p>Volvemos a entrar en la carpeta <em>octopress</em> y editamos el archivo <em>Rakefile</em> que se encuentra dentro con:</p>
 
 <pre><code>$ cd octopress
 
@@ -132,7 +132,7 @@ deploy_default = "rsync"
 
 <p>y debemos editarlo para que sea:</p>
 
-<pre><code>ssh_user       = "pi@192.168.1.9" # the pi@and ip-address of your Raspberry Pi
+<pre><code>ssh_user       = "pi@you-pi-ipaddress" # the pi@and ip-address of your Raspberry Pi
 ssh_port       = "22"
 document_root  = "/var/www/" ## the web root where octopress public will be placed
 rsync_delete   = false
@@ -154,7 +154,7 @@ deploy_default = "rsync" #using rsync to deploy octopress
 
 <p>Desde ahora puedes visitar el blog en la dirección <em>loquesea.dnsdynamic.com</em> (tu dominio) desde cualquier sitio siempre que tengas tu servidor activo, es decir, que tengas la Raspberry encendida.</p>
 
-<p>Más adelante escribiré una entrada donde explicaré cómo configurar y usar Octopress.</p>
+<p>Más adelante escribiré una entrada donde explicaré cómo configurar y añadir contenido Octopress.</p>
 ]]></content>
   </entry>
   
