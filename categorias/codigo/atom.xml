@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: código | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/categorias/codigo/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-30T19:17:51+02:00</updated>
+  <updated>2014-04-30T21:52:54+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -190,6 +190,10 @@ __Texto en negrita__
 ___Texto en cursiva y negrita___
 
 ~~~Texto tachado~~~
+
+&lt;s&gt;Texto tachado&lt;/s&gt;
+
+&lt;u&gt;Texto subrayado&lt;/u&gt;
 </code></pre>
 
 <p>Obtenemos:</p>
@@ -207,6 +211,10 @@ ___Texto en cursiva y negrita___
 <p><strong><em>Texto en cursiva y negrita</em></strong></p>
 
 <p><del>Texto tachado</del></p>
+
+<p><s>Texto tachado</s></p>
+
+<p><u>Texto subrayado</u></p>
 
 <h2>Listas<a name="7"></a></h2>
 
