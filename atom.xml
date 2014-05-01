@@ -4,7 +4,7 @@
   <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-04-30T21:52:54+02:00</updated>
+  <updated>2014-05-01T12:50:55+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -749,7 +749,7 @@ ___Texto en cursiva y negrita___
 
 <p><img class="right" src="http://malsanamondo.github.io/images/cepmanipula.jpg" width="420" height="700" title="Manipulando" ></p>
 
-<p>(1984 se quedó corto&hellip;)</p>
+<p>lo que permite colocar varias imágenes en el mismo párrafo jugando con su tamaño y posición.</p>
 
 <h2>Regla horizontal<a name="9"></a></h2>
 
