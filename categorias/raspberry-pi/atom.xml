@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: Raspberry Pi | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/categorias/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-05-02T11:32:52+02:00</updated>
+  <updated>2014-05-02T11:35:47+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -356,7 +356,7 @@ Guardamos el archivo con Ctrl+O, ENTER y Ctrl+X (en cualquier momento se puede v
 <pre><code>$ sudo reboot
 </code></pre>
 
-<p>Para que todo funcione debemos configurar nuestro router redirigiendo los puertos 80 (HTTP) y 22 (SHH) hacia la IP privada de nuestra Raspberry Pi, en el ejemplo que estamos siguiendo 192.168.1.9. Cada router se configura de forma diferente, si tenéis dificultades para abrir los puertos buscad en Internet documentación de la marca y modelo de vuestro router.</p>
+<p>Para que todo funcione debemos configurar nuestro router redirigiendo los puertos 80 (HTTP) y 22 (SHH) hacia la IP privada de nuestra Raspberry Pi, en el ejemplo que estamos siguiendo 192.168.1.9. Cada router se configura de forma diferente, si tenéis dificultades para redirigir los puertos buscad en Internet documentación de la marca y modelo de vuestro router.</p>
 
 <p>En principio si se quiere utilizar un nombre de dominio propio contratado (por ejemplo: loquesea.net) para que apunte a vuestra Raspberry Pi, se puede hacer añadiendo un registro CNAME en los DNS de loquesea.net que apunte hacia el dominio registrado en dnsdynamic, aunque debo decir que yo no lo he logrado.</p>
 
