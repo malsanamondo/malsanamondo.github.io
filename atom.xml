@@ -4,7 +4,7 @@
   <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-05-01T12:55:51+02:00</updated>
+  <updated>2014-05-02T11:11:16+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -202,7 +202,7 @@ deploy_default = "rsync" #using rsync to deploy octopress
 <ul>
 <li><strong>Expandir el sistema</strong>: para que Raspbian ocupe todo el espacio de la tarjeta.</li>
 <li><strong>Cambio de contraseña</strong>: por defecto el usuario es <em>pi</em> y la contraseña es <em>raspberry</em>. Por seguridad cambiamos la contraseña. Nos pedirá dos veces que escribamos la nueva contraseña.</li>
-<li><strong>Opciones de internacionalización</strong>: configurar idioma, localización, teclado, etc. En idioma desmarcamos (con la barra de espacio) <em>en_GB.UTF-8 UTF-8</em> y seleccionamos <em>es_ES UTF-8 UTF-8</em> (si lo queréis en castellano), volvemos a seleccionar <em>es_ES.UTF-8</em> en configuración de sistema y cambiamos la zona horaria. No es necesario configurar ni la distribución ni el idioma del teclado porque se toma automáticamente del ordenador huésped (si decidimos conectar un teclado USB a la Raspberry Pi necesitaremos configurarlo). En las siguientes opciones no hace falta cambiar nada.</li>
+<li><strong>Opciones de internacionalización</strong>: configurar idioma, localización, teclado, etc. En idioma desmarcamos (con la barra de espacio) <em>en_GB.UTF-8 UTF-8</em> y seleccionamos <em>es_ES UTF-8 UTF-8</em> (si lo queréis en castellano), volvemos a seleccionar <em>es_ES.UTF-8</em> en configuración de sistema y cambiamos la zona horaria. No es necesario configurar la distribución y el idioma del teclado porque se toma automáticamente de la máquina anfitriona desde la cual controlaremos nuestra Raspberry Pi. Si decidimos conectar un teclado USB a la Raspberry Pi para controlarlo directamente sin shh necesitaremos configurar esos parámetros. En las siguientes opciones no hace falta cambiar nada.</li>
 <li><strong>Opciones avanzadas</strong>: si queremos podemos cambiar el nombre del dispositivo (hostname) dentro de la red local.</li>
 </ul>
 
