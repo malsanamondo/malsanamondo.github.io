@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: Raspberry Pi | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/categorias/raspberry-pi/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-05-02T11:46:33+02:00</updated>
+  <updated>2014-05-11T00:57:36+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -439,7 +439,7 @@ Guardamos el archivo con Ctrl+O, ENTER y Ctrl+X (en cualquier momento se puede v
     <link href="http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/"/>
     <updated>2014-04-16T16:51:26+02:00</updated>
     <id>http://malsanamondo.github.io/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1</id>
-    <content type="html"><![CDATA[<p><img class="right" src="/images/RpiFront.jpg" width="300" height="300" title="Raspberry Pi Modelo B" >
+    <content type="html"><![CDATA[<p><span class='caption-wrapper'><img class='caption' src='http://elinux.org/images/9/96/RpiFront.jpg">http://elinux.org/images/9/96/RpiFront.jpg</a>' width='400' height='300' title='Raspberry Pi Modelo B. Crédito de la imagen: Wikipedia'><span class='caption-text'>Raspberry Pi Modelo B. Crédito de la imagen: Wikipedia</span></span>
 Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo costo, desarrollado en Reino Unido por la <a href="http://www.raspberrypi.org/">Fundación Raspberry Pi</a>, con el objetivo de estimular la enseñanza de ciencias de la computación en las escuelas.</p>
 
 <p>Las especificaciones las puedes consultar <a href="https://es.wikipedia.org/wiki/Raspberry_Pi">aquí</a>, y en Internet puedes encontrar fácilmente información de precios (la versión B de 512 MB cuesta unos 36 €), accesorios (cajas, tarjetas SD/SDHC, cables, alimentadores, adaptadores wifi, disipadores, cámaras, etc.), sistemas operativos, usos, proyectos, etc.</p>

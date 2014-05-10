@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: código | Malsana Mondo]]></title>
   <link href="http://malsanamondo.github.io/categorias/codigo/atom.xml" rel="self"/>
   <link href="http://malsanamondo.github.io/"/>
-  <updated>2014-05-02T11:46:33+02:00</updated>
+  <updated>2014-05-11T00:57:36+02:00</updated>
   <id>http://malsanamondo.github.io/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -250,7 +250,7 @@ ___Texto en cursiva y negrita___
 
 <h2>Imágenes<a name="8"></a></h2>
 
-<p>Para añadir imágenes tenemos dos formas, una parecida a la de crear enlaces y otra que nos permite elegir el tamaño y la posición de la imagen (plugin Image Tag de Octopress).</p>
+<p>Para añadir imágenes tenemos tres formas, una parecida a la de crear enlaces, otra que nos permite elegir el tamaño y la posición de la imagen (plugin Image Tag de Octopress) y otra que además coloca un pie de fotografía (<a href="http://blog.zerosharp.com/image-captions-for-octopress/">http://blog.zerosharp.com/image-captions-for-octopress/</a>).</p>
 
 <p>Con <code>![Texto alternativo](/images/imagen.jpg "Texto")</code>, reemplazando la ruta y el nombre del archivo de imagen, y añadiendo el nombre mostrado (opcional). En Octopress las imágenes se guardan en <code>octopress/sources/images</code>.</p>
 
@@ -267,13 +267,13 @@ ___Texto en cursiva y negrita___
 
 <p><img src="/images/cepmanipula.jpg" alt="Sin título" /></p>
 
-<p>Con <code><img class="[class names]" src="/path/to/image" title="[width] [height] [title text [alt text]]" ></code>, reemplazando ruta y nombre del archivo de imagen y añadiendo atributos de posición, anchura, altura, título y nombre mostrado.</p>
+<p>Con <code>{\% img [class names] /path/to/image [width] [height] [title text [alt text]] \%}</code> (eliminando los caracteres &ldquo;\&rdquo; antes de &ldquo;%&rdquo;), reemplazando ruta y nombre del archivo de imagen y añadiendo atributos de posición, anchura, altura, título y nombre mostrado.</p>
 
-<p>Si escribimos:</p>
+<p>Si escribimos (eliminando los caracteres &ldquo;\&rdquo; antes de &ldquo;%&rdquo;):</p>
 
-<pre><code><img class="left" src="/images/obama_nsa_merkel.jpg" width="300" height="300" title="Criminales" >
+<pre><code>{\% img left /images/obama_nsa_merkel.jpg 300 300 Criminales \%}
 
-<img class="right" src="/images/cepmanipula.jpg" width="420" height="700" title="Manipulando" >
+{\% img right /images/cepmanipula.jpg 420 700 Manipulando \%}
 </code></pre>
 
 <p>Obtenemos:</p>
@@ -283,6 +283,17 @@ ___Texto en cursiva y negrita___
 <p><img class="right" src="/images/cepmanipula.jpg" width="420" height="700" title="Manipulando" ></p>
 
 <p>lo que permite colocar varias imágenes en el mismo párrafo jugando con su tamaño y posición.</p>
+
+<p>Con <code>{\% imgcap http://loquesea.net/pic.jpg Texto \%}</code> (eliminando los caracteres &ldquo;\&rdquo; antes de &ldquo;%&rdquo;).</p>
+
+<p>Si escribimos (eliminando los caracteres &ldquo;\&rdquo; antes de &ldquo;%&rdquo;):</p>
+
+<pre><code>{\% imgcap center /images/obama_nsa_merkel.jpg 800 500 Criminales \%}
+</code></pre>
+
+<p>Obtenemos:</p>
+
+<p><span class='caption-wrapper center'><img class='caption' src='/images/obama_nsa_merkel.jpg' width='800' height='500' title='Criminales'><span class='caption-text'>Criminales</span></span></p>
 
 <h2>Regla horizontal<a name="9"></a></h2>
 
