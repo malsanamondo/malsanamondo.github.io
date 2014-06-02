@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Categoría: Raspberry Pi | Malsana Mondo]]></title>
-  <link href="http://www.malsanamondo.com/categorias/raspberry-pi/atom.xml" rel="self"/>
-  <link href="http://www.malsanamondo.com/"/>
-  <updated>2014-06-02T10:34:51+02:00</updated>
-  <id>http://www.malsanamondo.com/</id>
+  <link href="http://malsanamondo.com/categorias/raspberry-pi/atom.xml" rel="self"/>
+  <link href="http://malsanamondo.com/"/>
+  <updated>2014-06-02T13:39:40+02:00</updated>
+  <id>http://malsanamondo.com/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (4)]]></title>
-    <link href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4/"/>
+    <link href="http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4/"/>
     <updated>2014-04-27T23:03:21+02:00</updated>
-    <id>http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4</id>
+    <id>http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4</id>
     <content type="html"><![CDATA[<p><a href="http://www.malsanamondo.com/categorias/raspberry-pi/">Anteriormente</a> ya hemos instalado y configurado el sistema operativo de la Raspberry Pi. En esta entrada veremos cómo instalar el servidor web y Octopress para poder escribir y gestionar un blog alojado en nuestra Raspberry Pi.</p>
 
 <p>También hemos comentado que a diferencia de otros CMS Octopress ofrece el contenido en HTML estático sin utilizar una base de datos, por tanto no necesitamos software que las gestione y muestre el contenido dinámico (MySQL, PHP, PhpMyAdmin, etc.). Necesitaremos solamente <a href="https://es.wikipedia.org/wiki/Nginx">Nginx</a> como servidor web, y Ruby-Dev como dependencias necesarias para Octopress.</p>
@@ -160,9 +160,9 @@ deploy_default = "rsync" #using rsync to deploy octopress
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (3)]]></title>
-    <link href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/"/>
+    <link href="http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/"/>
     <updated>2014-04-25T17:26:05+02:00</updated>
-    <id>http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3</id>
+    <id>http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3</id>
     <content type="html"><![CDATA[<p>En la <a href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera</a> y <a href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">segunda</a> parte de este manual hemos visto qué es la Raspberry Pi y cómo se instala Raspbian en la tarjeta SD. En esta tercera parte configuraremos el sistema operativo para que podamos acceder a él desde cualquier parte.</p>
 
 <p>Después de copiar Raspbian en la tarjeta SD podemos comenzar la configuración. En este punto necesitamos además de la Raspberry Pi y de la SD, el alimentador micro-usb (sirve cualquier cargador micro-usb de móvil de al menos 700 mA), un cable RJ-45 (ethernet) para conectarla al router y un ordenador desde el cual controlaremos nuestra Raspberry Pi. También debemos tener acceso a la configuración del router.</p>
@@ -366,9 +366,9 @@ Guardamos el archivo con Ctrl+O, ENTER y Ctrl+X (en cualquier momento se puede v
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (2)]]></title>
-    <link href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/"/>
+    <link href="http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/"/>
     <updated>2014-04-17T12:22:14+02:00</updated>
-    <id>http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2</id>
+    <id>http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2</id>
     <content type="html"><![CDATA[<p>Antes de continuar con este manual recomiendo la lectura de la <a href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera parte</a>. A continuación instalaremos el sistema operativo de la Raspberry Pi.</p>
 
 <p>La Raspberry Pi no tiene disco duro ni SSD, en su lugar utiliza una tarjeta SD para almacenar los datos y es allí donde debemos instalar el sistema operativo.</p>
@@ -436,9 +436,9 @@ Guardamos el archivo con Ctrl+O, ENTER y Ctrl+X (en cualquier momento se puede v
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (1)]]></title>
-    <link href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/"/>
+    <link href="http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/"/>
     <updated>2014-04-16T16:51:26+02:00</updated>
-    <id>http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1</id>
+    <id>http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1</id>
     <content type="html"><![CDATA[<p><span class='caption-wrapper'><img class='caption' src='http://elinux.org/images/9/96/RpiFront.jpg">http://elinux.org/images/9/96/RpiFront.jpg</a>' width='400' height='300' title='Raspberry Pi Modelo B. Crédito de la imagen: Wikipedia'><span class='caption-text'>Raspberry Pi Modelo B. Crédito de la imagen: Wikipedia</span></span>
 Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo costo, desarrollado en Reino Unido por la <a href="http://www.raspberrypi.org/">Fundación Raspberry Pi</a>, con el objetivo de estimular la enseñanza de ciencias de la computación en las escuelas.</p>
 

@@ -1,51 +1,43 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://www.malsanamondo.com/2014/04/hola/</loc>
+        <loc>http://malsanamondo.com/2014/04/hola/</loc>
         <lastmod>2014-04-24T22:31:16+02:00</lastmod>
     </url>
     <url>
-        <loc>http://www.malsanamondo.com/2014/04/markdown/</loc>
+        <loc>http://malsanamondo.com/2014/04/markdown/</loc>
         <lastmod>2014-05-11T00:08:31+02:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/
-        </loc>
+        <loc>http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/</loc>
         <lastmod>2014-06-02T10:26:06+02:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/
-        </loc>
+        <loc>http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/</loc>
         <lastmod>2014-06-02T10:26:49+02:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/
-        </loc>
+        <loc>http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/</loc>
         <lastmod>2014-06-02T10:27:58+02:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4/
-        </loc>
+        <loc>http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4/</loc>
         <lastmod>2014-06-02T10:29:00+02:00</lastmod>
     </url>
     <url>
-        <loc>http://www.malsanamondo.com/archives/</loc>
+        <loc>http://malsanamondo.com/archives/</loc>
         <lastmod>2014-06-02T10:29:00+02:00</lastmod>
     </url>
     <url>
-        <loc>http://www.malsanamondo.com/</loc>
+        <loc>http://malsanamondo.com/</loc>
         <lastmod>2014-06-02T10:29:00+02:00</lastmod>
     </url>
     <url>
-        <loc>http://www.malsanamondo.com/robots.txt</loc>
+        <loc>http://malsanamondo.com/robots.txt</loc>
         <lastmod>2014-04-11T13:57:38+02:00</lastmod>
     </url>
     <url>
-        <loc>http://www.malsanamondo.com/contacto/</loc>
+        <loc>http://malsanamondo.com/contacto/</loc>
         <lastmod>2014-04-28T17:27:01+02:00</lastmod>
     </url>
 </urlset>
