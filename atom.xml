@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Malsana Mondo]]></title>
-  <link href="http://malsanamondo.com/atom.xml" rel="self"/>
-  <link href="http://malsanamondo.com/"/>
-  <updated>2014-06-02T13:39:40+02:00</updated>
-  <id>http://malsanamondo.com/</id>
+  <link href="http://www.malsanamondo.com/atom.xml" rel="self"/>
+  <link href="http://www.malsanamondo.com/"/>
+  <updated>2014-06-02T13:48:14+02:00</updated>
+  <id>http://www.malsanamondo.com/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (4)]]></title>
-    <link href="http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4/"/>
+    <link href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4/"/>
     <updated>2014-04-27T23:03:21+02:00</updated>
-    <id>http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4</id>
+    <id>http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-4</id>
     <content type="html"><![CDATA[<p><a href="http://www.malsanamondo.com/categorias/raspberry-pi/">Anteriormente</a> ya hemos instalado y configurado el sistema operativo de la Raspberry Pi. En esta entrada veremos cómo instalar el servidor web y Octopress para poder escribir y gestionar un blog alojado en nuestra Raspberry Pi.</p>
 
 <p>También hemos comentado que a diferencia de otros CMS Octopress ofrece el contenido en HTML estático sin utilizar una base de datos, por tanto no necesitamos software que las gestione y muestre el contenido dinámico (MySQL, PHP, PhpMyAdmin, etc.). Necesitaremos solamente <a href="https://es.wikipedia.org/wiki/Nginx">Nginx</a> como servidor web, y Ruby-Dev como dependencias necesarias para Octopress.</p>
@@ -160,9 +160,9 @@ deploy_default = "rsync" #using rsync to deploy octopress
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (3)]]></title>
-    <link href="http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/"/>
+    <link href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3/"/>
     <updated>2014-04-25T17:26:05+02:00</updated>
-    <id>http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3</id>
+    <id>http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-3</id>
     <content type="html"><![CDATA[<p>En la <a href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera</a> y <a href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/">segunda</a> parte de este manual hemos visto qué es la Raspberry Pi y cómo se instala Raspbian en la tarjeta SD. En esta tercera parte configuraremos el sistema operativo para que podamos acceder a él desde cualquier parte.</p>
 
 <p>Después de copiar Raspbian en la tarjeta SD podemos comenzar la configuración. En este punto necesitamos además de la Raspberry Pi y de la SD, el alimentador micro-usb (sirve cualquier cargador micro-usb de móvil de al menos 700 mA), un cable RJ-45 (ethernet) para conectarla al router y un ordenador desde el cual controlaremos nuestra Raspberry Pi. También debemos tener acceso a la configuración del router.</p>
@@ -366,9 +366,9 @@ Guardamos el archivo con Ctrl+O, ENTER y Ctrl+X (en cualquier momento se puede v
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (2)]]></title>
-    <link href="http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/"/>
+    <link href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2/"/>
     <updated>2014-04-17T12:22:14+02:00</updated>
-    <id>http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2</id>
+    <id>http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-2</id>
     <content type="html"><![CDATA[<p>Antes de continuar con este manual recomiendo la lectura de la <a href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/">primera parte</a>. A continuación instalaremos el sistema operativo de la Raspberry Pi.</p>
 
 <p>La Raspberry Pi no tiene disco duro ni SSD, en su lugar utiliza una tarjeta SD para almacenar los datos y es allí donde debemos instalar el sistema operativo.</p>
@@ -392,7 +392,7 @@ Guardamos el archivo con Ctrl+O, ENTER y Ctrl+X (en cualquier momento se puede v
 
 <p>Aunque estos instaladores presentan algunas ventajas (automatización, instalación de varios sistemas operativos en la misma tarjeta SD, clonación de particiones, etc.), nuestro servidor lo montaremos sin instalador, copiando directamente Raspbian en la tarjeta SD.</p>
 
-<p><img src="http://malsanamondo.com/images/raspbian_logo.png" alt="Logo Raspbian" /></p>
+<p><img src="http://www.malsanamondo.com/images/raspbian_logo.png" alt="Logo Raspbian" /></p>
 
 <p>Descargamos la imagen de la última versión disponible desde <a href="http://www.raspberrypi.org/downloads/">aquí</a>, descomprimimos el archivo <code>.zip</code> y obtenemos otro archivo <code>.img</code>, el cual debemos copiar en la tarjeta SD. Explicaré el método para hacerlo desde un ordenador con sistema operativo GNU/Linux (Debian Wheezy) por ser el método que conozco, para hacerlo desde Windows encontraréis información <a href="http://openwebcms.es/raspberry-pi/como-instalar-raspbian-en-raspberry-pi/">aquí</a>.</p>
 
@@ -436,9 +436,9 @@ Guardamos el archivo con Ctrl+O, ENTER y Ctrl+X (en cualquier momento se puede v
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (1)]]></title>
-    <link href="http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/"/>
+    <link href="http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1/"/>
     <updated>2014-04-16T16:51:26+02:00</updated>
-    <id>http://malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1</id>
+    <id>http://www.malsanamondo.com/2014/04/raspberry-pi-montar-un-servidor-web-en-casa-1</id>
     <content type="html"><![CDATA[<p><span class='caption-wrapper right'><img class='caption' src='http://elinux.org/images/9/96/RpiFront.jpg' width='400' height='300' title='Raspberry Pi Modelo B. Crédito de la imagen: Wikipedia'><span class='caption-text'>Raspberry Pi Modelo B. Crédito de la imagen: Wikipedia</span></span>
 Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo costo, desarrollado en Reino Unido por la <a href="http://www.raspberrypi.org/">Fundación Raspberry Pi</a>, con el objetivo de estimular la enseñanza de ciencias de la computación en las escuelas.</p>
 
@@ -482,9 +482,9 @@ Raspberry Pi es un ordenador de placa reducida o placa única (SBC) de bajo cost
   
   <entry>
     <title type="html"><![CDATA[Markdown]]></title>
-    <link href="http://malsanamondo.com/2014/04/markdown/"/>
+    <link href="http://www.malsanamondo.com/2014/04/markdown/"/>
     <updated>2014-04-13T22:57:48+02:00</updated>
-    <id>http://malsanamondo.com/2014/04/markdown</id>
+    <id>http://www.malsanamondo.com/2014/04/markdown</id>
     <content type="html"><![CDATA[<p><a href="https://es.wikipedia.org/wiki/Markdown" title="Markdown en la Wikipedia">Markdown</a> es un lenguaje de marcado ligero que facilita la aplicación de formato a un texto mediante un simple editor de texto y ocupando poco espacio. En Octopress el contenido se forma con este lenguaje y a continuación se muestra la sintaxis utilizada para escribir en este blog. En algunos casos es Markdown simple, original o standard, en otros es Markdown sobre plugins que se incluyen en la instalación de Octopress y en otros casos directamente se recurre al HTML, ya que algunas funcionalidades no son propias del Markdown original (más información <a href="http://accelera.uab.cat/help.php?file=markdown.html#code" title="Sintaxis Markdown original">aquí</a>).</p>
 
 <!-- more -->
@@ -730,9 +730,9 @@ ___Texto en cursiva y negrita___
 
 <p>Obtenemos:</p>
 
-<p><img src="http://malsanamondo.com/images/obama_nsa_merkel.jpg" title="Criminales" alt="Con título" /></p>
+<p><img src="http://www.malsanamondo.com/images/obama_nsa_merkel.jpg" title="Criminales" alt="Con título" /></p>
 
-<p><img src="http://malsanamondo.com/images/cepmanipula.jpg" alt="Sin título" /></p>
+<p><img src="http://www.malsanamondo.com/images/cepmanipula.jpg" alt="Sin título" /></p>
 
 <p>Con <code>{\% img [class names] /path/to/image [width] [height] [title text [alt text]] \%}</code> (eliminando los caracteres &ldquo;\&rdquo; antes de &ldquo;%&rdquo;), reemplazando ruta y nombre del archivo de imagen y añadiendo atributos de posición, anchura, altura, título y nombre mostrado.</p>
 
@@ -745,9 +745,9 @@ ___Texto en cursiva y negrita___
 
 <p>Obtenemos:</p>
 
-<p><img class="left" src="http://malsanamondo.com/images/obama_nsa_merkel.jpg" width="300" height="300" title="Criminales" ></p>
+<p><img class="left" src="http://www.malsanamondo.com/images/obama_nsa_merkel.jpg" width="300" height="300" title="Criminales" ></p>
 
-<p><img class="right" src="http://malsanamondo.com/images/cepmanipula.jpg" width="420" height="700" title="Manipulando" ></p>
+<p><img class="right" src="http://www.malsanamondo.com/images/cepmanipula.jpg" width="420" height="700" title="Manipulando" ></p>
 
 <p>lo que permite colocar varias imágenes en el mismo párrafo jugando con su tamaño y posición.</p>
 
@@ -760,7 +760,7 @@ ___Texto en cursiva y negrita___
 
 <p>Obtenemos:</p>
 
-<p><span class='caption-wrapper center'><img class='caption' src='http://malsanamondo.com/images/obama_nsa_merkel.jpg' width='800' height='500' title='Criminales'><span class='caption-text'>Criminales</span></span></p>
+<p><span class='caption-wrapper center'><img class='caption' src='http://www.malsanamondo.com/images/obama_nsa_merkel.jpg' width='800' height='500' title='Criminales'><span class='caption-text'>Criminales</span></span></p>
 
 <h2>Regla horizontal<a name="9"></a></h2>
 
@@ -947,9 +947,9 @@ Aquí va el código que quieras mostrar
   
   <entry>
     <title type="html"><![CDATA[Hola]]></title>
-    <link href="http://malsanamondo.com/2014/04/hola/"/>
+    <link href="http://www.malsanamondo.com/2014/04/hola/"/>
     <updated>2014-04-12T18:08:36+02:00</updated>
-    <id>http://malsanamondo.com/2014/04/hola</id>
+    <id>http://www.malsanamondo.com/2014/04/hola</id>
     <content type="html"><![CDATA[<p>Esta es la primera entrada de este nuevo blog. Trataré diversos temas que he necesitado o querido conocer en algún momento, desarrollándolos como apuntes personales, esperando también que sirva de ayuda a quien lo necesite.</p>
 
 <p>Comenzaré explicando cómo montar un servidor web propio con una Raspberry Pi, cómo acceder a él desde el exterior de la red local y cómo instalar Octopress y crear un blog. Eso es lo que he tenido que aprender para montar este blog, y mediante documentación recogida en Internet, paciencia y mucho ensayo-error creo haberlo conseguido.</p>
