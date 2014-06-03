@@ -4,7 +4,7 @@
   <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://www.malsanamondo.com/atom.xml" rel="self"/>
   <link href="http://www.malsanamondo.com/"/>
-  <updated>2014-06-02T16:59:21+02:00</updated>
+  <updated>2014-06-03T18:15:23+02:00</updated>
   <id>http://www.malsanamondo.com/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -12,6 +12,257 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Privacidad y anonimato en Internet]]></title>
+    <link href="http://www.malsanamondo.com/2014/05/privacidad-y-anonimato-en-internet/"/>
+    <updated>2014-05-02T12:13:53+02:00</updated>
+    <id>http://www.malsanamondo.com/2014/05/privacidad-y-anonimato-en-internet</id>
+    <content type="html"><![CDATA[<p><span class='caption-wrapper right'><img class='caption' src='http://www.malsanamondo.com/images/internet.jpg' width='420' height='420' title='Chappatte (http://www.globecartoon.com/)'><span class='caption-text'>Chappatte (<a href="http://www.globecartoon.com/">http://www.globecartoon.com/</a>)</span></span>
+Este artículo no es un estudio exhaustivo de seguridad de redes, de legislación sobre datos personales o de alternativas para un uso ético de Internet. Solamente es un breve compendio de información cuya finalidad es ofrecer, de una parte una visión general del rastro que dejamos al usar Internet, y de otra parte mostrar algunas herramientas que nos pueden servir para intentar eliminar, minimizar o recortar ese rastro (si es que entendemos que debemos hacerlo).</p>
+
+<!-- more -->
+
+
+<p>Si crees que hay incorrecciones (sería extraño que no las hubiera), conceptos no suficientemente desarrollados o herramientas que no aparecen y crees que son importantes, no dudes en comunicarlo a través de los comentarios para que sean incorporados a la propia entrada previa comprobación. La idea es construir la información conjuntamente entre las personas que mostramos interés en este asunto.</p>
+
+<h3>Datos personales</h3>
+
+<p>Día a día nuestra actividad y nuestros movimientos en el mundo físico y en el digital generan una determinada información que se registra, almacena y procesa mediante diversas formas. Por ejemplo en grabaciones con cámaras de videovigilancia, grabaciones de conversaciones telefónicas, geolocalización GPS de dispositivos electrónicos, archivos de uso de servicios públicos como la Seguridad Social (y los datos que se desprenden de ellos: edad, sexo, historial de enfermedades, etc.), o privados como los bancos, afiliación a una asociación, a una religión o a un partido político, archivo de la plantilla de una empresa o administración, etc. A esos datos los llamamos <strong>datos personales</strong>, ya sean públicos o privados.</p>
+
+<p><span class='caption-wrapper left'><img class='caption' src='http://www.malsanamondo.com/images/google_data_center.jpg' width='420' height='420' title='Google data center. Créditos de imagen: Google'><span class='caption-text'>Google data center. Créditos de imagen: Google</span></span>
+Algunos de estos datos se registran, almacenan y procesan por imposición legal, ya que los gobiernos obligan al cumplimiento de determinadas leyes; otros porque empresas, administraciones, organizaciones o particulares simplemente lo hacen motivados por diversas razones (control de la propiedad privada física o intelectual, seguridad pública, <em>target</em> publicitario en marketing, etc.). Existen leyes que regulan el uso de los datos personales como la <a href="https://www.boe.es/boe/dias/1999/12/14/pdfs/A43088-43099.pdf">Ley Orgánica 15/1999, de 13 de diciembre</a> conocida por Ley Orgánica de Protección de Datos de Carácter Personal.</p>
+
+<h3>Logs, cookies, etc.</h3>
+
+<p>Nos centraremos en los datos personales relacionados con el uso de Internet. Este uso genera una determinada información: localización por IP pública (identificación de la red desde la que un dispositivo se conecta a Internet), nombre, edad, búsquedas realizadas, correos electrónicos (remitentes, destinatarios y contenido), contactos, tipo de ordenador, software instalado (sistema operativo y versión, navegador, etc.), hora y duración de la actividad, etc. Datos que son almacenados (y por lo tanto susceptibles de ser procesados) por un tiempo indeterminado.</p>
+
+<p>Parte de esta información se agrupa en unos archivos de texto llamados <strong>logs</strong> y se almacenan en los servidores que prestan los servicios. Estos datos posibilitan que nos llegue la respuesta de una petición (por ejemplo una búsqueda desde el navegador) a nuestro ordenador y no a otro cualquiera, que el sitio web que estamos visitando se adapte al tamaño de la pantalla de nuestro dispositivo, que nuestro navegador interprete correctamente el aspecto de una página web, etc.</p>
+
+<p>Existe otro método de recolección de datos personales, a través de <strong>cookies</strong>, que son pequeños ficheros que almacenan información en nuestro propio ordenador, y que luego son consultados por los sitios web que los crearon. Crean perfiles de los usuarios y posibilitan por ejemplo, información para iniciar sesión automáticamente, que un sitio recuerde nuestras preferencias, que se nos muestre publicidad personalizada a través de nuestra localización, de nuestras búsquedas o de nuestro historial de compras, etc.</p>
+
+<p><span class='caption-wrapper right'><img class='caption' src='http://www.malsanamondo.com/images/facebook_data_center.jpg' width='420' height='420' title='Facebook data center. Créditos de imagen: Facebook'><span class='caption-text'>Facebook data center. Créditos de imagen: Facebook</span></span>
+Otro elemento a tener en cuenta para ser conscientes de la dispersión de nuestros datos es la duplicación simultánea de archivos de datos en varios servidores. Algunas de las razones por la que esto sucede son la &ldquo;seguridad&rdquo;, rapidez y fiabilidad de un determinado servicio. Si enviamos un email, desde que sale de nuestro dispositivo hasta que llega a su destino se copiará en diversos servidores de todo el mundo; si utilizamos un servicio en la &ldquo;nube&rdquo; (por ejemplo Dropbox, Flickr, Evernote, etc.) el contenido de nuestras cuentas también se duplicará en diversos servidores. Los datos y contenidos se duplican para evitar que la caída de un servidor interrumpa un servicio o elimine su contenido, o para hacer llegar con mayor rapidez la respuesta a una petición redirigiéndola a los servidores más cercanos.</p>
+
+<p>Es decir, hay datos que ofrecemos para poder cumplir con los protocolos de intercambio de información, y otros que no son necesarios y que aún así se nos piden o se recavan sin nuestro conocimiento. También debemos saber que algunos gobiernos obligan a las empresas que tienen los servidores ubicados en sus territorios (aunque presten un servicio a cualquier otra parte del mundo) a almacenar ciertos datos esgrimiendo razones varias, y que otras empresas lo hacen aunque no estén obligadas a hacerlo.</p>
+
+<h3>Privacidad y anonimato</h3>
+
+<p>La privacidad y el anonimato son importantes por varias razones, y una de ellas por sí sola ya lo eleva a categoría de necesidad: para denunciar el abuso cualquiera sea su forma, especialmente del perpetrado por parte de personas con cuotas de poder.</p>
+
+<p>La libertad de expresión y la libre circulación de información y conocimiento se niegan sistemáticamente en todo el mundo, a menudo bajo la supuesta defensa de la libertad, democracia y seguridad. Allá donde exista un conflicto (laboral, bélico, político, etc.) la libertad de expresión y/o de circulación de la información están amenazadas.</p>
+
+<p><img src="http://www.malsanamondo.com/images/prism.jpg" alt="PRISM" /></p>
+
+<p>Pero no es únicamente en el ámbito del activismo donde cobran importancia la privacidad y el anonimato, en cualquier faceta de nuestras vidas deberían tener la misma importancia. La idea que se expresa en razonamientos del tipo <em>&ldquo;no importa que me observen, como no tengo nada que ocultar no tengo nada que temer&rdquo;</em> o <em>&ldquo;no me van a espiar porque mi vida es completamente normal&rdquo;</em> es muy peligrosa, además de irreal.</p>
+
+<blockquote><p>&ldquo;Que me sean dadas seis líneas escritas de puño y letra del hombre más honrado del mundo, y hallaré en ellas motivos para hacerle ahorcar.&rdquo; Cita atribuída a <a href="https://es.wikipedia.org/wiki/Cardenal_Richelieu">Armand Jean du Plessis</a>, cardenal-duque de Richelieu, duque de Fronsac y par de Francia</p></blockquote>
+
+<p>Y es que quien tenga la capacidad necesaria puede criminalizar lo que antes era elogiable, la misma interpretación de las leyes puede hacer que dos situaciones similares tengan diversas sanciones, y además existe la posibilidad real de &ldquo;depositar&rdquo; algún dato comprometedor en un dispositivo que posteriormente será analizado. Es decir, que poco importa si creemos que no tenemos nada que esconder porque no seremos quienes lo decidamos ni quienes lo juzguemos. Nuestros datos personales pueden ser usados para formar listas negras, para crear campañas de fomento o desprestigio de un determinado aspecto político, social, de consumo, etc. Son muy valiosos y los gobiernos y empresas interesadas no se resistirán a dejar pasar ante sus ojos ese flujo de información que puede favorecer el control social, político, económico, etc.</p>
+
+<p>Recordemos el lema de Google <em>&ldquo;don&rsquo;t be evil&rdquo;</em>, algo así como no hagas el mal, que no resiste un análisis bajo un mínimo de conciencia crítica pues qué son &ldquo;el bien&rdquo; y &ldquo;el mal&rdquo; y quién lo decide. ¿Google? ¿La <a href="https://es.wikipedia.org/wiki/Agencia_de_Seguridad_Nacional">NSA</a>? Es curioso saber que este lema fue para muchas personas una garantía de honestidad por parte de Google, un activo que los diferenciaba del resto de empresas (las &ldquo;malas&rdquo; según Google) que no respetaban a los usuarios. Hoy en día y después de que tengamos más información al respecto (colaboración Google-NSA y la ambigüedad en la que se mueve, por ejemplo <a href="http://www.lavanguardia.com/tecnologia/internet/20140320/54403268633/larry-page-ceo-google-decepcionado-espionaje-nsa.html">aquí</a>, <a href="http://www.abc.es/tecnologia/redes/20140320/abci-gmail-encriptado-centros-datos-201403201952.html">aquí</a> y <a href="http://tn.com.ar/tecno/f5/revelan-una-relacion-cercana-entre-google-y-la-nsa_497399">aquí</a>) ha habido un giro en la opinión y ese lema adquiere otra dimensión.</p>
+
+<p>Si quieres informarte sobre los programas de vigilancia masiva aplicados a la población mundial, puedes empezar por la siguiente lista:</p>
+
+<ul>
+<li><a href="http://www.eldiario.es/turing/vigilancia_y_privacidad/NSA-programas-vigilancia-desvelados-Snowden_0_240426730.html">Programas de la NSA desvelados por Edward Snowden</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Datos_acerca_de_la_vigilancia_mundial_%282013_a_la_fecha%29">Datos acerca de la vigilancia mundial</a></li>
+<li><a href="http://cita.es/sitel/">Información sobre SITEL, el sistema de interceptación de comunicaciones patrio</a></li>
+<li><a href="http://www.elladodelmal.com/2013/09/historias-de-espionaje-personal-por.html">Trabajadores de la NSA que han utilizado su posición privilegiada en la obtención de datos mediante el espionaje para sacar beneficio personal</a></li>
+<li><a href="http://www.rebelion.org/noticia.php?id=102205">Conversación en el año 2010 con Nicole Wong (ex-vicepresidenta de Google, actual directora de la asesoría jurídica de Twitter y directora de la oficina de confidencialidad de Barack Obama) y Alma Whitten (ex-directora de privacidad de Google e ingeniera de seguridad y privacidad)</a></li>
+<li><a href="https://prism-break.org/es/">Cómo evitar PRISM</a></li>
+<li><a href="https://quematumovil.pimienta.org">Sobre el uso del teléfono móvil, la privacidad y el anonimato</a></li>
+</ul>
+
+
+<h3>Tomemos el control de nuestros propios equipos (o al menos de nuestro software)</h3>
+
+<p>Debemos ser conscientes de que la total privacidad y anonimato en Internet no se pueden alcanzar, pero sí se pueden obtener niveles altos. Creer que nuestros equipos, conexiones y datos son totalmente seguros, anónimos y privados demuestra ingenuidad, hay muchos elementos que pueden comprometerlos. Si eres sensible a esta necesidad es posible que la mejor decisión sea la de <strong>no utilizar Internet ni dispositivos electrónicos como el teléfono móvil</strong>.</p>
+
+<p>Si aún así queremos seguir usando Internet por cualquier razón, más adelante se muestran una serie de herramientas que nos pueden servir, pero antes debemos tener claros unos conceptos:</p>
+
+<ul>
+<li><strong>Hardware</strong>: parte física de los dispositivos (teclado, placa base, monitor, ratón, unidad de almacenamiento, etc.).</li>
+<li><strong>Software</strong>: el conjunto intangible de datos y programas de la computadora.</li>
+</ul>
+
+
+<p>La interacción entre el <em>software</em> y el <em>hardware</em> hace operativos los dispositivos.</p>
+
+<ul>
+<li><p><strong>Código Fuente</strong>: todo el conjunto de líneas de texto escritas en lenguajes de programación que construyen un programa o un sistema operativo.</p></li>
+<li><p><strong>Software Libre</strong>: &ldquo;es el software que respeta la libertad de los usuarios y la comunidad. En grandes líneas, significa que los usuarios tienen la libertad para ejecutar, copiar, distribuir, estudiar, modificar y mejorar el software&rdquo; (definición de la <a href="https://www.gnu.org/philosophy/free-sw.es.html"><em>Free Software Foundation</em></a>). El código fuente es de libre acceso, por lo tanto se puede revisar. Puede ser software gratuíto o de pago.</p></li>
+</ul>
+
+
+<p>El sistema operativo de software libre más extendido es <a href="https://www.gnu.org/gnu/linux-and-gnu.es.html">GNU/Linux</a>. Bajo este sistema operativo se han creado diversas “distribuciones”, que se adaptan a diversas necesidades de uso y a diversos niveles de compromiso con el software libre.</p>
+
+<ul>
+<li><p><strong>Software Privativo</strong>: el que restringe algún derecho del usuario sobre el producto, es decir, que no se puede copiar, o redistribuir, estudiar o modificar. No se tiene acceso a su código fuente salvo en contadas ocasiones. Los términos <em>shareware</em> o <em>freeware</em> hacen referencia a dos tipos de licencias privativas. Puede ser software gratuíto o de pago.</p></li>
+<li><p><strong>Software de Código Abierto</strong>: es el software al que se puede acceder a su código fuente, más información <a href="https://es.wikipedia.org/wiki/Software_de_c%C3%B3digo_abierto">aquí</a>.</p></li>
+</ul>
+
+
+<p>Los términos <em>software libre</em> y <em>código abierto</em> (open source en inglés) no son enteramente sinónimos pues tienen cargas políticas diversas, aunque su modelo de desarrollo sea cooperativo. <a href="https://www.gnu.org/philosophy/free-software-for-freedom.es.html">Esto</a> es lo que la <em>Free Software Foundation</em> dice al respecto, y <a href="https://es.wikipedia.org/wiki/Software_libre_y_de_c%C3%B3digo_abierto">esto</a> lo que dice la Wikipedia. <a href="https://es.wikipedia.org/wiki/Open_Source_Initiative">Aquí</a> más información sobre la <em>Open Source Initiative</em>.</p>
+
+<p>Una opción bastante lógica es pensar que lo mínimo que podemos hacer por nuestra seguridad es <strong>evitar el uso de software del cual no se pueda estudiar su código fuente</strong>, ya que no sabemos si ese código incluye puertas traseras desde las cuales envía información o modifica datos de nuestro dispositivo.</p>
+
+<p>Ahora bien, que el código fuente sea de libre acceso quiere decir solamente eso, que se puede leer para estudiar su comportamiento, no quiere decir que de entrada sea mejor, peor, más o menos seguro. Ni que cada usuario tenga las herramientas y conocimientos para estudiarlo y para dar la alerta si descubre alguna vulnerabilidad. A veces salen a la luz vulnerabilidades existentes desde hace mucho tiempo y que no se habían descubierto, otras veces su importancia hace que adquiera relevancia, por ejemplo <a href="https://es.wikipedia.org/wiki/Heartbleed">Heartbleed</a>, que afecta a los cifrados SSL de una gran cantidad de servidores. Por cosas como estas no debemos ser negligentes y creer que nuestros equipos y conexiones son totalmente seguros por usar un cierto tipo de software.</p>
+
+<p>Por tanto, si usamos Internet y valoramos la privacidad y el anonimato como herramientas sociales necesarias, es nuestra propia responsabilidad el investigar, experimentar, construir, revisar y difundir sobre ellas según nuestros conocimientos, teniendo en cuenta que los intereses asociados a la negación de esas necesidades son muy grandes. Es parte de la culturización de una sociedad que hace uso de una tecnología que dista mucho de ser neutra y que por eso desconocemos.</p>
+
+<h2>Herramientas</h2>
+
+<p>Las siguientes herramientas de software libre funcionan en los sistemas operativos más extendidos, Windows, Mac OS y GNU/Linux, aunque es en este último en el que presentarán mejores resultados para el propósito que nos ocupa.</p>
+
+<h3>Navegador</h3>
+
+<p><img src="http://www.malsanamondo.com/images/firefox.png" alt="Firefox" /></p>
+
+<p><a href="https://www.mozilla.org/es-ES/">Mozilla Firefox</a> de la Fundación Mozilla, un navegador de código abierto al que se le pueden instalar un buen número de extensiones que le añaden funcionalidades. La versión para Debian GNU/Linux se llama <em>Iceweasel</em>, y difiere de Firefox en una cuestión de licencias, siendo completamente compatible con sus extensiones.</p>
+
+<p>Existen otros navegadores de código abierto pero en esta sección usaremos Firefox por su compatibilidad con las siguientes extensiones.</p>
+
+<hr />
+
+<h3>Extensiones</h3>
+
+<p><img src="http://www.malsanamondo.com/images/logo_noscript.png" alt="NoScript" /></p>
+
+<p><a href="http://noscript.net/">NoScript</a> bloquea la ejecución de Javascript, Java, Flash, Silverlight, y otros plugins y contenidos de scripts. Cargar este tipo de contenido con nuestro navegador puede ofrecer información sin que seamos conscientes de ello, puede instalar <a href="https://es.wikipedia.org/wiki/Malware"><em>malware</em></a> en nuestros dispositivos y además hace más lenta la carga de las páginas que visualizamos. Una vez instalado aparecerá un icono en la barra de menús del navegador desde el cual podemos permitir o revocar los permisos de ejecución de contenido activo de un sitio web. Puedes instalarlo en Firefox desde <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">aquí</a>.</p>
+
+<p><img src="http://www.malsanamondo.com/images/https-everywhere.jpg" alt="HTTPS Everywhere" /></p>
+
+<p><a href="https://www.eff.org/https-everywhere">HTTPS Everywhere</a> de <a href="https://es.wikipedia.org/wiki/Electronic_Frontier_Foundation">Electronic Frontier Foundation</a>. Herramienta que cambia automáticamente nuestra petición de <a href="https://es.wikipedia.org/wiki/HTTP">HTTP</a> a <a href="https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure">HTTPS</a> si el servidor de destino admite este protocolo de comunicación segura.</p>
+
+<p><img src="http://www.malsanamondo.com/images/disconnect.png" alt="Disconnect" /></p>
+
+<p><a href="https://disconnect.me/">Disconnect</a> desconecta y visualiza los sitios web que te rastrean, haciendo más rápida la carga de las páginas web. Al instalarlo aparece un icono en la barra de menús del navegador desde el cual puedes conocer los servicios que te rastrean cuando visitas un sitio web. Puedes instalarlo desde <a href="https://addons.mozilla.org/es/firefox/addon/disconnect/?src=search">aquí</a>.</p>
+
+<p><img src="http://www.malsanamondo.com/images/adblock-edge.png" alt="Adblock Edge" /></p>
+
+<p><a href="https://addons.mozilla.org/es/firefox/addon/adblock-edge/">Adblock Edge</a> bloquea e impide que se cargue la publicidad <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> que aparece al visitar algunos sitios web, y por esa razón también hace más rápida la carga de estos sitios web. Puedes instalarlo desde <a href="https://addons.mozilla.org/es/firefox/addon/adblock-edge/?src=search">aquí</a>.</p>
+
+<hr />
+
+<h3>Buscadores</h3>
+
+<p><img src="http://www.malsanamondo.com/images/startp_logo.gif" alt="Startpage" /></p>
+
+<p><a href="https://startpage.com/esp/">Startpage</a> es un buscador que usa el motor de búsqueda de Google (muestra los resultados de una forma similar a Google) pero no registra nuestra IP. La misma empresa creó anteriormente el buscador <a href="https://ixquick.com/esp/">Ixquick</a> que basa sus resultados en los primeros diez resultados de los principales motores de búsqueda y tampoco registra la IP.</p>
+
+<p><img src="http://www.malsanamondo.com/images/duck.png" alt="DuckDuckGo" /></p>
+
+<p><a href="https://duckduckgo.com/">DuckDuckGo</a> es otro buscador que tampoco registra nuestra IP. Tiene la opción de buscar directamente dentro de los sitios web a través de <a href="https://duckduckgo.com/bang.html"><em>!bangs</em></a> (por ejemplo <strong>duckduckgo !w</strong> para buscar &ldquo;duckduckgo&rdquo; en la Wikipedia). Más información <a href="https://es.wikipedia.org/wiki/DuckDuckGo">aquí</a>.</p>
+
+<hr />
+
+<h3>Servicios de correo electrónico</h3>
+
+<p>Son varios los problemas que afectan a las comunicaciones a través de correo electrónico en lo que respecta a la privacidad y anonimato.</p>
+
+<p>En un principio un mensaje de correo electrónico está formado por los metadatos del propio mensaje (dirección de correo electrónico e IP del remitente, dirección de correo electrónico e IP del destinatario, asunto, fecha, hora y tamaño del mensaje, tamaño y formato de los archivos adjuntos, etc.), el cuerpo del mensaje y los archivos adjuntos, y ni unos ni otros viajan cifrados. Esto quiere decir que si se intercepta un correo electrónico se puede acceder tanto a los metadatos como a todo su contenido.</p>
+
+<p>Esquemáticamente el recorrido completo que hace un correo electrónico comprende tres tramos:</p>
+
+<ol>
+<li>Remitente escribe su mensaje y lo envía, llegando hasta su servidor de correo electrónico (&ldquo;A&rdquo;).</li>
+<li>Servidor &ldquo;A&rdquo; busca en la cabecera del correo electrónico a qué servidor pertenece la dirección destinataria y lo envía al servidor en cuestión (&ldquo;B&rdquo;).</li>
+<li>Servidor &ldquo;B&rdquo; envía el correo electrónico a la dirección destinataria.</li>
+</ol>
+
+
+<p>Como anteriormente dijimos desde que un correo electrónico se envía hasta que llega a su destinatario se replica en distintos servidores, tanto en los del remitente como en los del destinatario, lo que aumenta las opciones de poder ser rastreados, intervenidos, modificados, etc.</p>
+
+<p>Debemos recordar que pese a todos los protocolos de seguridad que tomemos, hay proveedores de correo electrónico como Gmail de Google (y muy probablemente también otros) que rastrean el contenido de sus mensajes, según la misma empresa Google porque un usuario de un servicio gratuito no puede aspirar a la privacidad, así de claro lo explican, más información <a href="http://actualidad.rt.com/actualidad/view/102925-google-privacidad-imposible-defensa-afirmar">aquí</a>. Además la NSA (y casi con toda seguridad otras agencias de inteligencia) presiona a las compañías que ofrecen servicios de correo electrónico para que entregen información y contenidos de los usuarios, cerrando los servicios que se niegan a ello, por ejemplo la compañia <a href="https://es.wikipedia.org/wiki/Lavabit">Lavabit</a> a raíz del caso <a href="https://es.wikipedia.org/wiki/Edward_Snowden">Snowden</a>.</p>
+
+<p>Para tener mayor seguridad en nuestros correos electrónicos debemos encadenar una serie de elementos:</p>
+
+<ul>
+<li>Servicio de correo seguro (conexión SSL)</li>
+<li>Cifrado GnuPG</li>
+<li>Acceso desde IP no rastreable</li>
+<li>Hábitos correctos y sentido común (cabeceras, contenidos)</li>
+<li>Remitentes que sigan la misma cadena de seguridad</li>
+</ul>
+
+
+<p><strong>&ndash; Servicio de correo seguro (conexión SSL)</strong>: necesitamos un servicio de correo que proporcione conexión segura a través de <a href="https://es.wikipedia.org/wiki/Transport_Layer_Security">SSL</a> cuando nos conectamos a él y cuando enviamos o recibimos correos electrónicos. Esto cifrará una parte del correo electrónico, el cuerpo del mensaje, pero no se cifrarán ni las cabeceras y sus metadatos ni los archivos adjuntos del mensaje. Si no se utiliza comunicación vía SSL <strong>todo el contenido</strong> viajará de forma insegura.</p>
+
+<p>También necesitamos un proveedor que no guarde logs de conexión que asocien direcciones IP con cuentas de correo y su contenido.</p>
+
+<p><a href="https://www.autistici.org/es/index.html">Autistici/Inventati</a> (A/I) es una unión de personas y colectivos que llevan bastante tiempo trabajando sobre la privacidad y el anonimato entre otras cosas. Ofrecen varios servicios y uno de ellos es el de <a href="https://www.autistici.org/es/services/mail.html">correo electrónico</a> que cumple con nuestros requerimientos. Se organizan y financian de forma autogestionaria y ofrecen sus servicios gratuítamente. Es interesante saber el <a href="https://www.autistici.org/es/who/costs.html">coste</a> que tienen esos servicios y que podemos ayudar y colaborar para mantenerlo.</p>
+
+<p><a href="https://help.riseup.net/es">Riseup</a> es una organización autónoma con sede en Seattle que ofrecen varios servicios, y que como explican en su sitio web: &ldquo;&hellip; Hacemos esto proporcionando comunicación y medios electrónicos a nuestros amigos comprometidos con la lucha contra el capitalismo y otras formas de opresión&hellip; Trabajamos para apoyar a cada uno en la superación de la opresión sistémica incrustada en el uso y el desarrollo de la tecnología.&rdquo; más información <a href="https://help.riseup.net/es/about-us">aquí</a>. Uno de los servicios que ofrecen es el de <a href="https://help.riseup.net/es/email">correo electrónico</a> cifrado, sin guardar la dirección IP ni incrustarla en las cabeceras de los correos electrónicos.</p>
+
+<p>Extra: independientemente de los servicios de correo electrónico seguro, existen sitios web que ofrecen una dirección y buzón de correo electrónico que expira en un tiempo determinado (normalmente diez minutos prorrogables). Puede ser una solución cuando, al registrarnos en un servicio, se nos pide una dirección de correo electrónico desde la cual confirmar el propio registro, y tememos que se pueda usar para enviarnos spam publicitario o simplemente no queremos ofrecer nuestra dirección. Uno de estos servicios es <a href="http://10minutemail.net">10minutemail</a>.</p>
+
+<p><strong>&ndash; Cifrado (<a href="https://es.wikipedia.org/wiki/GNU_Privacy_Guard">GnuPG</a>)</strong>: este punto tiene importancia por varias razones. Una es por el reconocimiento mutuo entre interlocutores: si Ana envía un correo electrónico a Belén, Ana debe tener la certeza y seguridad de que el contenido del mensaje llega y es leído solamente por Belén, y Belén debe tener la certeza y seguridad de que el mensaje proviene realmente de Ana (no nos debemos fiar de las direcciones de los remitentes ya que se pueden modificar para hacernos creer que son, por ejemplo un contacto conocido, <a href="https://es.wikipedia.org/wiki/Phishing"><em>phising</em></a>).</p>
+
+<p>Otra razón por la cual es importante es para cifrar de una forma segura el contenido de un mensaje para que, aún siendo interceptado, no se pueda acceder a su contenido.</p>
+
+<p>En resúmen y a modo informativo, podemos decir que existen tres tipos de cifrado, el simétrico, el asimétrico y el híbrido. Más información <a href="https://www.gnupg.org/gph/es/manual/c190.html">aquí</a>.</p>
+
+<ul>
+<li><p>Simétrico: el que usa una sola clave para cifrar y descifrar, también llamado de clave privada. Las dos partes deben conocer la clave previamente y este es el punto vulnerable, el cómo se comunica la clave entre las partes, ya que se comunicará de una forma no segura y será susceptible de interceptación.</p></li>
+<li><p>Asimétrico: llamado de clave pública o de par de claves. Cada persona crea y tiene un par de claves relacionadas, una pública que se distribuye a quién se quiera sin temor, y otra privada que se matiene en secreto. Las personas deben saber las claves públicas de sus interlocutores, claves que se pueden comunicar por cualquier medio, aunque no sean seguros. El remitente usa la clave pública del destinatario para cifrar el mensaje, y una vez cifrado, sólo la clave privada del destinatario podrá descifrar este mensaje.</p></li>
+<li><p>Híbrido: usa tanto un cifrado simétrico como uno asimétrico. Funciona mediante el uso de un cifrado de clave pública para compartir una clave para el cifrado simétrico. El mensaje que se esté enviando en el momento, se cifra usando la clave y enviándolo al destinatario. Ya que compartir una clave simétrica no es seguro, la clave usada es diferente para cada sesión. La clave de sesión es cifrada con la clave pública, y el mensaje saliente es cifrado con la clave simétrica, todo combinado automáticamente en un sólo paquete. Si un atacante pudiera descifrar una clave de sesión, sólo sería útil para poder leer un mensaje, el cifrado con esa clave de sesión. El atacante tendría que volver a empezar y descifrar otra clave de sesión para poder leer cualquier otro mensaje.</p></li>
+</ul>
+
+
+<p>Una de las formas para poder implementar el cifrado en el correo electrónico es usando la extensión <em>Enigmail</em> en el gestor de correo electrónico <em>Thunderbird</em>.</p>
+
+<p><img src="http://www.malsanamondo.com/images/thunderbird-logo.png" alt="Thunderbird" /></p>
+
+<p><a href="https://www.mozilla.org/es-ES/thunderbird/">Thunderbird</a> es un gestor de correo electrónico de código abierto de la Fundación Mozilla, y al igual que para su navegador Firefox, existen muchos complementos que aumentan sus capacidades. La versión para Debian se llama <em>Icedove</em>.</p>
+
+<p><img src="http://www.malsanamondo.com/images/enigmail-logo.gif" alt="Enigmail" /></p>
+
+<p><a href="https://addons.mozilla.org/es/thunderbird/addon/enigmail/">Enigmail</a> es una extensión que permite utilizar el programa de cifrado GnuPG dentro de Thunderbird para cifrar correos electrónicos y para crear <a href="https://www.gnupg.org/gph/es/manual/x232.html">firmas digitales</a>.</p>
+
+<p>Más información sobre cómo usar estas herramientas desde GNU/Linux <a href="http://geekland.hol.es/cifrar-mails-con-enigmal/">aquí</a>, y desde Windows <a href="https://securityinabox.org/es/thunderbird_usarenigmail">aquí</a>.</p>
+
+<p><strong>&ndash; Acceso desde IP no rastreable</strong>: se puede conseguir conectando con nuestro servidor de correo electrónico a través de la red <em>Tor</em> (más información en los siguientes puntos).</p>
+
+<p><strong>&ndash; Hábitos correctos y sentido común</strong>: estudiar y practicar las comunicaciones seguras y mantener ciertos hábitos como el de no escribir información en el campo <em>asunto</em>, cifrar los archivos adjuntos y evaluar la seguridad de los dispositivos desde los cuales accedemos a nuestro correo electrónico.</p>
+
+<p><strong>&ndash; Remitentes que sigan la misma cadena de seguridad</strong>: para aumentar la fiabilidad de estas prácticas debemos cuidar que todos los elementos participantes en las comunicaciones tengan clara la importancia de las mismas.</p>
+
+<hr />
+
+<h3>Tor</h3>
+
+<p><img src="http://www.malsanamondo.com/images/tor-logo.jpeg" alt="Tor" /></p>
+
+<p>The Onion Router (<a href="https://es.wikipedia.org/wiki/Tor">Tor</a>) es un proyecto cuyo objetivo es el anonimato a nivel de IP, que ha desarrollado un software (Tor Browser Bundle) que permite mantener el anonimato en internet mediante un sistema de nodos. Cualquier petición que parta de un dispositivo conectado a la red Tor pasa por tres nodos cifrados entre sí hasta alcanzar el destino, haciendo altamente improbable la identificación IP del dispositivo orígen de la petición. El único segmento de comunicación desprotegido es el que sale del tercer nodo y se dirige hasta el destino (que viaja por Internet de forma ordinaria), no siendo suficiente para la identificación del origen.</p>
+
+<p>Puedes instalar Tor Browser Bundle en tu idioma desde <a href="https://www.torproject.org/projects/torbrowser.html.en">aquí</a> (instrucciones de instalación en el mismo enlace), independientemente de que utilices GNU/Linux, Windows o Mac OS, para Android existe una versión llamada Orbot. Se instalará un navegador desde el cual conectarás con Internet a través de la red Tor. Puedes comprobar la IP pública desde la cual ese navegador está conectado a Internet en distintas web que te ofrecen esta información, por ejemplo <a href="http://www.vermiip.es">http://www.vermiip.es</a> o <a href="http://www.cualesmiip.com,">http://www.cualesmiip.com,</a> y así asegurarte que no usas la IP pública de tu router.</p>
+
+<hr />
+
+<h3>Sistema operativo preparado para la privacidad y el anonimato</h3>
+
+<p>Hacer uso de la red Tor para todas las conexiones (navegador, correo, chat, etc.) puede ser una solución para mantener el anonimato, y se puede conseguir con la siguiente herramienta:</p>
+
+<p><img src="http://www.malsanamondo.com/images/tails-logo.png" alt="Tails" /></p>
+
+<p><strong>Tails (The Amnesic Incognito Live System)</strong> es una distribución GNU/Linux preparada para ser instalada y utilizada desde un pendrive y que no deja rastro de uso en el ordenador en el cual se ejecute. Es muy completa y está configurada para forzar todas las conexiones a Internet a través de la red Tor, contiene herramientas de cifrado, de correo electrónico y de chat, de producción de documentos, de eliminación de metadatos, etc.</p>
+
+<p><a href="https://tails.boum.org/index.en.html">Aquí</a> encontrarás información sobre cómo descargarla y cómo instalarla en un pendrive. Una de las características de esta herramienta es que no guarda nada de información de nuestra actividad, esto también incluye archivos, es decir, si descargamos o creamos algún archivo se eliminarán cuando desconectemos el sistema operativo. Para evitar esto se le puede indicar al sistema operativo que cree una partición de persistencia (cifrada con contraseña) en el propio pendrive donde se guardarán los datos que queramos mantener.</p>
+
+<hr />
+
+<p>Sea cual sea el nivel que queramos de privacidad y anonimato y las herramientas que usemos para obtenerlo, debemos ser conscientes de que necesitamos estudiar usos y procedimientos que no acostumbramos a utilizar. Un buen método para aprender y entender cómo utilizar estas herramientas es tomarlo como un juego con el que experimentaremos, y del que complementariamente tendremos que buscar y leer documentación que podemos encontrar haciendo simples búsquedas en Internet.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>El tema de la publicidad en Internet es controvertido ya que algunos sitios web la han adoptado como opción de ingresos para su autogestión económica. Cuando bloqueamos la publicidad de un sitio web estamos ejerciendo nuestro derecho a no ser sujetos expuestos a los mensajes publicitarios (aunque sea solamente en las pantallas de nuestros dispositivos), y a la misma vez estamos impidiendo que ese sitio web se pueda financiar mediante la publicidad. Determinar si la incapacidad para solucionar los problemas de la autogestión de un sitio web justifica el uso publicitario para solventarlo, es algo que cada responsable de sitios web debe reflexionar. <a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi: montar un servidor web en casa (4)]]></title>
