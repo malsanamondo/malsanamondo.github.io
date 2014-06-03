@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: privacidad y anonimato | Malsana Mondo]]></title>
   <link href="http://www.malsanamondo.com/categorias/privacidad-y-anonimato/atom.xml" rel="self"/>
   <link href="http://www.malsanamondo.com/"/>
-  <updated>2014-06-03T20:30:39+02:00</updated>
+  <updated>2014-06-03T20:44:55+02:00</updated>
   <id>http://www.malsanamondo.com/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -240,15 +240,15 @@ Otro elemento a tener en cuenta para ser conscientes de la dispersión de nuestr
 
 <hr />
 
-<h3>Sistema operativo preparado para la privacidad y el anonimato</h3>
+<h3>Tails (sistema operativo preparado para la privacidad y el anonimato)</h3>
 
-<p>Hacer uso de la red Tor para todas las conexiones (navegador, correo, chat, etc.) puede ser una solución para mantener el anonimato, y se puede conseguir con la siguiente herramienta:</p>
+<p>Hacer uso de la red Tor para todas las conexiones (navegador, correo, chat, etc.) puede ser una buena solución para mantener la privacidad y el anonimato, y se puede conseguir con la siguiente herramienta:</p>
 
 <p><img src="/images/tails-logo.png" alt="Tails" /></p>
 
 <p><strong>Tails (The Amnesic Incognito Live System)</strong> es una distribución GNU/Linux preparada para ser instalada y utilizada desde un pendrive y que no deja rastro de uso en el ordenador en el cual se ejecute. Es muy completa y está configurada para forzar todas las conexiones a Internet a través de la red Tor, contiene herramientas de cifrado, de correo electrónico y de chat, de producción de documentos, de eliminación de metadatos, etc.</p>
 
-<p><a href="https://tails.boum.org/index.en.html">Aquí</a> encontrarás información sobre cómo descargarla y cómo instalarla en un pendrive. Una de las características de esta herramienta es que no guarda nada de información de nuestra actividad, esto también incluye archivos, es decir, si descargamos o creamos algún archivo se eliminarán cuando desconectemos el sistema operativo. Para evitar esto se le puede indicar al sistema operativo que cree una partición de persistencia (cifrada con contraseña) en el propio pendrive donde se guardarán los datos que queramos mantener.</p>
+<p><a href="https://tails.boum.org/index.en.html">Aquí</a> encontrarás información sobre cómo descargarla y cómo instalarla en un pendrive. Una de las características de esta herramienta es que no guarda nada de información de nuestra actividad, esto también incluye archivos, es decir, si descargamos o creamos algún archivo se eliminarán cuando apaguemos el sistema operativo. Para evitar esto se le puede indicar al sistema operativo que cree una partición de persistencia (cifrada con contraseña) en el propio pendrive donde se guardarán los datos que queramos mantener.</p>
 
 <hr />
 
