@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: GNU/Linux | Malsana Mondo]]></title>
   <link href="http://www.malsanamondo.com/categorias/gnu-slash-linux/atom.xml" rel="self"/>
   <link href="http://www.malsanamondo.com/"/>
-  <updated>2014-06-04T10:44:35+02:00</updated>
+  <updated>2014-06-04T11:15:17+02:00</updated>
   <id>http://www.malsanamondo.com/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -119,7 +119,7 @@ Otro elemento a tener en cuenta para ser conscientes de la dispersión de nuestr
 
 <p><img src="/images/firefox.png" alt="Firefox" /></p>
 
-<p><a href="https://www.mozilla.org/es-ES/">Mozilla Firefox</a> de la Fundación Mozilla, un navegador de código abierto al que se le pueden instalar un buen número de extensiones que le añaden funcionalidades. La versión para Debian GNU/Linux se llama <em>Iceweasel</em>, y difiere de Firefox en una cuestión de licencias, siendo completamente compatible con sus extensiones.</p>
+<p><a href="https://www.mozilla.org/es-ES/">Mozilla Firefox</a> de la Fundación Mozilla, es un navegador de código abierto al que se le pueden instalar un buen número de extensiones que le añaden funcionalidades. La versión para Debian GNU/Linux se llama <em>Iceweasel</em> y es completamente compatible con sus extensiones.</p>
 
 <p>Existen otros navegadores de código abierto pero en esta sección usaremos Firefox por su compatibilidad con las siguientes extensiones.</p>
 
@@ -224,7 +224,7 @@ Otro elemento a tener en cuenta para ser conscientes de la dispersión de nuestr
 
 <p><strong>&ndash; Acceso desde IP no rastreable</strong>: se puede conseguir conectando con nuestro servidor de correo electrónico a través de la red <em>Tor</em> (más información en los siguientes puntos).</p>
 
-<p><strong>&ndash; Hábitos correctos y sentido común</strong>: estudiar y practicar las comunicaciones seguras y mantener ciertos hábitos como el de no escribir información en el campo <em>asunto</em>, cifrar los archivos adjuntos y evaluar la seguridad de los dispositivos desde los cuales accedemos a nuestro correo electrónico.</p>
+<p><strong>&ndash; Hábitos correctos y sentido común</strong>: estudiar y practicar las comunicaciones seguras y mantener ciertos hábitos como el de no escribir información en el campo <em>asunto</em>, cifrar y eliminar los metadatos de los archivos adjuntos y evaluar la seguridad de los dispositivos desde los cuales accedemos a nuestro correo electrónico.</p>
 
 <p><strong>&ndash; Remitentes que sigan la misma cadena de seguridad</strong>: para aumentar la fiabilidad de estas prácticas debemos cuidar que todos los elementos participantes en las comunicaciones tengan clara la importancia de las mismas.</p>
 
@@ -234,7 +234,7 @@ Otro elemento a tener en cuenta para ser conscientes de la dispersión de nuestr
 
 <p><img src="/images/tor-logo.jpeg" alt="Tor" /></p>
 
-<p>The Onion Router (<a href="https://es.wikipedia.org/wiki/Tor">Tor</a>) es un proyecto cuyo objetivo es el anonimato a nivel de IP, que ha desarrollado un software (Tor Browser Bundle) que permite mantener el anonimato en internet mediante un sistema de nodos. Cualquier petición que parta de un dispositivo conectado a la red Tor pasa por tres nodos cifrados entre sí hasta alcanzar el destino, haciendo altamente improbable la identificación IP del dispositivo orígen de la petición. El único segmento de comunicación desprotegido es el que sale del tercer nodo y se dirige hasta el destino (que viaja por Internet de forma ordinaria), no siendo suficiente para la identificación del origen.</p>
+<p>The Onion Router (<a href="https://es.wikipedia.org/wiki/Tor">Tor</a>) es un proyecto cuyo objetivo es el anonimato a nivel de IP, que ha desarrollado un software (Tor Browser Bundle) que permite mantener el anonimato en internet mediante un sistema de nodos. Cualquier petición que parta de un dispositivo conectado a la red Tor pasa por tres nodos cifrados entre sí hasta alcanzar el destino, haciendo altamente improbable la identificación IP del dispositivo orígen de la petición. El único segmento de comunicación desprotegido (se puede rastrear el contenido) es el que sale del tercer nodo y se dirige hacia el destino (que viaja por Internet de forma ordinaria), no siendo suficiente para la identificación de la IP de origen.</p>
 
 <p>Puedes instalar Tor Browser Bundle en tu idioma desde <a href="https://www.torproject.org/projects/torbrowser.html.en">aquí</a> (instrucciones de instalación en el mismo enlace), independientemente de que utilices GNU/Linux, Windows o Mac OS, para Android existe una versión llamada Orbot. Se instalará un navegador desde el cual conectarás con Internet a través de la red Tor. Puedes comprobar la IP pública desde la cual ese navegador está conectado a Internet en distintas web que te ofrecen esta información, por ejemplo <a href="http://www.vermiip.es">http://www.vermiip.es</a> o <a href="http://www.cualesmiip.com,">http://www.cualesmiip.com,</a> y así asegurarte que no usas la IP pública de tu router.</p>
 
@@ -246,9 +246,9 @@ Otro elemento a tener en cuenta para ser conscientes de la dispersión de nuestr
 
 <p><img src="/images/tails-logo.png" alt="Tails" /></p>
 
-<p><strong>Tails (The Amnesic Incognito Live System)</strong> es una distribución GNU/Linux preparada para ser instalada y utilizada desde un pendrive y que no deja rastro de uso en el ordenador en el cual se ejecute. Es muy completa y está configurada para forzar todas las conexiones a Internet a través de la red Tor, contiene herramientas de cifrado, de correo electrónico y de chat, de producción de documentos, de eliminación de metadatos, etc.</p>
+<p><strong>Tails (The Amnesic Incognito Live System)</strong> es un sistema operativo (distribución GNU/Linux) preparado para ser instalado y utilizado desde un pendrive y que no deja rastro de uso en el ordenador en el cual se ejecute. Es muy completo y está configurado para forzar todas las conexiones a Internet a través de la red Tor, contiene herramientas de cifrado, de correo electrónico y de chat, de producción de documentos, de eliminación de metadatos, etc.</p>
 
-<p><a href="https://tails.boum.org/index.en.html">Aquí</a> encontrarás información sobre cómo descargarla y cómo instalarla en un pendrive. Se puede utilizar en cualquier ordenador en el cual se pueda configurar el arranque desde usb en la <a href="https://es.wikipedia.org/wiki/BIOS">BIOS</a> (normalmente se accede a la configuración de la BIOS desde la tecla F2). Una de las características de Tails es que no guarda información de nuestra actividad, esto también incluye archivos, es decir, si descargamos o creamos algún archivo se eliminarán cuando apaguemos el sistema operativo. Para evitar esto se le puede indicar al sistema operativo que cree una partición de persistencia (cifrada con contraseña) en el propio pendrive donde se guardarán los datos que queramos mantener.</p>
+<p><a href="https://tails.boum.org/index.en.html">Aquí</a> encontrarás información sobre cómo descargarlo y cómo instalarlo en un pendrive. Se puede utilizar en cualquier ordenador en el cual se pueda configurar el arranque desde usb en la <a href="https://es.wikipedia.org/wiki/BIOS">BIOS</a> (normalmente se accede a la configuración de la BIOS en el arranque desde la tecla F2). Una de las características de Tails es que no guarda información de nuestra actividad, esto también incluye archivos, es decir, si descargamos o creamos algún archivo se eliminarán cuando apaguemos el sistema operativo. Para evitar esto se le puede indicar al sistema operativo que cree una partición de persistencia (cifrada con contraseña) en el propio pendrive donde se guardarán los datos que queramos mantener.</p>
 
 <hr />
 
