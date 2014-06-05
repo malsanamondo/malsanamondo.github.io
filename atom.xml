@@ -4,7 +4,7 @@
   <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://www.malsanamondo.com/atom.xml" rel="self"/>
   <link href="http://www.malsanamondo.com/"/>
-  <updated>2014-06-05T20:44:56+02:00</updated>
+  <updated>2014-06-05T21:02:31+02:00</updated>
   <id>http://www.malsanamondo.com/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -122,6 +122,8 @@ Otro elemento a tener en cuenta para ser conscientes de la dispersión de nuestr
 <p><a href="https://www.mozilla.org/es-ES/">Mozilla Firefox</a> de la Fundación Mozilla, es un navegador de código abierto al que se le pueden instalar un buen número de extensiones que le añaden funcionalidades. La versión para Debian GNU/Linux se llama <em>Iceweasel</em> y es completamente compatible con sus extensiones.</p>
 
 <p>Existen otros navegadores de código abierto pero en esta sección usaremos Firefox por su compatibilidad con las siguientes extensiones.</p>
+
+<p>Para protegernos de los <em>cookies</em> los navegadores ofrecen la posibilidad de configurarlos para no aceptarlos por defecto, pudiendo aceptar los que necesitáramos incluyéndolos en una lista de permitidos. En Firefox se hace en Preferencias-Privacidad-Excepciones, no teniendo seleccionada la casilla de aceptar <em>cookies</em>.</p>
 
 <hr />
 
