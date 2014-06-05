@@ -4,7 +4,7 @@
   <title><![CDATA[Categoría: privacidad y anonimato | Malsana Mondo]]></title>
   <link href="http://www.malsanamondo.com/categorias/privacidad-y-anonimato/atom.xml" rel="self"/>
   <link href="http://www.malsanamondo.com/"/>
-  <updated>2014-06-05T16:39:20+02:00</updated>
+  <updated>2014-06-05T17:07:24+02:00</updated>
   <id>http://www.malsanamondo.com/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -224,7 +224,7 @@ Otro elemento a tener en cuenta para ser conscientes de la dispersión de nuestr
 
 <p><strong>&ndash; Acceso desde IP no rastreable</strong>: se puede conseguir conectando con nuestro servidor de correo electrónico a través de la red <em>Tor</em> (más información en los siguientes puntos).</p>
 
-<p><strong>&ndash; Hábitos correctos y sentido común</strong>: estudiar y practicar las comunicaciones seguras y mantener ciertos hábitos como el de no escribir información en el campo <em>asunto</em>, cifrar y eliminar los metadatos de los archivos adjuntos y evaluar la seguridad de los dispositivos desde los cuales accedemos a nuestro correo electrónico.</p>
+<p><strong>&ndash; Hábitos correctos y sentido común</strong>: estudiar y practicar las comunicaciones seguras manteniendo ciertos hábitos como el de no escribir información en el campo <em>asunto</em> (pues forma parte de la cabecera y no se puede cifrar), cifrar y eliminar los metadatos de los archivos adjuntos y evaluar la seguridad de los dispositivos desde los cuales accedemos a nuestro correo electrónico.</p>
 
 <p><strong>&ndash; Remitentes que sigan la misma cadena de seguridad</strong>: para aumentar la fiabilidad de estas prácticas debemos cuidar que todos los elementos participantes en las comunicaciones tengan clara la importancia de las mismas.</p>
 
