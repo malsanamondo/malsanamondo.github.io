@@ -4,7 +4,7 @@
   <title><![CDATA[Malsana Mondo]]></title>
   <link href="http://www.malsanamondo.com/atom.xml" rel="self"/>
   <link href="http://www.malsanamondo.com/"/>
-  <updated>2014-06-07T12:01:26+02:00</updated>
+  <updated>2014-06-07T12:21:27+02:00</updated>
   <id>http://www.malsanamondo.com/</id>
   <author>
     <name><![CDATA[Malsana Mondo]]></name>
@@ -222,7 +222,7 @@ Otro elemento a tener en cuenta para ser conscientes de la dispersión de nuestr
 
 <p><a href="https://addons.mozilla.org/es/thunderbird/addon/enigmail/">Enigmail</a> es una extensión que permite utilizar el programa de cifrado GnuPG dentro de Thunderbird para cifrar correos electrónicos y para crear <a href="https://www.gnupg.org/gph/es/manual/x232.html">firmas digitales</a>.</p>
 
-<p>Más información sobre cómo instalar y usar estas herramientas desde GNU/Linux, Windows o Mac OS <a href="http://geekland.hol.es/cifrar-mails-con-enigmal/">aquí</a>, y centrado en Windows <a href="https://securityinabox.org/es/thunderbird_usarenigmail">aquí</a>.</p>
+<p>Más información sobre cómo instalar y usar estas herramientas desde GNU/Linux, Windows o Mac OS en <a href="http://geekland.hol.es/cifrar-mails-con-enigmal/">este</a> interesante artículo (aunque se basa en la utilización de una cuenta Gmail, se puede y se recomienda hacerlo con otros proveedores más seguros), y <a href="https://securityinabox.org/es/thunderbird_usarenigmail">aquí</a> centrado en Windows.</p>
 
 <p><strong>&ndash; Acceso desde IP no rastreable</strong>: se puede conseguir conectando con nuestro servidor de correo electrónico a través de la red <em>Tor</em> (más información en los siguientes puntos).</p>
 
