@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Categoría: caché web | Malsana Mondo]]></title>
+  <link href="http://www.malsanamondo.com/categorias/cache-web/atom.xml" rel="self"/>
+  <link href="http://www.malsanamondo.com/"/>
+  <updated>2014-06-11T12:41:22+02:00</updated>
+  <id>http://www.malsanamondo.com/</id>
+  <author>
+    <name><![CDATA[Malsana Mondo]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Búsqueda inversa de imágenes y búsqueda en la caché web]]></title>
+    <link href="http://www.malsanamondo.com/2014/06/busqueda-en-la-cache-almacenada-y-busqueda-inversa-de-imagenes/"/>
+    <updated>2014-06-09T14:22:59+02:00</updated>
+    <id>http://www.malsanamondo.com/2014/06/busqueda-en-la-cache-almacenada-y-busqueda-inversa-de-imagenes</id>
+    <content type="html"><![CDATA[<p>Tanto la búsqueda inversa de imágenes como la busqueda de contenido web en caché son procesos muy simples que no requieren de conocimientos especiales. La razón por la cual escribo este artículo es para mostrar lo útiles que pueden llegar a ser.</p>
+
+<p>Hace pocos días asistimos al desenmascaramiento de otro intento de manipulación e intoxicación informativa realizada por dos medios de comunicación, en este caso El Confidencial y ABC.</p>
+
+<!-- more -->
+
+
+<p>En el marco de las protestas contrarias al intento de desalojo y derribo del barcelonés centro social autogestionado Can Vies por parte del Ayuntamiento de Barcelona, no tardaron en aparecer informaciones que especulaban sobre el orígen de las protestas.</p>
+
+<p>En dicho contexto aparece <a href="http://www.elconfidencial.com/espana/cataluna/2014-05-30/mercenarios-entrenados-en-eeuu-e-italia-dirigen-a-los-violentos-de-barcelona_138683/">este artículo en El Confidencial</a> relacionando las movilizaciones con equipos organizados de mercenarios antisistema provenientes de Estados Unidos e Italia. Y al día siguiente <a href="http://www.elconfidencial.com/espana/cataluna/2014-05-31/antisistemas-de-toda-europa-se-citan-en-barcelona-para-un-black-sabbath_139354/">este otro artículo</a> en el mismo medio, y que en su origen contenía las fotografías de dos lanzallamas caseros, que según su autor, habían sido intervenidos a un grupo italiano en la frontera de La Junquera:</p>
+
+<p><img src="/images/lanzallamas.jpg" alt="Lanzallamas de El Confidencial" /></p>
+
+<p>Rápidamente varias personas intentaron averiguar más información sobre esas imágenes, y descubrieron que la fotografía de uno de los dos lanzallamas aparece en un blog estadounidense desde el 9 de mayo de 2005 y la del otro lanzallamas está disponible en otra web estadounidense sin fecha concreta pero sin duda anterior a la fecha de la supuesta intervención en La Junquera. Posteriormente el periódico ABC publica una noticia en la que vuelve a mostrar uno de los lanzallamas que sirve de atrezo a un espectacular artículo. Si quieres saber más sobre este caso visita <a href="https://www.diagonalperiodico.net/blogs/1147/27927">este blog de Diagonal Periódico</a>.</p>
+
+<p>Recuerda al reciente caso de la famosa muleta-cuchillo y del tirachinas de bolas de acero del 22-M que resultaron ser intervenidos en fechas anteriores al propio 22-M y objeto de manipulación e intoxicación informativa por parte de la C.E.P. (Confederación Española de Policía). Falsas informaciones que fueron amplificadas por medios de comunicación que presuponen veracidad incontestable a las fuentes policiales, nada nuevo.</p>
+
+<hr />
+
+<p>La <strong>búsqueda inversa de imágenes</strong> puede servir para rastrear imágenes cronológicamente, para conocer lo extendidas que están por Internet, para conocer sus licencias de uso o si se incumplen las mismas, para conocer su autoría, etc.</p>
+
+<p>Es una forma sencilla para poder averiguar el origen de una imagen o qué sitios web la utilizan. Se pueden utilizar diversos medios, por ejemplo <a href="https://www.tineye.com/">TinEye</a>, ya sea desde su web o a través de su extensión para los navegadores más usados. Su funcionamiento es sencillo, puedes subir la imagen a contrastar o escribir su URL y te mostrará las coincidencias que se pueden ordenar bajo distintas indicaciones.</p>
+
+<p>Otra forma es utilizar el servicio de Google Images, y en la siguiente imagen-manual realizado por <a href="http://peoplewitness.net/">peoplewitness</a> se explica cómo hacerlo:</p>
+
+<p><img src="/images/foto-inversa.png" alt="Búsqueda inversa de imágenes" /></p>
+
+<hr />
+
+<p>La <strong>búsqueda en la caché web</strong> puede servir para leer una web que está saturada y a la que no se puede acceder, para ver los cambios que se han realizado en un artículo, para acceder a una web censurada, para ver cómo era una web hace años, etc. Evidentemente lo anterior es posible si la web a cual queremos acceder ha sido cacheada previamente.</p>
+
+<p><a href="https://archive.org/web/web.php">WayBackMachine</a> es un servicio ofrecido por <a href="https://archive.org/"><em>Internet Archive</em></a> en el cual puedes introducir una dirección y obtener las capturas en caché de esa dirección en orden cronológico.</p>
+
+<p>Para acceder a la caché de Google desde cualquier buscador se puede utilizar tanto <code>http://webcache.googleusercontent.com/search?q=cache:&lt;url sin "http://"&gt;</code>, como <code>http://webcache.googleusercontent.com/search?q=cache%3A&lt;url sin "http://"&gt;</code>, por ejemplo <a href="http://webcache.googleusercontent.com/search?q=cache:malsanamondo.com">http://webcache.googleusercontent.com/search?q=cache:malsanamondo.com</a> . Para hacerlo desde el buscador de Google se puede escribir <code>cache:</code> antes de la URL completa que quieras buscar o directamente pinchar sobre <em>En caché</em> en el enlace que aparece después de realizar una búsqueda.</p>
+]]></content>
+  </entry>
+  
+</feed>
